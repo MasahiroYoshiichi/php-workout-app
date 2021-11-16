@@ -15,10 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('top','TestController@top');
+Route::get('top','HomeController@top');
+Route::get('login','HomeController@login');
+Route::get('register','HomeController@register');
+Route::get('introduction', 'HomeController@introduction');
+Route::get('event', 'HomeController@event');
+Route::get('community', 'HomeController@community');
 
-Route::get('login','TestController@login');
-
-Route::get('register','TestController@register');
-
-Route::get('introduction', 'TestController@introduction');
+Route::get('selection', 'MainController@selection');
+route::get('information', 'MainController@information');

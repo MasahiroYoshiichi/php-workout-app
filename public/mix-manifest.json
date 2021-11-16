@@ -2,6 +2,8 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/top.css": "/css/top.css",
-    "/css/login.css": "/css/login.css",
+    "/css/form.css": "/css/form.css",
+    "/css/introduction.css": "/css/introduction.css",
+    "/css/layouts.css": "/css/layouts.css",
     "/js/bootstrap.js": "/js/bootstrap.js"
 }

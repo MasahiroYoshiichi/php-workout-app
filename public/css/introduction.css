@@ -1,43 +1,16 @@
-.cours1{
-    position: relative;
-    background-color: #696969;
-    padding-bottom: 8.5rem;
-    line-height: 2rem;
-    
+.a-cours{
+  background-color: #696969;
+  line-height: 2.5rem;
 }
 
-.cours2{
-    position: relative;
-    background-color: #D2B48C;
-    padding-bottom: 8.4rem;
-    line-height: 2rem;
+.e-cours{
+  background-color: #D2B48C;
+  line-height: 2.5rem;
 }
 
-.cours3{
-    position: relative;
-    background-color: #5F9EA0;
-    padding-bottom: 8.4rem;
-    line-height: 2rem;
+.f-cours{
+  background-color: #5F9EA0;
+  line-height: 2.5rem;
+  
 }
 
-.cours-image{
-     position:absolute;
-     left:52rem;
-     top: 10rem;
-    }
-    
-.cours-image2{
-    position: absolute;
-    left: 52rem;
-    top:36.1rem;
-}
-
-.cours-image3{
-    position: absolute;
-    left: 52rem;
-    top: 62.1rem;
-}
-
-.join-button{
-    left: 100%;
-}

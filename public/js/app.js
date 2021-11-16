@@ -49706,10 +49706,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/login.scss":
-/*!***********************************!*\
-  !*** ./resources/sass/login.scss ***!
-  \***********************************/
+/***/ "./resources/sass/form.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/form.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/introduction.scss":
+/*!******************************************!*\
+  !*** ./resources/sass/introduction.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/layouts.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/layouts.scss ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49729,16 +49751,18 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/top.scss ./resources/sass/login.scss ***!
-  \*******************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/top.scss ./resources/sass/form.scss ./resources/sass/introduction.scss ./resources/sass/layouts.scss ***!
+  \***********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/ec2-user/environment/workout/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /home/ec2-user/environment/workout/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /home/ec2-user/environment/workout/resources/sass/top.scss */"./resources/sass/top.scss");
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/workout/resources/sass/login.scss */"./resources/sass/login.scss");
+__webpack_require__(/*! /home/ec2-user/environment/workout/resources/sass/form.scss */"./resources/sass/form.scss");
+__webpack_require__(/*! /home/ec2-user/environment/workout/resources/sass/introduction.scss */"./resources/sass/introduction.scss");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/workout/resources/sass/layouts.scss */"./resources/sass/layouts.scss");
 
 
 /***/ })

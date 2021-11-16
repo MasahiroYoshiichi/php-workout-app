@@ -21,6 +21,8 @@
        <link href="{{ secure_asset('css/form.css') }}" rel="stylesheet">
        <link href="{{ secure_asset('css/introduction.css') }}" rel="stylesheet">
        <link href="{{ secure_asset('css/layouts.css') }}" rel="stylesheet">
+       <link href="{{ secure_asset('css/selection.css') }}" rel="stylesheet">
+
       
   </head>
   
@@ -34,20 +36,29 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav nav-position">
                    <li class="nav-item active">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/introduction">コース紹介 <span class="sr-only">(current)</span></a>
+                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/introduction">スケジュール<span class="sr-only">(current)</span></a>
                    </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/event">イベント</a>
+                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/event">各種トレーニング</a>
                    </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/community">コミュニティ</a>
+                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/community">リカバリー</a>
                    </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/login">ログイン</a>
+                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/login">コミュニティー</a>
                     </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/register">新規登録</a>
-                    </li>
+                     <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           各種設定
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                           <a class="dropdown-item" href="#">プロフィール編集</a>
+                           <a class="dropdown-item" href="#">レポート</a>
+                           <a class="dropdown-item" href="#">ログアウト</a>
+                        </div>
+                     </div>
+                   </li>
                 <ul>
             </div>
         </nav>

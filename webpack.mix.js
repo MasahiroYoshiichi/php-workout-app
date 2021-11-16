@@ -15,4 +15,6 @@ mix.js('resources/js/app.js', 'public/js')
 mix.js('resources/js/bootstrap.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/top.scss', 'public/css')
-    .sass('resources/sass/login.scss', 'public/css');
+    .sass('resources/sass/form.scss', 'public/css')
+    .sass('resources/sass/introduction.scss', 'public/css')
+    .sass('resources/sass/layouts.scss', 'public/css');

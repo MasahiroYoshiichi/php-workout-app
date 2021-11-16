@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TestController extends Controller
+class HomeController extends Controller
 {
     //
     
@@ -28,4 +28,20 @@ class TestController extends Controller
     {
         return view('home.introduction');
     }
+    
+    public function event()
+    {
+        return view('home.event');
+    }
+    
+    public function community()
+    {
+        return view('home.community');
+    }
+    
+
 }
+
+
+
+

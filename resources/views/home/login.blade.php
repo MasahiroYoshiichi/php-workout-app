@@ -3,21 +3,28 @@
 @section('title', 'ログイン')
 
 @section('content')
- 　<div class="container-fluid">
-   　  <div class=" bg-secondary row justify-content-center">  
-   　    <div class="login-form bg-secondary">
-   　     <div class="login-title">Exprosive Workout</div>
-   　       <div class="mb-3">
-   　         <label class="form-label" for="e-mail">e-mail</label>
-   　          <input type="email" class="form-control" placeholder="✉️ Email Adress"> 
-   　       </div>
-   　       <div class="mb-3">
-   　        <label class="form-label" for="password">password</label>
-   　        <input type="password" class="form-control" placeholder="🔒 Password">
-   　       </div>
-   　       <div class="login-button">
-   　        <button type="submit" class="btn btn-light btn-lg">login</button>
-   　       </div>
-   　    </div>
-   　  </div>
+<div class="containe-fluid">
+   <div class="row bg-secondary" style="height: 100%;">
+     <div class="col-md-12 mx-auto login-form">
+        <div class="col-md-4 mx-auto text-center"><h3>Exprosive Workout</h3></div>
+         <div class="col-md-5 mt-3 mx-auto">
+            <label class="form-label" for="e-mail">e-mail</label>
+             <input type="email" class="form-control" placeholder="📧Email Adres">
+         </div>
+         <div class="col-md-5 mt-3 mx-auto">
+            <label class="form-label" for="password">password</label>
+            <input type="password" class="form-control" placeholder="🔒password">
+         </div>
+         <div class="col-md-5 mx-auto text-right mt-5">
+            <button type="submit" class="btn btn-light btn-lg">login</button>
+         </div>
+     </div>
    </div>
+</div>
+ 　
+ 　
+ 　
+ 　
+ 　
+ 　
+ 　
