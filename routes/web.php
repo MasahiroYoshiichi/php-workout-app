@@ -24,3 +24,6 @@ Route::get('community', 'HomeController@community');
 
 Route::get('selection', 'MainController@selection');
 route::get('information', 'MainController@information');
+Route::get('record', 'MainController@record');
+
+Route::get('create', 'Admin\MainController@create');

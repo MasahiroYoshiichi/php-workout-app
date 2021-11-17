@@ -17,4 +17,9 @@ class MainController extends Controller
     {
         return view('main.information');
     }
+    
+    public function record()
+    {
+        return view('main.record');
+    }
 }

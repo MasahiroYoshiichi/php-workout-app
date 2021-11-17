@@ -29,14 +29,14 @@
   <body style="padding-top: 50px">
       <header>
         <nav class="navbar navbar-expand-md navbar-light pl-4 bg-dark fixed-top">
-            <a class="navbar-brand" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/top">Exprosive Workout</a>
+            <a class="navbar-brand" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/selection">Exprosive Workout</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon bg-secondary"></span>
             </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav nav-position">
                    <li class="nav-item active">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/introduction">スケジュール<span class="sr-only">(current)</span></a>
+                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/record">レコード<span class="sr-only">(current)</span></a>
                    </li>
                    <li class="nav-item">
                      <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/event">各種トレーニング</a>
@@ -53,8 +53,8 @@
                            各種設定
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                           <a class="dropdown-item" href="#">プロフィール編集</a>
-                           <a class="dropdown-item" href="#">レポート</a>
+                           <a class="dropdown-item" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/information">プロフィール編集</a>
+                           <a class="dropdown-item" href="#">トレーニング管理</a>
                            <a class="dropdown-item" href="#">ログアウト</a>
                         </div>
                      </div>

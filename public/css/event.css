@@ -1,0 +1,21 @@
+.event-list{
+    float: left;
+}
+
+.event-image{
+    background-image: url("/images/AdobeStock_303448274.jpeg");
+    background-size: cover;
+}
+
+dt{
+    border-bottom:1px solid #ccc;
+    float:left;
+    
+}
+
+dd{
+      border-bottom:1px solid #ccc;
+      padding-left: 5rem;
+      margin-right: 3rem;
+}
+

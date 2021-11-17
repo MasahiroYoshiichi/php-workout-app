@@ -21,6 +21,7 @@
        <link href="{{ secure_asset('css/form.css') }}" rel="stylesheet">
        <link href="{{ secure_asset('css/introduction.css') }}" rel="stylesheet">
        <link href="{{ secure_asset('css/layouts.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/event.css') }}" rel="stylesheet">
       
   </head>
   
