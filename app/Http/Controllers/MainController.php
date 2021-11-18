@@ -22,4 +22,19 @@ class MainController extends Controller
     {
         return view('main.record');
     }
+    
+    public function menu()
+    {
+        return view('main.menu');
+    }
+    
+    public function recovery()
+    {
+        return view('main.recovery');
+    }
+    
+    public function post()
+    {
+        return view('main.post');
+    }
 }

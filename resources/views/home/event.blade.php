@@ -5,7 +5,7 @@
 @section('content')
 <div class="container-fluid event-image">
     <div class="row justify-content-center">
-        <div class="col-5 bg-light">
+        <div class="col-md-5  bg-light">
            <p class="text-dark text-center" style="font-size: 4rem;">event</p>
         </div>
     </div>

@@ -1,6 +1,8 @@
 .selection-image{
     background-image: url("/images/AdobeStock_239063695.jpeg");
     background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 
