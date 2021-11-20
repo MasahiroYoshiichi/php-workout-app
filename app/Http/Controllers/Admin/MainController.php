@@ -12,4 +12,14 @@ class MainController extends Controller
     {
         return view('admin.event');
     }
+    
+    public function index()
+    {
+        return view('admin.index');
+    }
+    
+    public function edit()
+    {
+        return view('admin.edit');
+    }
 }

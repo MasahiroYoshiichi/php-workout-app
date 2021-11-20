@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('top','HomeController@top');
 Route::get('login','HomeController@login');
 Route::get('register','HomeController@register');
+Route::post('register', 'HomeController@register');
 Route::get('introduction', 'HomeController@introduction');
 Route::get('event', 'HomeController@event');
 Route::get('community', 'HomeController@community');
@@ -28,5 +29,8 @@ Route::get('record', 'MainController@record');
 Route::get('menu', 'MainController@menu');
 Route::get('recovery', 'MainController@recovery');
 Route::get('post', 'MainController@post'); 
+Route::get('management', 'MainController@management');
 
 Route::get('create', 'Admin\MainController@create');
+Route::get('index', 'Admin\MainController@index');
+Route::get('edit', 'Admin\MainController@edit');

@@ -1,0 +1,12 @@
+.selection-image {
+  background-image: url("/images/selection.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+input[type=radio] {
+  transform: scale(3);
+  margin-top: 6rem;
+}
+

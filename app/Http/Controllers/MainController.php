@@ -37,4 +37,9 @@ class MainController extends Controller
     {
         return view('main.post');
     }
+    
+    public function management()
+    {
+        return view('main.management');
+    }
 }

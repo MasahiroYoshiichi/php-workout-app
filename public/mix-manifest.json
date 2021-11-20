@@ -1,9 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/top.css": "/css/top.css",
-    "/css/form.css": "/css/form.css",
-    "/css/introduction.css": "/css/introduction.css",
     "/css/layouts.css": "/css/layouts.css",
-    "/js/bootstrap.js": "/js/bootstrap.js"
+    "/css/home.css": "/css/home.css",
+    "/css/main.css": "/css/main.css",
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/popper.js": "/js/popper.js"
 }

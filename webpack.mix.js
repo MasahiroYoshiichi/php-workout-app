@@ -13,8 +13,9 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
 mix.js('resources/js/bootstrap.js', 'public/js')
+mix.sourceMaps().js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
     .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/top.scss', 'public/css')
-    .sass('resources/sass/form.scss', 'public/css')
-    .sass('resources/sass/introduction.scss', 'public/css')
-    .sass('resources/sass/layouts.scss', 'public/css');
+    .sass('resources/sass/layouts.scss', 'public/css')
+    .sass('resources/sass/home.scss', 'public/css')
+    .sass('resources/sass/main.scss', 'public/css');
+    
