@@ -16,7 +16,7 @@
             </div>
            @endif
          </div>
-         <form action="{{ action('HomeController@register') }}" method="post">
+         <form action="{{ action('TopController@app_add') }}" method="post">
          <div class="col-md-3 mt-3 mx-auto form-group">
             <label class="form-label" for="e-mail">e-mail</label>
              <input type="email" class="form-control" id="e-mail" placeholder="📧Email Adres">

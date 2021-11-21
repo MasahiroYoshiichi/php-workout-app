@@ -3,45 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    //
-    
-    public function top()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        return view('home.top');
+        $this->middleware('auth');
     }
-    
-    public function login()
-    {
-        return view('home.login');
-    }
-    
-    public function register()
-    {
-        return view('home.register');
-    }
-    
-    public function introduction()
-    {
-        return view('home.introduction');
-    }
-    
-    public function event()
-    {
-        return view('home.event');
-    }
-    
-    public function community()
-    {
-        return view('home.community');
-    }
-    
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
+    }
 }
-
-
-
-
