@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('top','TopController@top');
 Route::get('app_login','TopController@app_login');
+Route::post('app_login', 'TopController@app_signin');
 Route::get('app_register','TopController@app_register');
 Route::post('app_register', 'TopController@app_add');
 Route::get('introduction', 'TopController@introduction');
@@ -24,7 +25,7 @@ Route::get('event', 'TopController@event');
 Route::get('community', 'TopController@community');
 
 Route::get('selection', 'MainController@selection');
-route::get('information', 'MainController@information');
+Route::get('information', 'MainController@information');
 Route::get('record', 'MainController@record');
 Route::get('menu', 'MainController@menu');
 Route::get('recovery', 'MainController@recovery');

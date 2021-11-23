@@ -6,12 +6,26 @@ use Illuminate\Http\Request;
 
 use App\Workout;
 
+use Auth;
+
 class TopController extends Controller
 {
     //
     public function top()
     {
         return view('home.top');
+    }
+    
+    public function app_signin(Request $request)
+    {
+        $this->validate($request, Workout::$rules);
+        
+        if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password') ]))
+        {
+            return redirect('selection');
+        } else {
+            return redirect('app_login');
+        }
     }
     
     public function app_login()
