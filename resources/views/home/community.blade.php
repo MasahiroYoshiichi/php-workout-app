@@ -1,4 +1,4 @@
-@extends('layouts.first')
+@extends('layouts.general')
 
 @section('title','コミュニティ')
 
@@ -55,3 +55,4 @@
         </div>
     </div>
 </div>
+@endsection

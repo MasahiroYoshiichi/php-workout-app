@@ -1,4 +1,4 @@
-@extends('layouts.first')
+@extends('layouts.general')
 
 @section('title', 'イベント')
 

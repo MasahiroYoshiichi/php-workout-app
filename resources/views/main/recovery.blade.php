@@ -1,4 +1,4 @@
-@extends('layouts.second')
+@extends('layouts.general')
 
 @section('title', 'リカバリー')
 
@@ -45,3 +45,5 @@
             <h4>詳細が表示されます。</h4>
         </div>
     </div>
+</div>
+@endsection

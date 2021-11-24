@@ -57,6 +57,7 @@ class TopController extends Controller
     
     public function introduction()
     {
+        
         return view('home.introduction');
     }
     

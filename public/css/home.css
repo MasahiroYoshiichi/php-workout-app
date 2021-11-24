@@ -59,3 +59,8 @@ dd {
   margin-right: 3rem;
 }
 
+.password-forget{
+  color: black;
+  padding:0 ;
+  border: red;
+}

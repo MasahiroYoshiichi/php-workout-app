@@ -1,4 +1,4 @@
-@extends('layouts.second')
+@extends('layouts.general')
 
 @section('title', '新規投稿')
 
@@ -51,5 +51,6 @@
     <div class="row justify-content-end pb-3">
          <button type="submit" class="col-md-2 mt-3 btn btn-light btn-lg">新規投稿</button>
     </div>
- </div> 
+   </div> 
  </div>
+ @endsection

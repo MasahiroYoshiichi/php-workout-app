@@ -1,4 +1,3 @@
-
 .jumbotron-extend {
   background-position: center;
   position: relative;
@@ -7,50 +6,63 @@
   background-size: cover;
 }
 
- .jumbotron-container {
+.jumbotron-container {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.login-title{
-    font-size: 5rem;
+.login-title {
+  font-size: 5rem;
 }
 
-.a-cours{
+.login-layout{
+  height: 100vh;
+}
+
+.login-form{
+  margin-top: 10rem;
+}
+
+.a-cours {
   background-color: #696969;
   line-height: 2.5rem;
 }
 
-.e-cours{
+.e-cours {
   background-color: #D2B48C;
   line-height: 2.5rem;
 }
 
-.f-cours{
+.f-cours {
   background-color: #5F9EA0;
   line-height: 2.5rem;
-  
 }
 
-.event-list{
-    float: left;
+.event-list {
+  float: left;
 }
 
-.event-image{
-    background-image: url("/images/event.jpeg");
-    background-size: cover;
+.event-image {
+  background-image: url("/images/event.jpeg");
+  background-size: cover;
 }
 
-dt{
-    border-bottom:1px solid #ccc;
-    float:left;
-    
+dt {
+  border-bottom: 1px solid #ccc;
+  float: left;
 }
 
-dd{
-      border-bottom:1px solid #ccc;
-      padding-left: 5rem;
-      margin-right: 3rem;
+dd {
+  border-bottom: 1px solid #ccc;
+  padding-left: 5rem;
+  margin-right: 3rem;
 }
 
+.password-forget{
+  color: black;
+  outline: none;
+  input[type="text"]:focus{
+     outline: none;
+  }
+}

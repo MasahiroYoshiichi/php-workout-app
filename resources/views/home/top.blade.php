@@ -1,4 +1,4 @@
-@extends('layouts.first')
+@extends('layouts.general')
 
 @section('title', 'トップページ')
 
@@ -14,5 +14,3 @@
     </div>
 </div>
 @endsection
-
- 　

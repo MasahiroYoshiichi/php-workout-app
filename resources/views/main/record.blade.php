@@ -1,4 +1,4 @@
-@extends('layouts.second')
+@extends('layouts.general')
 
 @section('title', 'レコード')
 
@@ -13,3 +13,4 @@
         </div>
     </div>
 </div>
+@endsection

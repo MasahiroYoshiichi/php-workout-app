@@ -1,4 +1,4 @@
-@extends('layouts.second')
+@extends('layouts.general')
 
 @section('title', 'トレーニングメニュー')
 
@@ -47,3 +47,4 @@
         </div>
     </div>
 </div>
+@endsection

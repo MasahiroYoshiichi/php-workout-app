@@ -1,4 +1,4 @@
-@extends('layouts.second')
+@extends('layouts.general')
 
 @section('title', 'ユーザー情報登録')
 
@@ -82,5 +82,5 @@
       </div>
     </div>
  </form>
- 
+ @endsection
  

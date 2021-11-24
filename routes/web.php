@@ -15,15 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(["middleware" => "guest"], function() {
 Route::get('top','TopController@top');
-Route::get('app_login','TopController@app_login');
-Route::post('app_login', 'TopController@app_signin');
-Route::get('app_register','TopController@app_register');
-Route::post('app_register', 'TopController@app_add');
 Route::get('introduction', 'TopController@introduction');
+});
+
 Route::get('event', 'TopController@event');
 Route::get('community', 'TopController@community');
 
+Route::group(["middleware" => "auth"],function() {
 Route::get('selection', 'MainController@selection');
 Route::get('information', 'MainController@information');
 Route::get('record', 'MainController@record');
@@ -31,18 +31,14 @@ Route::get('menu', 'MainController@menu');
 Route::get('recovery', 'MainController@recovery');
 Route::get('post', 'MainController@post'); 
 Route::get('management', 'MainController@management');
+});
 
 Route::get('create', 'Admin\MainController@create');
 Route::get('index', 'Admin\MainController@index');
 Route::get('edit', 'Admin\MainController@edit');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
+Route::get('/home', 'HomeController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

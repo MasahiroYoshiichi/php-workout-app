@@ -1,4 +1,4 @@
-@extends('layouts.second')
+@extends('layouts.general')
 
 @section('title', 'トレーニング管理')
 
@@ -41,3 +41,4 @@
         <div class="col-md-12 text-center align-self-center"><h2>折れ線グラフ作成予定</h2></div>
     </div>
 </div>
+@endsection

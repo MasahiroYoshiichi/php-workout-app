@@ -1,6 +1,6 @@
 @extends('layouts.first')
 
-@section('title', '新規登録')
+@section('title', 'general')
 
 @section('content')
 
