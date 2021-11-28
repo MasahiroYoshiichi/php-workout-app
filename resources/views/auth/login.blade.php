@@ -32,12 +32,6 @@
                               <a class="btn btn-link"  href="{{ route('password.request') }}">パスワードをお忘れですか？</a>
                      @endif
                  </div>
-                 <div class="col-md-3 form-group mx-auto">
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                        <label class="form-check-label" for="remember">パスワードを記録しますか？</label>
-                     </div>
-                 </div>
                  <div class="col-md-1 form-group mx-auto text-center">
                         <button type="submit" class="btn btn-light">ログイン</button>
                  </div>

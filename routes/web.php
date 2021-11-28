@@ -26,11 +26,13 @@ Route::get('community', 'TopController@community');
 Route::group(["middleware" => "auth"],function() {
 Route::get('selection', 'MainController@selection');
 Route::get('information', 'MainController@information');
+Route::post('information', 'MainController@profile_create');
 Route::get('record', 'MainController@record');
 Route::get('menu', 'MainController@menu');
 Route::get('recovery', 'MainController@recovery');
 Route::get('post', 'MainController@post'); 
 Route::get('management', 'MainController@management');
+Route::get('record', 'CalendarController@record');
 });
 
 Route::get('create', 'Admin\MainController@create');

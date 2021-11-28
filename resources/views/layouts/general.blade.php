@@ -98,10 +98,10 @@
         </nav>
         @endauth
       </header>
-      <main>
+      <main style="padding-top:50px;">
           @yield('content')
       </main>
-      
+     
       <footer>
          <hr class="bg-light">
          <div class="container-fluid">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Profile;
 
 class MainController extends Controller
 {
@@ -18,10 +19,34 @@ class MainController extends Controller
         return view('main.information');
     }
     
-    public function record()
+    public function profile_create(Request $request)
     {
-        return view('main.record');
+        $this->validate($request, Profile::$rules);
+        
+        $profile = new Profile;
+        $form = $request->all();
+
+        
+        if (isset($form['image'])) {
+            $path = $request->file('image')->store('public/image');
+            $profile->image_path = basename($path);
+        } else {
+            $profile->image_path = null;
+        }
+            
+        unset($form['_token']);
+        unset($form['image']);
+        
+        $profile->fill($form)->save();
+        
+        return redirect('selection');
+        
+        
+        
+        $profile->fill($form)->save();
     }
+    
+    
     
     public function menu()
     {

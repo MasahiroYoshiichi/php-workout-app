@@ -1,0 +1,46 @@
+version: "3.8"
+volumes:
+  php-fpm-socket:
+  db-store:
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-secret}
+      MYSQL_DATABASE: ${DB_DATABASE:-db}
+      MYSQL_USER: ${DB_USERNAME:-db_user}
+      MYSQL_PASSWORD: ${DB_PASS:-password}
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+    - ./infra/docker/mysql/db-store:/var/lib/mysql
+    - ./infra/docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    - ./infra/docker/mysql/sql:/docker-entrypoint-initdb.d
+    ports:
+    - 3306:3306
+  web:
+    build:
+      context: .
+      dockerfile: ./infra/docker/nginx/Dockerfile
+    ports:
+      - ${WEB_PORT:-80}:80
+    volumes:
+      - php-fpm-socket:/var/run/php-fpm
+      - ./www:/work/www
+  app:
+    build:
+      context: .
+      dockerfile: ./infra/docker/php/Dockerfile
+    volumes:
+      - php-fpm-socket:/var/run/php-fpm
+      - ./www:/work/www
+    environment:
+       DB_CONNECTION: mysql
+       DB_HOST: db
+       DB_PORT: 3306
+       DB_DATABASE: ${DB_DATABASE:-db}
+       DB_USERNAME: ${DB_USERNAME:-db_user}
+       DB_PASSWORD: ${DB_PASSWORD:-password}
+    links:
+      - db
