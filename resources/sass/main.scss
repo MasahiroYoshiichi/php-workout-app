@@ -1,14 +1,106 @@
-.selection-image{
-    background-image: url("/images/AdobeStock_239063695.jpeg");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    height: 100vh;
-
+.selection-image {
+  background-image: url("/images/selection.jpeg");
+  background-size: cover;
+  position: relative;
+  height: 100vh;
 }
 
-
-input[type="radio"]{
+input[type=radio] {
   transform: scale(3);
-  margin-top: 6rem;
+  margin-top: 4.5rem;
 }
+
+
+.profile_image{
+  height:300px;
+  width:300px;
+  margin: 0 0 4rem 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.profile_title{
+  margin-bottom: 4rem;
+}
+
+.selection_title{
+ border-bottom: solid #b22222;
+}
+
+.selection_layout{
+  line-height: 10rem;
+}
+
+.section_button{
+  color: #ffffff;
+  background-color: #646466;
+  border-radius: 50px;
+  height: 100%;
+  width: 60%;
+  font-size: 1.5rem;
+}
+
+.record_table{
+  height: 100%;
+}
+
+.data_link{
+  text-decoration: none;
+  color: black;
+}
+
+.day_table{
+  line-height: 3rem;
+}
+
+.links>a {
+    color: black;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.table-bordered{
+  color: black;
+}
+
+th:nth-of-type(1),
+td:nth-of-type(1) {
+    color: #FF5F17;
+}
+
+th:nth-of-type(7),
+td:nth-of-type(7) {
+    color: #508393;
+}
+
+.today{
+  background-color: #FFF0F5;
+  position: relative;
+  transition: color 300ms, background-color 300ms;
+  &:hover{
+    background-color: #343A3F;
+    color: #fff;
+  }
+}
+
+.calendar{
+  background-color: #FFF;
+  position: relative;
+  background: #fff;
+  transition: color 300ms, background-color 300ms;
+  &:hover{
+    background-color: #343A3F;
+    color: #fff;
+  }
+}
+
+.cours-title{
+  color: red;

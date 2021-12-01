@@ -33,6 +33,9 @@ Route::get('recovery', 'MainController@recovery');
 Route::get('post', 'MainController@post'); 
 Route::get('management', 'MainController@management');
 Route::get('record', 'CalendarController@record');
+Route::get('athlete', 'MainController@athlete');
+Route::get('exercise', 'MainController@exercise');
+Route::get('fitness', 'MainController@fitness');
 });
 
 Route::get('create', 'Admin\MainController@create');

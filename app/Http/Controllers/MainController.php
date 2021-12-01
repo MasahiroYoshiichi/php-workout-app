@@ -67,4 +67,19 @@ class MainController extends Controller
     {
         return view('main.management');
     }
+    
+    public function athlete()
+    {
+        return view('main.athlete');
+    }
+    
+    public function exercise()
+    {
+        return view('main.exercise');
+    }
+    
+    public function fitness()
+    {
+        return view('main.fitness');
+    }
 }

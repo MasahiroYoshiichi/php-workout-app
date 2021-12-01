@@ -28,7 +28,7 @@ class CalendarService
             if (Carbon::now()->format('Y-m-j') === $date) {
                 $week .= '<td class="today">' . $day;
             } else {
-                $week .= '<td>' . $day;
+                $week .= '<td class="calendar">' . $day;
             }
             $week .= '</td>';
 

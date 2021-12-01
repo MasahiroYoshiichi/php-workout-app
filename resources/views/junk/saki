@@ -1,0 +1,184 @@
+ <div class="row">
+        <div class="col-md-12 bg-light scrollbleChartWeapper">
+          <div>
+            <canvas id="chart" style="height: 250px"></canvas>
+          </div>
+          <canvas id="yAxis" width="0"></canvas>
+        </div>
+            <script>
+                const DATA_COUNT = 30;
+                     const labels = [];
+                     for (let i = 0; i < DATA_COUNT; ++i) {
+                         labels.push(i + "日",toString());
+                     }
+                     
+                var cvsYAxis = document.getElementById('yAxis');
+                var ctxYAxis = cvsYAxis.getContext('2d');
+                     
+                var data = [];
+                var labels = [];
+                var colors = [];
+                
+                var xAxisStepSize = 1,
+                
+                var chartWidth = data.lenght * xAxisStepSize
+                var cvsChart = document.getElementById('chart').getContext('2d');
+                
+                cvsChart.style.width = chartWidth + "px";
+                
+                console.log("Before chart canvas width=" + condition.style.width);
+                console.log("Before chart canvas height=" + condition.style.height);
+                
+                var copyYAxisCalled = false;
+                
+                function copyYAxisImage(chart) {
+                    
+                    if(copyYAxisCalled) return;
+                    
+                    copyYAxisCalled = true;
+                    
+                    var scale = window.devicePixelRatio;
+                    
+                    var yAxScale = chart.scales['y-axis-0'];
+                    
+                    var yAxisStyleWidth0 = yAxScale.width - 10;
+                    
+                    var copyWidth = Math.ceil(yAxisStyleWidth0 * scale);
+                    
+                    var yAxisCvsWidth = copyWidth + 4;
+                    
+                    var yAxisStyleWidth = yAxisCvsWidth / scale;
+                    
+                    var yAxisStyleHeight = yAxScale.height + yAxScale.top + 10;
+                    
+                    var copyHeight = yAxisStyleHeight * scale;
+                    
+                    var yAxisCvsHeight = copyHeight;
+                    
+                    console.log("After chart canvas width=" + cvsChart.width);
+                    
+                    console.log("After chart canvas height=" + cvsChart.height);
+
+                    console.log("scale="+scale);
+                    
+                    console.log("copyWidth="+copyWidth);
+                    
+                    console.log("copyHeight="+copyHeight);
+                    
+                    console.log("yAxisCvsWidth="+yAxisCvsWidth);
+                    
+                    console.log("yAxisCvsHeight="+yAxisCvsHeight);
+                    
+                    console.log("yAxisStyleWidth0="+yAxisStyleWidth0);
+                    
+                    console.log("yAxisStyleWidth="+yAxisStyleWidth);
+                    
+                    console.log("yAxisStyleHeight="+yAxisStyleHeight);
+                  
+                    cvsYAxis.width = yAxisCvsWidth;
+                    
+                    cvsYAxis.height = yAxisCvsHeight;
+                   
+                    cvsYAxis.style.width = yAxisStyleWidth + "px";
+                    
+                    cvsYAxis.style.height = yAxisStyleHeight + "px";
+
+                    ctxYAxis.drawImage(cvsChart, 0, 0, copyWidth, copyHeight, 0, 0, copyWidth, copyHeight);
+                    
+                    chart.options.scales.yAxes[0].ticks.fontColor = 'rgba(0,0,0,0)';
+                    
+                    chart.update();
+                    
+                    ctxChart.clearRect(0, 0, yAxisStyleWidth, yAxisStyleHeight);
+
+                }
+
+
+                var mychart = new Chart(ctxChart, {
+                     type: 'line',
+                     data: {
+                         labels: labels,xAxisID: "day",
+                         datasets: [{
+                             label: '体重',
+                             type: "line",
+                             fill: false,data: [60,65,70,65,60,60],
+                             borderColor: "rgb(154, 162, 235)",
+                             backgroundColor: "rgba(0, 0, 0, 0)",
+                             yAxisID: "weight",
+                         }, {
+                             label: '体脂肪',
+                             data: [10,12,14,16,14,10,14,],
+                             borderColor: "rgb(255, 99, 132)",
+                             backgroundColor: "rgba(0, 0, 0, 0)",
+                             yAxisID: "fat",
+                         }]
+                     },
+                     options: {
+                         tooltips: {
+                             mode: 'nearest',
+                             intersect: false,
+                         },
+                         responsive: false,
+                         scales: {
+                             yAxes: [{
+                                 id: "weight",
+                                 type: "linear",
+                                 position: "left",
+                                 ticks: {
+                                     max: 100,
+                                     min: 20,
+                                     stepSize: 5,
+                                     callback: function(value, index, values){
+                                     return value + 'ksg'
+                                     beginAtZero: true 
+                                    }
+                                 },
+                             }, {
+                                 id: "fat",
+                                 type: "linear",
+                                 position: "right",
+                                 ticks: {
+                                     max: 50,
+                                     min: 0,
+                                     stepSize: 5,
+                                      callback: function(value, index, values){
+                                      return value + '%'
+                                      beginAtZero: true
+                                    }
+                                 },
+                                 
+                             }],
+                         },
+                     },
+                     plugins: [{
+                        afterRender: copyYAxisImage
+                     }]
+                 });
+            </script>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+ var cvsYAxis = document.getElementById('yAxis');
+    var ctxYAxis = cvsYAxis.getContext('2d');
+    
+   
+    var data = [];
+    var data2 = [];
+    var labels = [];
+    var DATA_COUNT = 30;
+    for (i = 0; i < DATA_COUNT; i += 1) {
+      [60, 65, 70, 65, 60, 55].forEach(x => { data.push(x); });
+      [10, 12, 14, 16, 14, 12].forEach(x => { data2.push(x); });
+      labels.push(i + "日",toString());

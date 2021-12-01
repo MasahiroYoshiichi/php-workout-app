@@ -44,7 +44,7 @@
 }
 
 .event-image {
-  background-image: url("/images/event.jpeg");
+  background-image: url("https://image.freepik.com/free-photo/abstract-blur-fitness-gym_155003-15518.jpg");
   background-size: cover;
 }
 
@@ -61,8 +61,10 @@ dd {
 
 .password-forget{
   color: black;
-  outline: none;
-  input[type="text"]:focus{
-     outline: none;
-  }
+  padding:0 ;
+  border: red;
+}
+
+.top_title{
+  border-bottom:solid #b22222;
 }

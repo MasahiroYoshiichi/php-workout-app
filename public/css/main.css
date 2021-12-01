@@ -10,66 +10,150 @@ input[type=radio] {
   margin-top: 4.5rem;
 }
 
-
-.profile_image{
-  height:300px;
-  width:300px;
+.profile_image {
+  height: 300px;
+  width: 300px;
   margin: 0 0 4rem 4rem;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-input[type="file"] {
+input[type=file] {
   display: none;
 }
 
-.profile_title{
+.profile_title {
   margin-bottom: 4rem;
 }
 
-.selection_title{
- border-bottom: solid #b22222;
+.selection_title {
+  border-bottom: solid #b22222;
 }
 
-.selection_layout{
+.selection_layout {
   line-height: 10rem;
 }
 
-.section_button{
-  color: #ffffff;
-  background-color: #333333;
+.section_button {
+  color: #333;
+  background-color: #FBFAFE;
   border-radius: 50px;
   height: 100%;
   width: 60%;
   font-size: 1.5rem;
 }
 
-.record_table{
+.record_table {
   height: 100%;
+  color: #333;
+  margin: 2rem 0;
 }
 
-.data_link{
+.month_change{
+  font-size:1.2rem;
+}
+
+.table_link {
   text-decoration: none;
-  color: white;
+  color: #333;
 }
 
-.day_table{
-  background-color: #343A3F;
+.day_table {
   line-height: 3rem;
-  border: solid 0.5rem #343A3F;
-  color: white;
+  background-color: #fff;
 }
 
-.links>a {
-    color: black;
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
+.record-text{
+  height: 100%;
+  margin: 4rem 0;
 }
 
-.today{
-  color: red;
+
+
+
+.table-bordered {
+  color: #333;
+  
+}
+
+th:nth-of-type(1),
+td:nth-of-type(1) {
+  color: #FF5F17;
+}
+
+th:nth-of-type(7),
+td:nth-of-type(7) {
+  color: #508393;
+}
+
+.today {
+  background-color: #FFF0F5;
+  position: relative;
+  transition: color 300ms, background-color 300ms;
+}
+
+.today:hover {
+  background-color: #343A3F;
+  color: #fff;
+}
+
+.calendar {
+  background-color: #FFF;
+  position: relative;
+  background: #fff;
+  transition: color 300ms, background-color 300ms;
+}
+
+.calendar:hover {
+  background-color: #343A3F;
+  color: #fff;
+}
+
+
+.workoutChart{
+  background-color: #fff;
+  padding-top: 5rem;
+  margin: 0;
+}
+
+.btn-parts{
+  padding: 1rem;
+}
+
+
+.scrollableChartWrapper {
+  position: relative;
+  background-color: ghostwhite;
+}
+
+/* スクロール可能グラフを囲む div */
+.scrollableChartWrapper > div {
+  position: relative;
+  overflow-x: scroll;
+}
+
+/* Y軸イメージコピー用 canvas */
+.scrollableChartWrapper > canvas {
+  position: absolute;            /* これにより、上の div と重なる位置に canvas が配置される */
+  left: 0;
+  top: 0;
+  background-color: ghostwhite;  /* ここをコメントアウトすると、背景色が透明になるので、Y軸を透かしてグラフ部分が見えるようになる */
+}
+
+.cours-title{
+  margin: 0;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.unit{
+  margin: 2.5rem 0 0 0;
+  padding: 0;
+}
+
+.cours-line{
+  padding: 0;
+  margin: 0;
+  background-color: #333;
 }

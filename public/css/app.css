@@ -2670,6 +2670,7 @@ textarea.form-control.is-invalid {
 .btn:focus,
 .btn.focus {
   outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .btn.disabled,
@@ -3304,18 +3305,18 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: black;
+  color: #3490dc;
   text-decoration: none;
 }
 
 .btn-link:hover {
-  color: white;
+  color: #1d68a7;
   text-decoration: underline;
 }
 
 .btn-link:focus,
 .btn-link.focus {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .btn-link:disabled,
