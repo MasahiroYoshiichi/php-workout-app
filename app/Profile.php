@@ -14,6 +14,7 @@ class Profile extends Model
         'lastName' => 'required',
         'rubyFirst' => 'required',
         'rubyLast' => 'required',
+        'age' => 'required',
         'gender' => 'required',
         'height' => 'required',
         'weight' => 'required',

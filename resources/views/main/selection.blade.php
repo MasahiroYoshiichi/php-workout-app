@@ -13,13 +13,13 @@
        <div class="row selection_layout">
            <div class="col-md-12 mt-4 text-center">
                <div class="col-md-6 mx-auto">
-                   <a type="button" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/athlete" class="btn btn-light section_button">アスリートコース</a>
+                   <a type="button" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/athlete" class="btn selection_button">アスリートコース</a>
                </div>
                <div class="col-md-6 mx-auto">
-                   <a type="button" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/exercise" class="btn btn-light section_button">エクササイズコース</a>
+                   <a type="button" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/exercise" class="btn selection_button">エクササイズコース</a>
                </div>
                <div class="col-md-6 mx-auto">
-                   <a type="button" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/fitness" class="btn btn-light section_button">フィットネス</a>
+                   <a type="button" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/fitness" class="btn selection_button">フィットネスコース</a>
                </div>
            </div>
         </div>

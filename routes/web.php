@@ -36,6 +36,8 @@ Route::get('record', 'CalendarController@record');
 Route::get('athlete', 'MainController@athlete');
 Route::get('exercise', 'MainController@exercise');
 Route::get('fitness', 'MainController@fitness');
+Route::get('morning', 'Ajax\RecoveryController@morning');
+Route::get('noon', 'Ajax\RecoveryController@noon');
 });
 
 Route::get('create', 'Admin\MainController@create');

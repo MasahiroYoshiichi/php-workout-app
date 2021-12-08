@@ -19,10 +19,12 @@ class CreateProfilesTable extends Migration
             $table->string('lastName');
             $table->string('rubyFirst');
             $table->string('rubyLast');
-            $table->string('gender');
+            $table->integer('age');
+            $table->integer('gender');
             $table->integer('height');
             $table->integer('weight');
-            $table->string('bodyType');
+            $table->integer('fat');
+            $table->integer('bodyType');
             $table->string('introduction');
             $table->string('image_path')->nullable();  
             $table->timestamps();

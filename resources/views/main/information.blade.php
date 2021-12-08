@@ -20,6 +20,10 @@
         　      @endforeach
         　  </ul>
           @endif
+      <div class="row justify-content-center">
+        <p>※体脂肪率とプロフィール画像は必須ではありません。</p>
+        <p>入力するとより詳しく体組成を把握できます。</p>
+      </div>
       <div class="form-group row">
           <div class="col-md-2 mt-4 pt-2"><h3>氏名</h3></div>  
           <div class="col-md-4">
@@ -43,14 +47,23 @@
           </div>
       </div>
       <div class="row">
+        <div class="col-md-2 mt-4 pt-2"><h3>年齢</h3></div>
+        <div class="col-md-2 mt-4">
+            <input type="text" class="form-control" name="age" placeholder="age" value="{{ old('age') }}">
+        </div>
+        <div class="col-md-1 align-self-end">
+            <h5>歳</h5>
+        </div>
+      </div>
+      <div class="row">
           <div class="col-md-2 mt-4 pt-2"><h3>性別</h3></div>
           <div class="col-md-4 mt-4">
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-light active">
-                       <input type="radio" name="gender"  value="men"> 男
+                       <input type="radio" name="gender"  value="01"> 男
                   </label>
                   <label class="btn btn-light">
-                       <input type="radio" name="gender"  value="women"> 女
+                       <input type="radio" name="gender"  value="02"> 女
                   </label>
               </div>
           </div>
@@ -77,18 +90,29 @@
             <h5>kg</h5>
           </div>
       </div>
+      <div class="form-group row">
+        <div class="col-md-2 mt-4 pt-2">
+          <h3>体脂肪率</h3>
+        </div>
+        <div class="col-md-2 mt-4">
+           <input type="text" class="form-control" name="fat" placeholder="body Fat" value="{{ old('fat') }}">
+        </div>
+        <div class="col-md-1 align-self-end">
+            <h5>%</h5>
+        </div>
+      </div>
       <div class="row">
           <div class="col-md-2 mt-4 pt-2"><h3>体型</h3></div>
           <div class="col-md-4 mt-4">
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-light active">
-                       <input type="radio" name="bodyType"  value="slim"> 痩せ型体型
+                       <input type="radio" name="bodyType"  value="01"> 痩せ型体型
                   </label>
                   <label class="btn btn-light">
-                       <input type="radio" name="bodyType"  value="muscular"> 筋肉質体型
+                       <input type="radio" name="bodyType"  value="02"> 筋肉質体型
                   </label>
                   <label class="btn btn-light">
-                       <input type="radio" name="bodyType"  value="obesity"> 肥満型体型
+                       <input type="radio" name="bodyType"  value="03"> 肥満型体型
                   </label>
               </div>
           </div>

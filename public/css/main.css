@@ -31,8 +31,53 @@ input[type=file] {
   border-bottom: solid #b22222;
 }
 
-.selection_layout {
-  line-height: 10rem;
+
+
+.selection_button{
+  color:#fff;
+  background-color: rgba(0,0,0,0);
+  font-size: 3rem;
+  margin-bottom: 5rem;
+  width: 30rem;
+  height: 5.5rem;
+  border: solid;
+  position: relative;
+  display: block;
+  z-index: 1;
+  overflow: hidden;
+  transition: .3s;
+  background: transparent;
+}
+.selection_button::before,
+.selection_button::after {
+  content: "";
+  width: 30rem;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: transform ease .3s;
+}
+.selection_button::before {
+  right: -2rem;
+  border-right: 4rem solid transparent;
+  border-bottom: 5.5rem solid #fff;
+  transform: translateX(-100%);
+}
+.selection_button::after {
+  left: -2rem;
+  border-left: 4rem solid transparent;
+  border-top: 5.5rem solid #fff;
+  transform: translateX(100%);
+}
+.selection_button:hover {
+  color: #333;
+  border: solid #fff;
+}
+.selection_button:hover::before {
+  transform: translateX(-49%);
+}
+.selection_button:hover::after {
+  transform: translateX(49%);
 }
 
 .section_button {
@@ -118,7 +163,30 @@ td:nth-of-type(7) {
 }
 
 .btn-parts{
-  padding: 1rem;
+  padding: 2rem;
+  border: solid;
+  color :#fff;
+  background-color: #333;
+  margin-right: 10rem;
+}
+
+.btn-color{
+  background-color:#FF4F50;
+}
+.btn-color2{
+  background-color:#87CEEB;
+}
+.btn-color3{
+  background-color:#66CDAA;
+}
+.btn-color4{
+  background-color:#BDB76B;
+}
+.btn-color5{
+  background-color:#F4A460;
+}
+.btn-color6{
+  background-color:#DDA0DD;
 }
 
 
@@ -156,4 +224,13 @@ td:nth-of-type(7) {
   padding: 0;
   margin: 0;
   background-color: #333;
+}
+
+.chart-title{
+  background-color: #FF5F17;
+  padding-top: 0.5rem;
+}
+.chart-title2{
+  background-color: #7B3CFF;
+  padding-top: 0.5rem;
 }

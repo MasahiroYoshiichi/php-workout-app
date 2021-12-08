@@ -4,32 +4,45 @@
 
 @section('content')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="./js/chartjs-plugin-labels.js"></script>
 
-<div class="container-fluid bg-secondary">
+
+<div class="container-fluid bg-light">
+    <div class="row chart-title ">
+      <h1 class="chart-text">Body Condition</h1>
+    </div>
     <div class="row">
         <div class="col-md-2 d-block d-md-none dropdown text-center" aria-labelledby="dropdownMenuButton">
-          <button class="btn btn-light btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            部位選択
            </button>
            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">胸</a>
-              <a class="dropdown-item" href="#">上腕二頭筋</a>
-              <a class="dropdown-item" href="#">上腕三頭筋</a>
-              <a class="dropdown-item" href="#">肩</a>
-              <a class="dropdown-item" href="#">足</a>
-              <a class="dropdown-item" href="#">体幹</a>
+              <a class="dropdown-item" href="">胸</a>
+              <a class="dropdown-item" href="">上腕二頭筋</a>
+              <a class="dropdown-item" href="">上腕三頭筋</a>
+              <a class="dropdown-item" href="">肩</a>
+              <a class="dropdown-item" href="">足</a>
+              <a class="dropdown-item" href="">体幹</a>
            </div>
         </div>
-        <div class="col-md-3 d-none d-md-block btn-group-vertical" role="group" aria-label="bodyType" style="line-height: 5rem">
-            <button type="button" class="btn btn-light btn-parts">胸</button>
-            <button type="button" class="btn btn-light btn-parts">上腕二頭筋</button>
-            <button type="button" class="btn btn-light btn-parts">上腕三頭筋</button>
-            <button type="button" class="btn btn-light btn-parts">肩</button>
-            <button type="button" class="btn btn-light btn-parts">足</button>
-            <button type="button" class="btn btn-light btn-parts">体幹</button>
+        <div class="col-md-3 d-none d-md-block btn-group-vertical p-0" role="group" aria-label="bodyType" style="line-height: 5rem">
+            <button type="button" class="btn btn-color btn-parts">胸</button>
+            <button type="button" class="btn btn-color2 btn-parts">上腕二頭筋</button>
+            <button type="button" class="btn btn-color3 btn-parts">上腕三頭筋</button>
+            <button type="button" class="btn btn-color4  btn-parts">肩</button>
+            <button type="button" class="btn btn-color5 btn-parts">足</button>
+            <button type="button" class="btn btn-color6 btn-parts">体幹</button>
         </div>
-        <div class="col-md-4 text-center align-self-center"><h2>※総数などを入力予定</h2></div>
+        <div class="col-md-4">
+          <div class="card text-dark bg-light text-center" style="height: 80%; margin-top: 3rem;">
+                    <div class="card-header">トレーニング管理</div>
+  　　　　　　　　　　　　　　　　<div class="card-body">
+                       <h2>詳細を掲示</h2>
+                    </div>
+                  
+                </div>
+        </div>
         <div class="col-md-5 workoutChart" style="height:">
             <canvas id="workoutCount"></canvas>  
             <script>
@@ -40,12 +53,12 @@
                   labels: ["胸","上腕二頭筋","上腕三頭筋","肩","足","体幹"],
                   datasets: [{
                       backgroundColor: [
-                            "#FFDBC9",
-                            "#FFD5EC",
-                            "#EAD9FF",	
-                            "#D9E5FF",
-                            "#D7EEFF",
-                            "#CEF9DC"
+                            "#FF4F50",
+                            "#87CEEB",
+                            "#66CDAA",	
+                            "#BDB76B",
+                            "#F4A460",
+                            "#DDA0DD"
                       ],
                       data: [20, 20, 20,20,20,20],
                   }]
@@ -65,26 +78,69 @@
                   }
                 }
               });
-            </script>
-        </div>
+          </script>
+      </div>
+    </div>
+    <div class="row chart-title2">
+        <h1>Body Composition</h1>
     </div>
     <div class="scrollableChartWrapper">
-  <!-- スクロールされる canvas を持つ div:
-       - style.width を省略すると div の幅がページ幅に合わせられる;
-       - style.width を指定すると div の幅（≒スクロールバーの長さ）が固定される -->
        <div>
-    <!-- グラフ描画用 canvas:
-         - style.height は必須;
-         - style.width は全データを表示するのに必要なグラフ幅であり、JS によって設定する;
-         - width,height は Chart により設定される -->
            <canvas id="chart" style="height: 400px"></canvas>
        </div>
-  <!-- Y軸イメージコピー用 canvas: {style.,}{height,width} は JS によって設定する -->
        <canvas id="yAxis" width="0"></canvas>
     </div>
+    <div class="row text-center text-dark">
+      <div class="col-md-12">
+        <h4>body's Stats</h4>
+      </div>
+      <div class="col-md-6 mx-auto">
+        <p>体型 筋肉質型</p>
+        <br>
+        <p>身長 170cm</p>
+        <br>
+        <p>体重 70kg</p>
+        <br>
+        <p>体脂肪 12%</p>
+      </div>
+      <div class="col-md-6 mx-auto">
+        <p>BMI</p>
+        <br>
+        <p>筋力量</p>
+        <br>
+        <p>基礎代謝量</p>
+        <br>
+        <p>活動代謝量</p>
+        <p></p>
+      </div>
+    </div>
+    <hr style="background-color: black;">
+    <div class="row text-dark text-center">
+      <div class="col-md-12">
+        <h4>数値の見方</h4>
+      </div>
+    </div>
+    <div class="row text-dark text-center">
+      <div class="col-md-6">
+        <p>BMIとは...</p>
+      </div>
+      <div class="col-md-6">
+        <p>筋力量とは...</p>
+      </div>
+      <div class="col-md-6">
+        <p>基礎代謝量とは...</p>
+      </div>
+      <div class="col-md-6">
+        <p>活動代謝量とは...</p>
+      </div>
+    </div>
 
-<!-- 以下 JavaScript 部分 -->
 
+
+
+</div>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 
 <script>
 
@@ -94,18 +150,20 @@ var ctxYAxis = cvsYAxis.getContext('2d');
 
 // テスト用データの用意
 var data = [];
-var data2 = [];
 var labels = [];
 var colors = [];
-var DATA_COUNT = "31"
-for (i = 1; i - 1 < DATA_COUNT; ++i) {
-  [60, 65, 70, 65, 60].forEach(x => { data.push(x); });
-  [10,12,14,12,10,].forEach(x => { data2.push(x); });
-  labels.push(i + "日",);
+var data2 = [];
+var DATA_COUNT = 30
+
+for (i = 0; i < DATA_COUNT; i += 1) {
+  [60, 65, 70, 65, 60, 65].forEach(x => { data.push(x); });
+  [15, 17, 19, 17, 15, 17].forEach(x => { data2.push(x); });
+  
+  labels.push(i + "日");
 }
 
 // X軸の1データ当たりの幅
-var xAxisStepSize= 50;
+var xAxisStepSize= 10;
 // グラフ全体の幅を計算
 var chartWidth = data.length * xAxisStepSize;
 
@@ -120,8 +178,7 @@ cvsChart.style.width = chartWidth + "px";
 //cvsChart.width = chartWidth;
 //cvsChart.height = chartHeight;
 
-console.log("Before chart canvas width=" + cvsChart.style.width);
-console.log("Before chart canvas height=" + cvsChart.style.height);
+
 
 // 二重実行防止用フラグ
 var copyYAxisCalled = false;
@@ -138,10 +195,10 @@ function copyYAxisImage(chart) {
   var scale = window.devicePixelRatio;
 
   // Y軸のスケール情報
-  var yAxScale = chart.scales
+  var yAxScale = chart.scales['y-axis-0'];
 
   // Y軸部分としてグラフからコピーすべき幅 (TODO: 良く分かっていない)
-  var yAxisStyleWidth0 = yAxScale.width;
+  var yAxisStyleWidth0 = yAxScale.width - 10;
 
   // canvas におけるコピー幅(yAxisStyleWidth0を直接使うと微妙にずれるので、整数値に切り上げる)
   var copyWidth = Math.ceil(yAxisStyleWidth0 * scale);
@@ -157,16 +214,7 @@ function copyYAxisImage(chart) {
   // Y軸canvas の高さ
   var yAxisCvsHeight = copyHeight;
 
-  console.log("After chart canvas width=" + cvsChart.width);
-  console.log("After chart canvas height=" + cvsChart.height);
-  console.log("scale="+scale);
-  console.log("copyWidth="+copyWidth);
-  console.log("copyHeight="+copyHeight);
-  console.log("yAxisCvsWidth="+yAxisCvsWidth);
-  console.log("yAxisCvsHeight="+yAxisCvsHeight);
-  console.log("yAxisStyleWidth0="+yAxisStyleWidth0);
-  console.log("yAxisStyleWidth="+yAxisStyleWidth);
-  console.log("yAxisStyleHeight="+yAxisStyleHeight);
+  
 
   // 下記はやってもやらなくても結果が変わらないっぽい
   //ctxYAxis.scale(scale, scale);
@@ -191,65 +239,74 @@ function copyYAxisImage(chart) {
 
 // グラフ描画
 var myChart = new Chart(ctxChart, {
-    type: 'line',
+    type: 'bar',
     data: {
-      labels: labels,
         datasets: [{
             label: '体重',
+            yAxisID: 'weight',
             type: 'line',
             data: data,
-            backgroundColor: "rgba(0, 0, 0, 0)",
-            borderColor: "red",
-            yAxisID: 'weight',
+            borderColor: "#333",
+            backgroundColor: "rgba(0,0,0,0)"
         },{
             label: '体脂肪',
-            data: data2,
-            backgroundColor: "rgba(0, 0, 0, 0)",
-            borderColor: "blue",
             yAxisID: 'fat',
-        }]
+            data: data2,
+            backgroundColor: "#B0E0E6"
+            }],
+        labels: labels,
     },
     options: {
-    
-      responsive: false,
+      tooltips: {
+            mode: 'nearest',
+            intersect: false,
+          },
+      responsive: false,  // true（デフォルト）にすると画面の幅に合わせてしまう
       scales: {
         yAxes: [{
-           id: "weight",
-           type: "linear",
-           position: "left",
-           ticks: {
-             max: 100,
-             min: 20,
+          id: 'weight',
+          type: 'linear',
+          position: 'left',
+          ticks: {
+            max: 120,
+             min: 30,
              stepSize: 5,
-             callback: function(value, index, values){
+             callback: function(value){
              return value + 'kg'
              },
-             beginAtZero: true 
-             } 
-          },{
-           id: "fat",
-           type: "linear",
-           position: "right",
-           ticks: {
-           max: 50,
-           min: 0,
-           stepSize: 5,
-           callback: function(value, index, values){
-           return value + '%'
-           },
-           beginAtZero: true 
-           } 
+            beginAtZero: true
+          },
+        }, {
+          id: 'fat',
+          type: 'linear',
+          position: 'right',
+          ticks: {
+            max: 40,
+             min: 0,
+             stepSize: 5,
+             callback: function(value){
+             return value + '%'
+             },
+            beginAtZero: true
+          },
+           gridLines: {
+            drawOnChartArea: false,
+            },
         }]
       }
     },
     plugins: [{
+      // 描画完了後に copyYAxisImage() を呼び出す
+      // see https://www.chartjs.org/docs/latest/developers/plugins.html
+      //     https://stackoverflow.com/questions/55416218/what-is-the-order-in-which-the-hooks-plugins-of-chart-js-are-executed
       afterRender: copyYAxisImage
     }]
 });
 </script>
 
+
   
-</div>
+
 @endsection
 
 

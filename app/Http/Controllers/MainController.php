@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile;
+use Carbon\Carbon;
 
 class MainController extends Controller
 {
@@ -70,6 +71,8 @@ class MainController extends Controller
     
     public function athlete()
     {
+        
+        
         return view('main.athlete');
     }
     
