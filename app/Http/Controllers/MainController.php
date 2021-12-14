@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Profile;
+use App\User;
 use Carbon\Carbon;
+use Auth;
 
 class MainController extends Controller
 {
@@ -22,29 +23,26 @@ class MainController extends Controller
     
     public function profile_create(Request $request)
     {
-        $this->validate($request, Profile::$rules);
+        $this->validate($request, User::$rules);
         
-        $profile = new Profile;
+        $user = Auth::user();
         $form = $request->all();
 
         
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
-            $profile->image_path = basename($path);
+            $user->image_path = basename($path);
         } else {
-            $profile->image_path = null;
+            $user->image_path = null;
         }
             
         unset($form['_token']);
         unset($form['image']);
         
-        $profile->fill($form)->save();
+        $user->fill($form)->update();
+       
         
         return redirect('selection');
-        
-        
-        
-        $profile->fill($form)->save();
     }
     
     
@@ -71,7 +69,6 @@ class MainController extends Controller
     
     public function athlete()
     {
-        
         
         return view('main.athlete');
     }

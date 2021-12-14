@@ -163,6 +163,9 @@ return [
         'height' => '身長',
         'weight' => '体重',
         'bodyType' => '体型',
-        'introduction' => '自己紹介'
+        'introduction' => '自己紹介',
+        'age' => '年齢',
+        'name' => '名前',
+        'accountName' => 'アカウント名'
         ],
 ];

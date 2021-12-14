@@ -16,9 +16,20 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','accountName','age','gender','height','weight','fat','bodyType','introduction'
     ];
-
+    
+    
+    public static $rules = array(
+        'name' => 'required',
+        'accountName' => 'required',
+        'age' => 'required',
+        'gender' => 'required',
+        'height' => 'required',
+        'weight' => 'required',
+        'bodyType' => 'required',
+        'introduction' => 'required',
+    );  
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -36,4 +47,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    
 }

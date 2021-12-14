@@ -80,14 +80,7 @@ input[type=file] {
   transform: translateX(49%);
 }
 
-.section_button {
-  color: #333;
-  background-color: #FBFAFE;
-  border-radius: 50px;
-  height: 100%;
-  width: 60%;
-  font-size: 1.5rem;
-}
+
 
 .record_table {
   height: 100%;
@@ -107,6 +100,7 @@ input[type=file] {
 .day_table {
   line-height: 3rem;
   background-color: #fff;
+  table-layout: fixed;
 }
 
 .record-text{
@@ -114,12 +108,8 @@ input[type=file] {
   margin: 4rem 0;
 }
 
-
-
-
 .table-bordered {
   color: #333;
-  
 }
 
 th:nth-of-type(1),

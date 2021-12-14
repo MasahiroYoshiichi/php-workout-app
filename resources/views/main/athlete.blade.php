@@ -12,11 +12,10 @@
             <div class="card text-dark bg-light mt-3" style="height: 20rem;">
               <div class="card-header">ワークアウト履歴</div>
               <div class="card-body">
-                <p>前回トレーニング日<br>2021年12月1日</p>  
+                <p>前回トレーニング日<br></p>  
                 <p>前回選択コース<br>エクササイズコース</p>
-                <p>トレーニング部位<br>胸　上腕二頭筋</p>
-                <p>おすすめトレーニング<br>肩、上腕三頭筋</p>
-              </div>
+                <p>トレーニング部位<br>胸　上腕二頭筋</p>              
+            </div>
             </div>
         </div>
         <div class="col-md-10  bg-secondary">

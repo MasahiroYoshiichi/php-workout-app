@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrateUsersTable extends Migration
+class CreateTrainingPointsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class CrateUsersTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('training_points', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('training_point_name');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class CrateUsersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('training_points');
     }
 }

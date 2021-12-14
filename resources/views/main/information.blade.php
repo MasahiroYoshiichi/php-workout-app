@@ -20,30 +20,22 @@
         　      @endforeach
         　  </ul>
           @endif
-      <div class="row justify-content-center">
+      <div class="row justify-content-center mb-4">
         <p>※体脂肪率とプロフィール画像は必須ではありません。</p>
         <p>入力するとより詳しく体組成を把握できます。</p>
       </div>
       <div class="form-group row">
           <div class="col-md-2 mt-4 pt-2"><h3>氏名</h3></div>  
-          <div class="col-md-4">
-              <label for="firstName" class="form-label">姓</label>
-              <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First name" value="{{ old('firstName') }}">
-          </div>
-          <div class="col-md-4">
-              <label for ="lastName" class="form-label">名</label>
-              <input type="text" class="form-control" name="lastName" id="lastName"  placeholder="Last name" value="{{ old('lastName') }}">
+          <div class="col-md-3">
+            　<label for="name">姓と名の間にスペースを入れてください</label>
+              <input type="text" class="form-control" name="name" id="name" placeholder="name" value="{{ old('name') }}">
           </div>
       </div>
       <div class="form-group row">
-          <div class="col-md-2 mt-4 pt-2"><h3>フリガナ</h3></div>  
-          <div class="col-md-4">
-              <label for="rubyFirst" class="form-label">セイ</label>
-              <input type="text" class="form-control" name="rubyFirst" id="rubyFirst" placeholder="First name" value="{{ old('rubyFirst') }}">
-          </div>
-          <div class="col-md-4">
-              <label for ="rubyLast" class="form-label">メイ</label>
-              <input type="text" class="form-control" name="rubyLast" id="rubyLast"  placeholder="Last name" value="{{ old('rubyLast') }}">
+          <div class="col-md-2 mt-4 pt-2"><h3>アカウント名</h3></div>  
+          <div class="col-md-3">
+              <label for="accountName">コミュニティで使用する名前です</label>
+              <input type="text" class="form-control" name="accountName" id="accountName" placeholder="account name" value="{{ old('accountName') }}">
           </div>
       </div>
       <div class="row">
@@ -60,10 +52,10 @@
           <div class="col-md-4 mt-4">
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-light active">
-                       <input type="radio" name="gender"  value="01"> 男
+                       <input type="radio" name="gender"  value="01" {{(old('gender')=="01")? "checked":"" }}> 男
                   </label>
                   <label class="btn btn-light">
-                       <input type="radio" name="gender"  value="02"> 女
+                       <input type="radio" name="gender"  value="02" {{(old('gender')=="02")? "checked":""}}> 女
                   </label>
               </div>
           </div>
@@ -106,13 +98,13 @@
           <div class="col-md-4 mt-4">
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-light active">
-                       <input type="radio" name="bodyType"  value="01"> 痩せ型体型
+                       <input type="radio" name="bodyType"  value="01" {{(old('bodyType')=="01")? "checked":"" }}> 痩せ型体型
                   </label>
                   <label class="btn btn-light">
-                       <input type="radio" name="bodyType"  value="02"> 筋肉質体型
+                       <input type="radio" name="bodyType"  value="02" {{(old('bodyType')=="02")? "checked":"" }}> 筋肉質体型
                   </label>
                   <label class="btn btn-light">
-                       <input type="radio" name="bodyType"  value="03"> 肥満型体型
+                       <input type="radio" name="bodyType"  value="03" {{(old('bodyType')=="03")? "checked":"" }}> 肥満型体型
                   </label>
               </div>
           </div>
@@ -133,7 +125,7 @@
           <div class="col-md-6 mt-4">
             <label class="btn btn-light btn-lg">
               画像を選択
-              <input type="file" name="image" accept='image/*' onchange="previewImage(this);" value="images/selection.jpeg">
+              <input type="file" name="image" accept='image/*' onchange="previewImage(this);" value="images/selection.jpeg" {{old('image') }}>
             </label>
             <img id="preview" class="img-fluid  profile_image" alt="プロフィール画像" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           </div>
