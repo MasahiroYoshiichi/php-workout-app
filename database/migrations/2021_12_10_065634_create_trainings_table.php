@@ -17,8 +17,8 @@ class CreateTrainingsTable extends Migration
             $table->bigIncrements('id');
             $table->binary('video_url');
             $table->string('training_name');
-            
             $table->timestamps();
+            
         });
     }
 

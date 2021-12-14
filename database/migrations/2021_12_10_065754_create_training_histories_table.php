@@ -22,6 +22,29 @@ class CreateTrainingHistoriesTable extends Migration
             $table->integer('user_weight');
             $table->integer('user_fat');
             $table->timestamps();
+            
+             $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
+            
+            $table->foreign('training_id')
+                  ->references('id')
+                  ->on('trainings')
+                  ->onDelete('cascade');
+                  
+            $table->foreign('course_id')
+                  ->references('id')
+                  ->on('courses')
+                  ->onDelete('cascade');
+                  
+            $table->foreign('training_point_id')
+                  ->references('id')
+                  ->on('training_points')
+                  ->onDelete('cascade');
+                  
+           
+
         });
     }
 

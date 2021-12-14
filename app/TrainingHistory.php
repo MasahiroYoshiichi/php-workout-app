@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TrainingHistory extends Model
+class TrainingHIistory extends Model
 {
     //
 }
