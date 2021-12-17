@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use Carbon\Carbon;
+use App\Training;
+use App\TrainingHistory;
 use Auth;
 
 class MainController extends Controller
@@ -69,10 +71,17 @@ class MainController extends Controller
     
     public function athlete()
     {
-        
-        return view('main.athlete');
-    }
-    
+     
+     if (Auth::id() === TrainingHistory::where('user_id')) {
+         $movie = Training::find(2);
+     } else {
+         $movie = Training::find([1,2,3,4,5,6,]);
+     }
+     
+     $user = Auth::id();
+     
+     return view('main.athlete',['movie' => $movie,'user' => $user]);
+    } 
     public function exercise()
     {
         return view('main.exercise');
@@ -82,4 +91,26 @@ class MainController extends Controller
     {
         return view('main.fitness');
     }
+    
+   public function training_register(Request $request)
+    {
+        $this->validate($request, TrainingHistory::$rules);
+        $training_history = new TrainingHistory();
+        $form = $request->all();
+        $training_history->fill($form)->save();
+        
+        return redirect('selection');
+    }
+    
+    
 }
+
+
+
+
+ //
+      // 
+      // 
+      // 
+      // 
+      // //

@@ -15,10 +15,10 @@ class CreateTrainingHistoriesTable extends Migration
     {
         Schema::create('training_histories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->integer('training_id');
-            $table->integer('course_id');
-            $table->integer('training_point_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('training_id');
+            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('training_point_id');
             $table->integer('user_weight');
             $table->integer('user_fat');
             $table->timestamps();
@@ -26,23 +26,28 @@ class CreateTrainingHistoriesTable extends Migration
              $table->foreign('user_id')
                   ->references('id')
                   ->on('users')
-                  ->onDelete('cascade');
+                  ->onUpdate('CASCADE')
+                  ->onDelete('CASCADE');
+            
+            $table->foreign('course_id')
+                  ->references('id')
+                  ->on('courses')
+                  ->onUpdate('CASCADE')
+                  ->onDelete('CASCADE');
             
             $table->foreign('training_id')
                   ->references('id')
                   ->on('trainings')
-                  ->onDelete('cascade');
+                  ->onUpdate('CASCADE')
+                  ->onDelete('CASCADE');
                   
-            $table->foreign('course_id')
-                  ->references('id')
-                  ->on('courses')
-                  ->onDelete('cascade');
+            
                   
             $table->foreign('training_point_id')
                   ->references('id')
                   ->on('training_points')
-                  ->onDelete('cascade');
-                  
+                  ->onUpdate('CASCADE')
+                  ->onDelete('CASCADE');
            
 
         });

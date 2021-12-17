@@ -48,5 +48,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
+    public function training_histories()
+    {
+        return $this->hasMany('App\TrainingHistory');
+    }
+    
     
 }
