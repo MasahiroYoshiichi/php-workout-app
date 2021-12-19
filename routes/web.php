@@ -37,6 +37,8 @@ Route::get('athlete', 'MainController@athlete');
 Route::get('exercise','MainController@exercise');
 Route::get('fitness', 'MainController@fitness');
 Route::post('athlete','MainController@training_register');
+Route::post('exercise','MainController@training_register');
+Route::post('fitness','MainController@training_register');
 Route::get('morning', 'Ajax\RecoveryController@morning');
 Route::get('noon', 'Ajax\RecoveryController@noon');
 });

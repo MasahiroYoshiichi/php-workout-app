@@ -12,9 +12,22 @@
             <div class="card text-dark bg-light mt-3" style="height: 20rem;">
               <div class="card-header">ワークアウト履歴</div>
               <div class="card-body">
-                <p>前回トレーニング日<br></p>  
-                <p>前回選択コース<br>エクササイズコース</p>
-                <p>トレーニング部位<br>胸　上腕二頭筋</p>              
+                @if(empty($training_history_date))
+                  <label>前回トレーニング日</label>
+                  <p>前回履歴はありません</p>
+                  <label>前回トレーニングコース</label>
+                  <p>前回例歴はありません</p>
+                  <label>前回トレーニング部位</label>
+                  <p>前回履歴はありません</p>
+                @else
+                　<label>前回トレーニング日</label>
+                　<p>{{$training_history_date->created_at->isoformat('YYYY年M月DD日(ddd)HH:mm')}}</p>
+                  <label>前回トレーニングコース</label>
+                  <p>{{$training_history_date->course->course_name}}</p>
+                  <label>前回トレーニング部位</label>
+                  <p>{{$training_history_date->training_point->training_point_name}}</p>
+              @endif
+              
             </div>
             </div>
         </div>
@@ -31,13 +44,14 @@
                    @foreach($movie as $e)
                    <iframe width="950" height="534" src="{{$e->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                    @endforeach
-                  {{ $user }}
                    @foreach($movie as $e)
-                     <input type="text" name="training_id" value="{{$e->id}}">
-                     <input type="text" name="training_point_id" value="{{$e->training_point_id}}">
-                     <input type="text" name="course_id" value="{{$e->course_id}}">
+                     <input type="text" name="training_id[]" value="{{$e->id}}">
+                     <input type="hidden" name="training_point_id[]" value="{{$e->training_point_id}}">
+                     <input type="hidden" name="course_id[]" value="{{$e->course_id}}">
                    @endforeach
-                    <input type="text" name="user_id" value="{{$user}}">   
+                    <input type="hidden" name="user_id" value="{{$user->id}}">   
+                    {{$training_history}}
+                   
                </div>
                <div class="row bg-light text-dark text-center justify-content-center pt-3">
                    <div class="col-md-12">
@@ -51,7 +65,7 @@
                <hr class="cours-line">
                <div class="row bg-light text-dark text-center justify-content-center pt-3">
                    <div class="col-md-3">
-                       <label class="form-label" for="weight">体重を入力</label>
+                       <label class="form-label" for="weight">体重を入力</label>[][]
                        <input type="text" class="form-control" name="user_weight" id="weight" placeholder="kg">
                    </div>
                    <div class="unit">

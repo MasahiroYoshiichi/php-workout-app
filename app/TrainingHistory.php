@@ -22,22 +22,22 @@ class TrainingHistory extends Model
         
     
     
-    public function users()
+    public function user()
     {
         return $this->belongsTo('App\User');
     }
     
-    public function trainings()
+    public function training()
     {
         return $this->belongsTo('App\Training');
     }
     
-    public function trainingpoint()
+    public function training_point()
     {
         return $this->belongsTo('App\TrainingPoint');
     }
     
-    public function courses()
+    public function course()
     {
         return $this->belongsTo('App\Course');
     }

@@ -16,7 +16,7 @@ class CreateTrainingHistoriesTable extends Migration
         Schema::create('training_histories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('training_id');
+            $table->unsignedBigInteger('training_id')->nullable();
             $table->unsignedBigInteger('course_id');
             $table->unsignedBigInteger('training_point_id');
             $table->integer('user_weight');
