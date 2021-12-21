@@ -10,7 +10,7 @@
         $('#morning').click(function() {
         $.ajax({
         type: 'GET',
-        url: 'noon',
+        url: 'chest',
         dataType: 'html',
       }).done(function (results) {
         $('#text').html(results);
@@ -48,8 +48,8 @@
                摂取タイミング一覧
                </button>
                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <input type="button" class="dropdown-item" id="morning" value="朝" href="#">
-                  <input type="button" class="dropdown-item" id="noon" value="昼" href="#">
+                  <input type="button" class="dropdown-item" id="morning" value="朝">
+                  <input type="button" class="dropdown-item" id="noon" value="昼">
                   <a class="dropdown-item" href="#">夜</a>
                   <a class="dropdown-item" href="#">就寝前</a>
                   <a class="dropdown-item" href="#">トレーニング前</a>

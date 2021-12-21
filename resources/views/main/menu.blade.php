@@ -3,48 +3,65 @@
 @section('title', 'トレーニングメニュー')
 
 @section('content')
-<div class="container-fluid bg-secondary" style="height: 100%;">
+ <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+    
+    
+ <script>
+  
+   $(function() {
+       $('.click').click(function() {
+        var click = $(this).data('id');
+        $.ajax({
+        type: 'GET',
+        url: click,
+        dataType: 'html',
+      }).done(function (results) {
+        $('#movie').html(results);
+      }).fail(function (err) {
+         alert('ファイルの取得に失敗しました。');
+     });
+    }
+  );
+ });
+</script>
+<div class="bg-secondary">
+<div class="container bg-light">
     <div class="row">
-        <div class="col-md-2 mb-2 text-center d-block d-md-none">
+        <h1>各種トレーニング</h1>
+    </div>
+    <div class="row menu-selection">
+        <div class="col-md-6 text-center">
             <div class="dropdown" style="margin-top: 2rem;">
-               <button class="btn btn-light btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               トレーニング部位
+               <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="team_id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               トレーニング部位選択
                </button>
                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">上半身</a>
-                  <a class="dropdown-item" href="#">下半身</a>
-                  <a class="dropdown-item" href="#">体幹</a>
-                  <a class="dropdown-item" href="#">ストレッチ</a>
-             </div>
+                 <button class="dropdown-item click" data-id="chest">胸</button>
+                 <button class="dropdown-item click" data-id="back">背中</button>
+                 <button class="dropdown-item click" data-id="sholuder">肩</button>
+                 <button class="dropdown-item click" data-id="bicelder">上腕二頭筋</button>
+                 <button class="dropdown-item click" data-id="triceps">上腕三頭筋</button>
+                 <button class="dropdown-item click" data-id="leg">足</button>
+                 <button class="dropdown-item click" data-id="hip">お尻</button>
+                 <button class="dropdown-item click" data-id="body">体幹</button>
+               </div>
            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
+        <div class="col-md-6 text-center">
             <div class="dropdown" style="margin-top: 2rem;">
-               <button class="btn btn-light btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               トレーニング部位
+               <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="team_id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               コース別選択
                </button>
                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">上半身</a>
-                  <a class="dropdown-item" href="#">下半身</a>
-                  <a class="dropdown-item" href="#">体幹</a>
-                  <a class="dropdown-item" href="#">ストレッチ</a>
-             </div>
+                 <button class="dropdown-item click" data-id="ath">アスリートコース</button>
+                 <button class="dropdown-item click" data-id="exe">エクササイズコース</button>
+                 <button class="dropdown-item click" data-id="fit">フィットネスコース</button>
+               </div>
            </div>
         </div>
     </div>
-    <div class="row offset-2">
-        <div class="col-md-5 mb-4">
-            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2017/02/09/16/21/kettlebell-2052765_1280.jpg">
-        </div>
-        <div class="col-md-5 mb-4">
-            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2018/06/27/22/45/fitness-3502830_1280.jpg">
-        </div>
-        <div class="col-md-5 mb-4">
-            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2017/08/26/08/48/street-workout-2682499_1280.jpg">
-        </div>
-        <div class="col-md-5 mb-4">
-            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2017/04/22/10/15/woman-2250970_1280.jpg">
-        </div>
-    </div>
+    <div id="movie"></div>
+</div>
 </div>
 @endsection

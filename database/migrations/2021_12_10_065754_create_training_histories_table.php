@@ -19,6 +19,7 @@ class CreateTrainingHistoriesTable extends Migration
             $table->unsignedBigInteger('training_id')->nullable();
             $table->unsignedBigInteger('course_id');
             $table->unsignedBigInteger('training_point_id');
+            $table->unsignedBigInteger('training_group_id');
             $table->integer('user_weight');
             $table->integer('user_fat');
             $table->timestamps();
@@ -46,6 +47,12 @@ class CreateTrainingHistoriesTable extends Migration
             $table->foreign('training_point_id')
                   ->references('id')
                   ->on('training_points')
+                  ->onUpdate('CASCADE')
+                  ->onDelete('CASCADE');
+                  
+            $table->foreign('training_group_id')
+                  ->references('id')
+                  ->on('training_groups')
                   ->onUpdate('CASCADE')
                   ->onDelete('CASCADE');
            

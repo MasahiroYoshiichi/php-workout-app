@@ -41,4 +41,6 @@ class TrainingHistory extends Model
     {
         return $this->belongsTo('App\Course');
     }
+    
+    
 }

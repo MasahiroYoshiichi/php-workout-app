@@ -11,6 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $filePath = storage_path() . '/masterData/training_group.csv';
+        $records = read_csv_file($filePath);
+        DB::transaction(function() use ($records) {
+            TrainingGroup::query() -> delete();
+            foreach($records as $record) {
+                TrainingGroup::create($record);
+            }
+        });
     }
 }

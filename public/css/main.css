@@ -224,3 +224,14 @@ td:nth-of-type(7) {
   background-color: #7B3CFF;
   padding-top: 0.5rem;
 }
+
+.training_label{
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: solid;
+}
+
+.menu-selection{
+  padding-bottom: 2rem;
+}

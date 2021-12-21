@@ -4,16 +4,18 @@ namespace App\Http\Controllers\Ajax;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-class RecoveryController extends Controller
+use App\Training;
+class MenuController extends Controller
 {
     //
     public function morning()
     {
         return view('main.sample2');
     }
-    public function noon()
+    public function chest()
     {
-        return view('main.noon');
+         $movie = Training::where('training_point_id', '1')->get();
+        
+        return view('video.chest',['movie' => $movie]);
     }
 }
