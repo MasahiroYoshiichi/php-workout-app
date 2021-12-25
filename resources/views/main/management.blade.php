@@ -7,6 +7,25 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="./js/chartjs-plugin-labels.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script>
+   $(function() {
+         $('.click').click(function() {
+          var click = $(this).data('id');
+          $.ajax({
+          type: 'GET',
+          url: click,
+          dataType: 'html',
+        }).done(function (results) {
+          $('#text').html(results);
+        }).fail(function (err) {
+           alert('ファイルの取得に失敗しました。');
+       });
+      }
+    );
+   });
+</script>
+
 
 <div class="container-fluid bg-light">
     <div class="row chart-title ">
@@ -19,29 +38,32 @@
            </button>
            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="">胸</a>
+              <a class="dropdown-item" href="">背中</a>
+              <a class="dropdown-item" href="">肩</a>
               <a class="dropdown-item" href="">上腕二頭筋</a>
               <a class="dropdown-item" href="">上腕三頭筋</a>
-              <a class="dropdown-item" href="">肩</a>
               <a class="dropdown-item" href="">足</a>
+              <a class="dropdown-item" href="">お尻</a>
               <a class="dropdown-item" href="">体幹</a>
            </div>
         </div>
-        <div class="col-md-3 d-none d-md-block btn-group-vertical p-0" role="group" aria-label="bodyType" style="line-height: 5rem">
-            <button type="button" class="btn btn-color btn-parts">胸</button>
-            <button type="button" class="btn btn-color2 btn-parts">上腕二頭筋</button>
-            <button type="button" class="btn btn-color3 btn-parts">上腕三頭筋</button>
-            <button type="button" class="btn btn-color4  btn-parts">肩</button>
-            <button type="button" class="btn btn-color5 btn-parts">足</button>
-            <button type="button" class="btn btn-color6 btn-parts">体幹</button>
-        </div>
-        <div class="col-md-4">
-          <div class="card text-dark bg-light text-center" style="height: 80%; margin-top: 3rem;">
-                    <div class="card-header">トレーニング管理</div>
-  　　　　　　　　　　　　　　　　<div class="card-body">
-                       <h2>詳細を掲示</h2>
+        <div class="col-md-7 d-none d-md-block " >
+             <div class="management-bottom" role="group" aria-label="bodyType">
+               <button type="button" class="btn btn-color click" data-id="management_chest">胸</button>
+               <button type="button" class="btn btn-color2 click" data-id="management_back">背中</button>
+               <button type="button" class="btn btn-color3 click" data-id="management_sholuder">肩</button>
+               <button type="button" class="btn btn-color4 click" data-id="management_bicelder">上腕二頭筋</button>
+               <button type="button" class="btn btn-color5 click" data-id="management_triceps">上腕三頭筋</button>
+               <button type="button" class="btn btn-color6 click" data-id="management_leg">足</button>
+               <button type="button" class="btn btn-color7 click" data-id="management_hip">お尻</button>
+               <button type="button" class="btn btn-color8 click" data-id="management_body">体幹</button>
+            </div>
+            <div class="card text-dark bg-light management-card">
+                  <div class="card-header">トレーニング管理</div>
+  　　    　 　　　　　　　　　　<div class="card-body">
+                        <div id="text"></div>
                     </div>
-                  
-                </div>
+            </div>
         </div>
         <div class="col-md-5 workoutChart" style="height:">
             <canvas id="workoutCount"></canvas>  
@@ -50,17 +72,19 @@
               var workoutRecord = new Chart(count, {
                 type: 'doughnut',
                 data: {
-                  labels: ["胸","上腕二頭筋","上腕三頭筋","肩","足","体幹"],
+                  labels: ["胸","背中","肩","上腕二頭筋","上腕三頭筋","足","お尻","体幹"],
                   datasets: [{
                       backgroundColor: [
-                            "#FF4F50",
-                            "#87CEEB",
-                            "#66CDAA",	
-                            "#BDB76B",
-                            "#F4A460",
-                            "#DDA0DD"
+                            "#ff6347",
+                            "#00bfff",
+                            "#40e0d0",	
+                            "#90ee90",
+                            "#ffd700",
+                            "#ffa07a",
+                            "#ffb6c1",
+                            "#b0c4de"
                       ],
-                      data: [20, 20, 20,20,20,20],
+                      data: [{{$chest}},{{$back}},{{$sholuder}},{{$bicelder}},{{$triceps}},{{$leg}},{{$hip}},{{$body}}],
                   }]
                 },
                 options: {
@@ -95,16 +119,16 @@
         <h4>body's Stats</h4>
       </div>
       <div class="col-md-6 mx-auto">
-        <p>体型 筋肉質型</p>
+        <p>体型:{{$user->bodyType}}</p>
         <br>
-        <p>身長 170cm</p>
+        <p>身長:{{$user->height}}cm</p>
         <br>
-        <p>体重 70kg</p>
+        <p>体重:{{$user->weight}}kg</p>
         <br>
-        <p>体脂肪 12%</p>
+        <p>体脂肪:{{$user->fat}}%</p>
       </div>
       <div class="col-md-6 mx-auto">
-        <p>BMI</p>
+        <p>BMI  {{$bmi}}</p>
         <br>
         <p>筋力量</p>
         <br>
@@ -118,6 +142,7 @@
     <div class="row text-dark text-center">
       <div class="col-md-12">
         <h4>数値の見方</h4>
+       
       </div>
     </div>
     <div class="row text-dark text-center">

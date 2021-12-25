@@ -25,43 +25,38 @@
   );
  });
 </script>
-<div class="bg-secondary">
-<div class="container bg-light">
+
+<div class="container-fluid bg-light">
+    <div class="row training-top">
+        <h1>Training List</h1>
+    </div>
     <div class="row">
-        <h1>各種トレーニング</h1>
-    </div>
-    <div class="row menu-selection">
-        <div class="col-md-6 text-center">
-            <div class="dropdown" style="margin-top: 2rem;">
-               <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="team_id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               トレーニング部位選択
-               </button>
-               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                 <button class="dropdown-item click" data-id="chest">胸</button>
-                 <button class="dropdown-item click" data-id="back">背中</button>
-                 <button class="dropdown-item click" data-id="sholuder">肩</button>
-                 <button class="dropdown-item click" data-id="bicelder">上腕二頭筋</button>
-                 <button class="dropdown-item click" data-id="triceps">上腕三頭筋</button>
-                 <button class="dropdown-item click" data-id="leg">足</button>
-                 <button class="dropdown-item click" data-id="hip">お尻</button>
-                 <button class="dropdown-item click" data-id="body">体幹</button>
-               </div>
-           </div>
+        <div class="col-md-2 text-center">
+            <div class="cours-point-title">
+                <h5>コース選択</h5>
+            </div>
+            <div class="course-point">
+                <button class="dropdown-item click course-name" data-id="ath">アスリートコース</button>
+                <button class="dropdown-item click course-name" data-id="exe">エクササイズコース</button>
+                <button class="dropdown-item click course-name" data-id="fit">フィットネスコース</button>
+            </div>
+             <div class="training-point-title">
+                <h5>トレーニング部位選択</h5>
+            </div>
+            <div class="training-point">
+                <button class="dropdown-item click training-name" data-id="chest">胸</button>
+                <button class="dropdown-item click training-name" data-id="back">背中</button>
+                <button class="dropdown-item click training-name" data-id="sholuder">肩</button>
+                <button class="dropdown-item click training-name" data-id="bicelder">上腕二頭筋</button>
+                <button class="dropdown-item click training-name" data-id="triceps">上腕三頭筋</button>
+                <button class="dropdown-item click training-name" data-id="leg">足</button>
+                <button class="dropdown-item click training-name" data-id="hip">お尻</button>
+                <button class="dropdown-item click training-name" data-id="body">体幹</button>
+            </div>
         </div>
-        <div class="col-md-6 text-center">
-            <div class="dropdown" style="margin-top: 2rem;">
-               <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="team_id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               コース別選択
-               </button>
-               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                 <button class="dropdown-item click" data-id="ath">アスリートコース</button>
-                 <button class="dropdown-item click" data-id="exe">エクササイズコース</button>
-                 <button class="dropdown-item click" data-id="fit">フィットネスコース</button>
-               </div>
-           </div>
+        <div class="col-md-10 training_view">
+             <div id="movie"></div>
         </div>
     </div>
-    <div id="movie"></div>
-</div>
 </div>
 @endsection

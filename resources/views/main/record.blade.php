@@ -4,6 +4,9 @@
 
 @section('content')
 <div class="container-fluid bg-light">
+    <div class="row record-top">
+        <h1>Record</h1>
+    </div>
     <div class="row">
         <div class="col-md-4 text-center record_table">
              <div class="month_change">

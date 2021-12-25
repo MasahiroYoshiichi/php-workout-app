@@ -16,12 +16,11 @@ class CreateTrainingHistoriesTable extends Migration
         Schema::create('training_histories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('training_id')->nullable();
+            $table->unsignedBigInteger('training_id');
             $table->unsignedBigInteger('course_id');
             $table->unsignedBigInteger('training_point_id');
-            $table->unsignedBigInteger('training_group_id');
-            $table->integer('user_weight');
-            $table->integer('user_fat');
+            $table->integer('user_weight')->nullable();
+            $table->integer('user_fat')->nullable();
             $table->timestamps();
             
              $table->foreign('user_id')
@@ -47,12 +46,6 @@ class CreateTrainingHistoriesTable extends Migration
             $table->foreign('training_point_id')
                   ->references('id')
                   ->on('training_points')
-                  ->onUpdate('CASCADE')
-                  ->onDelete('CASCADE');
-                  
-            $table->foreign('training_group_id')
-                  ->references('id')
-                  ->on('training_groups')
                   ->onUpdate('CASCADE')
                   ->onDelete('CASCADE');
            

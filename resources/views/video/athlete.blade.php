@@ -1,4 +1,4 @@
-@extends('layouts.video')
+@extends('layouts.async')
 
 @section('content')
      <div class="row">

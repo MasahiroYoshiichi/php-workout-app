@@ -152,31 +152,36 @@ td:nth-of-type(7) {
   margin: 0;
 }
 
-.btn-parts{
-  padding: 2rem;
-  border: solid;
-  color :#fff;
-  background-color: #333;
-  margin-right: 10rem;
+
+
+.management-bottom {
+  margin: 1rem;
+  
 }
 
 .btn-color{
-  background-color:#FF4F50;
+  background-color: #ff6347;
 }
 .btn-color2{
-  background-color:#87CEEB;
+  background-color: #00bfff;
 }
 .btn-color3{
-  background-color:#66CDAA;
+  background-color: #40e0d0;
 }
 .btn-color4{
-  background-color:#BDB76B;
+  background-color: #90ee90;
 }
 .btn-color5{
-  background-color:#F4A460;
+  background-color: #ffd700;
 }
 .btn-color6{
-  background-color:#DDA0DD;
+  background-color: #ffa07a;
+}
+.btn-color7{
+  background-color: #ffb6c1;
+}
+.btn-color8{
+  background-color: #b0c4de;
 }
 
 
@@ -234,4 +239,108 @@ td:nth-of-type(7) {
 
 .menu-selection{
   padding-bottom: 2rem;
+}
+
+.recovery_title{
+  padding-top:1rem;
+}
+
+.recovery_name{
+  font-weight: bold;
+  line-height: 2rem;
+  border-bottom: solid;
+  
+}
+
+.recovery_view{
+  background-color: #fff;
+  color: #333;
+}
+
+.recovery_label{
+  color: #008080;
+  font-size: 1.5rem;
+  margin-top:1rem;
+}
+
+.recovery_list{
+  background-color: #fff;
+  color:#333;
+  padding-top:2rem;
+}
+
+.list_title{
+  margin-bottom: 1rem;
+  color: #3cb371;
+}
+
+.recovery-pru{
+  background-color: #778899;
+  height: 4rem;
+}
+
+.recovery_botton{
+  padding-top:0.5rem;
+  margin-left:2rem;
+}
+
+.training_view{
+  background-color: #fff;
+  padding-top:1rem;
+}
+
+.training-point-title{
+  color: #333;
+  margin-top: 2rem;
+}
+
+.cours-point-title{
+  color: #333;
+  margin-top: 1rem;
+}
+
+.training-top{
+  background-color:#778899;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.course-name{
+  background-color: #b0c4de;
+  margin-bottom: 0.2rem;
+}
+
+.training-name{
+   background-color: #b0c4de;
+   margin-bottom: 0.2rem;
+}
+
+.recovery-top{
+  background-color: #8fbc8f;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.record-top{
+  background-color: #ff6347;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.training-point{
+  margin-bottom: 1rem;
+}
+
+.course-point{
+  margin-bottom: 1rem;
+}
+
+.recovery-list-bottom{
+  background-color: #90ee90;
+  margin-bottom: 0.2rem;
+}
+
+.training-point{
+  margin-top:2rem;
+  font-weight: bold;
 }
