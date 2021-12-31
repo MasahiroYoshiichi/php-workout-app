@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TrainingHistory extends Model
 {
     protected $fillable = [
-        'user_id','training_id','course_id','training_point_id','user_weight','user_fat'
+        'user_id','training_id','course_id','training_point_id','user_weight','user_fat','training_date'
         ];
     
     public static $rules = array(

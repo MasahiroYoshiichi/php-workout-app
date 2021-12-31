@@ -97,7 +97,10 @@ class MainController extends Controller
         $height = $user->height;
         $weight = $user->weight;
         $bmi = round($weight/($height*$height)*100);
-        return view('main.management',['user' => $user, 'bmi' => $bmi, 'chest' => $chest, 'back' => $back, 'sholuder' => $sholuder, 'bicelder' => $bicelder,'triceps' => $triceps, 'leg' => $leg, 'hip' => $hip, 'body' => $body] );
+        $days_in_month = Carbon::now()->daysInMonth;
+        
+        return view('main.management',['user' => $user, 'bmi' => $bmi, 'chest' => $chest, 'back' => $back, 'sholuder' => $sholuder, 'bicelder' => $bicelder,'triceps' => $triceps, 'leg' => $leg, 'hip' => $hip, 'body' => $body
+        ,'days_in_month' => $days_in_month] );
     }
     
     public function athlete()
@@ -123,6 +126,7 @@ class MainController extends Controller
      } else {
          $history_time = $training_history->created_at->format('Y-m-d');
          $history_sub_time = $history_date->created_at->format('Y-m-d');
+        
      }
      return view('main.athlete',['user' => $user, 'training_history' => $training_history, 'history_date' => $history_date, 'training_sets' => $training_sets, 
      'history_point_names' => $history_point_names, 'today' => $today, 'history_time' => $history_time, 'history_sub_time' =>  $history_sub_time, 'before_trainings' => $before_trainings]);
@@ -151,6 +155,7 @@ class MainController extends Controller
      } else {
          $history_time = $training_history->created_at->format('Y-m-d');
          $history_sub_time = $history_date->created_at->format('Y-m-d');
+         
      }
      return view('main.exercise',['user' => $user, 'training_history' => $training_history, 'history_date' => $history_date, 'training_sets' => $training_sets, 
      'history_point_names' => $history_point_names, 'today' => $today, 'history_time' => $history_time, 'history_sub_time' =>  $history_sub_time, 'before_trainings' => $before_trainings]);
@@ -179,6 +184,7 @@ class MainController extends Controller
      } else {
          $history_time = $training_history->created_at->format('Y-m-d');
          $history_sub_time = $history_date->created_at->format('Y-m-d');
+       
      }
      return view('main.fitness',['user' => $user, 'training_history' => $training_history, 'history_date' => $history_date, 'training_sets' => $training_sets, 
      'history_point_names' => $history_point_names, 'today' => $today, 'history_time' => $history_time, 'history_sub_time' =>  $history_sub_time, 'before_trainings' => $before_trainings]);
@@ -196,6 +202,7 @@ class MainController extends Controller
             $history->course_id = $request->course_id[$i];
             $history->user_weight = $request->user_weight;
             $history->user_fat = $request->user_fat;
+            $history->training_date = Carbon::today()->format('Y-m-j');
             $history->save();
         }
         return redirect('selection');
@@ -209,6 +216,7 @@ class MainController extends Controller
             $history->training_id = $request->training_id[$i];
             $history->training_point_id = $request->training_point_id[$i];
             $history->course_id = $request->course_id[$i];
+            $history->training_date = Carbon::today()->format('Y-m-j');
             $history->save();
         }
         return redirect('selection');

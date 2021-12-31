@@ -9,7 +9,7 @@
             <h1 class="cours-title">AthletlCours</h1>
         </div>
         <div class="col-md-2">
-            <div class="card text-dark bg-light text-center mt-3" style="height: 30rem;">
+            <div class="card text-dark bg-light text-center training-history">
               <div class="card-header">ワークアウト履歴</div>
               <div class="card-body">
                 @if(empty($history_date))
@@ -20,13 +20,13 @@
                   <label>前回トレーニング部位</label>
                   <p>前回履歴はありません</p>
                 @else
-                　<label class="training-point">前回トレーニング日</label>
+                　<label class="history-label">前回トレーニング日</label>
                 　<p>{{$history_date->created_at->isoformat('YYYY年M月DD日(ddd)')}}</p>
-                  <label class="training-point">前回トレーニングコース</label>
+                  <label class="history-label">前回トレーニングコース</label>
                   <p>{{$history_date->course->course_name}}</p>
-                  <label class="training-point">前回トレーニング部位</label>
+                  <label class="history-point-label">前回トレーニング部位</label>
                   @foreach ($history_point_names as $history_point_name)
-                  <p>{{$history_point_name->training_point_name}}</p>
+                  <p class="history-point">{{$history_point_name->training_point_name}}</p>
                   @endforeach
               @endif
             </div>
@@ -39,14 +39,14 @@
                    <iframe width="950" height="534" src="{{$before_training->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                    @endforeach
              </div>
-             <div class="row bg-light text-dark text-center justify-content-center pt-3">
-                   <div class="col-md-12">
+             <div class="row bg-light text-dark text-center  justify-content-center">
+                   <div class="col-md-12 training-after">
                        <h4>トレーニングお疲れ様でした！</h4>
-                       <h4>本日のアスリートコースのトレーニングは完了しました。</h4>
+                       <h4>アスリートコースのトレーニングは完了しました。</h4>
                    </div>
              </div>
           </div>
-         @elseif ($today < $history_sub_time)
+         @elseif ($today == $history_sub_time)
           <div class="col-md-10 text-center pt-3  bg-secondary">
             <form action="{{ action('MainController@various_training_register') }}" method="post" enctype="multipart/form-data">
                  @if (count($errors) > 0)
@@ -67,14 +67,10 @@
                    @endforeach
                     <input type="hidden" name="user_id" value="{{$user->id}}">   
                </div>
-               <div class="row bg-light text-dark text-center justify-content-center pt-3">
-                   <div class="col-md-12">
+             <div class="row bg-light text-dark text-center justify-content-center">
+                   <div class="col-md-12  training-after">
                        <h4>トレーニングお疲れ様でした！</h4>
-                   </div>
-               </div>
-               <hr class="cours-line">
-               <div class="row justify-content-center text-center bg-light text-dark pt-3">
-                   <div class="col-md-5">
+                       <h4>ワークアウトを完了して、トレーニング履歴を残しましょう。</h4>
                        {{ csrf_field() }}
                        <button type="submit" class="btn btn-dark btn-lg">ワークアウトを完了する</button>
                    </div>

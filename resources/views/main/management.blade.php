@@ -12,6 +12,9 @@
    $(function() {
          $('.click').click(function() {
           var click = $(this).data('id');
+          let init_div = document.getElementById('text');
+          init_div.textContent = null;
+          
           $.ajax({
           type: 'GET',
           url: click,
@@ -58,10 +61,10 @@
                <button type="button" class="btn btn-color7 click" data-id="management_hip">お尻</button>
                <button type="button" class="btn btn-color8 click" data-id="management_body">体幹</button>
             </div>
-            <div class="card text-dark bg-light management-card">
+            <div class="card text-dark bg-light">
                   <div class="card-header">トレーニング管理</div>
   　　    　 　　　　　　　　　　<div class="card-body">
-                        <div id="text"></div>
+                        <div id="text">初期表示です</div>
                     </div>
             </div>
         </div>
@@ -120,20 +123,14 @@
       </div>
       <div class="col-md-6 mx-auto">
         <p>体型:{{$user->bodyType}}</p>
-        <br>
         <p>身長:{{$user->height}}cm</p>
-        <br>
         <p>体重:{{$user->weight}}kg</p>
-        <br>
         <p>体脂肪:{{$user->fat}}%</p>
       </div>
       <div class="col-md-6 mx-auto">
         <p>BMI  {{$bmi}}</p>
-        <br>
         <p>筋力量</p>
-        <br>
         <p>基礎代謝量</p>
-        <br>
         <p>活動代謝量</p>
         <p></p>
       </div>
@@ -178,9 +175,9 @@ var data = [];
 var labels = [];
 var colors = [];
 var data2 = [];
-var DATA_COUNT = 30
 
-for (i = 0; i < DATA_COUNT; i += 1) {
+
+for (i = 1; i <= {{$days_in_month}}; i++) {
   [60, 65, 70, 65, 60, 65].forEach(x => { data.push(x); });
   [15, 17, 19, 17, 15, 17].forEach(x => { data2.push(x); });
   

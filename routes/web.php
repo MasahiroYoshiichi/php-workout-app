@@ -87,6 +87,7 @@ Route::get('management_triceps', 'Ajax\ManagementController@triceps');
 Route::get('management_leg', 'Ajax\ManagementController@leg');
 Route::get('management_hip', 'Ajax\ManagementController@hip');
 Route::get('management_body', 'Ajax\ManagementController@body');
+Route::get('day/test', 'Ajax\CarenderController@day_test');
 });
 
 Route::get('create', 'Admin\MainController@create');

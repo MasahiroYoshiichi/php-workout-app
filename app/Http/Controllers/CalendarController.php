@@ -25,5 +25,6 @@ class CalendarController extends Controller
              'next' => Calendar::getNext(),
              ]);
     }
+
 }
 

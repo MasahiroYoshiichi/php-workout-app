@@ -112,7 +112,6 @@
            <button class="dropdown-item click recovery-list-bottom" data-id="ornithine">オルニチン</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="alanine">β-アラニン</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="tyrosine">L-チロシン</button>
-           <button class="dropdown-item click recovery-list-bottom" data-id="agmatin">アグマチン</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="lycopene">リコピン</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="polyphenol">ポリフェノール</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="omega">オメガ3</button>
