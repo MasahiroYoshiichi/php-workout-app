@@ -20,7 +20,6 @@ class CalendarService
         $week .= str_repeat('<td></td>', $day_of_week);
         for ($day = 1; $day <= $days_in_month; $day++, $day_of_week++) {
             $date = self::getYm() . '-' . $day;
-            $history = 
             $record_flg = '0';
             if (Carbon::now()->format('Y-m-j') === $date) {
                  if(is_null(Auth::user()->training_histories->where('training_date', $date)->first())) 
@@ -45,6 +44,7 @@ class CalendarService
             } else {
                   $week .= '</td>';
             }
+        
            
            
            

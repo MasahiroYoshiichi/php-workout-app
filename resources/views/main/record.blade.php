@@ -10,6 +10,8 @@
    $(function() {
          $('.click').click(function() {
           var day = $(this).data('id');
+          let init_div = document.getElementById('text');
+          init_div.textContent = null;
           $.ajax({
           type: 'GET',
           url: 'day/test',
@@ -30,7 +32,7 @@
         <h1>Record</h1>
     </div>
     <div class="row">
-        <div class="col-md-5 text-center record_table">
+        <div class="col-md-6 text-center record-table">
              <div class="month_change">
                  <a class="table_link" href="?ym={{ $prev }}">&lt;</a>
                  <span class="month">{{ $month }}</span>
@@ -53,10 +55,17 @@
                 </div>
             </table>   
         </div>
-        <div class="col-md-7">
-            <div class="card record-card text-dark bg-light">
-                <div id="text"></div>
-            </div>
+        <div class="col-md-6">
+                <div id="text">
+                    <div class="card record-card text-dark" style="height: 35rem;">
+                        <div class="card-header record-date stext-center">トレーニング記録管理</div>
+　                      <div class="card-body d-flex align-items-center justify-con">
+　                          <h5>トレーニングした日付をクリックして、記録を確認してみましょう！</h5>
+　                          
+　                     </div>
+                    </div>
+                </div>
+            
         </div>
     </div>
 </div>

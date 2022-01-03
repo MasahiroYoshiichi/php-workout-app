@@ -14,11 +14,11 @@
               <div class="card-body">
                 @if(empty($history_date))
                   <label>前回トレーニング日</label>
-                  <p>前回履歴はありません</p>
+                  <p>履歴はありません</p>
                   <label>前回トレーニングコース</label>
-                  <p>前回例歴はありません</p>
+                  <p>例歴はありません</p>
                   <label>前回トレーニング部位</label>
-                  <p>前回履歴はありません</p>
+                  <p>履歴はありません</p>
                 @else
                 　<label class="history-label">前回トレーニング日</label>
                 　<p>{{$history_date->created_at->isoformat('YYYY年M月DD日(ddd)')}}</p>
@@ -26,7 +26,7 @@
                   <p>{{$history_date->course->course_name}}</p>
                   <label class="history-point-label">前回トレーニング部位</label>
                   @foreach ($history_point_names as $history_point_name)
-                  <p class="history-point">{{$history_point_name->training_point_name}}</p>
+                  <p>{{$history_point_name->training_point_name}}</p>
                   @endforeach
               @endif
             </div>

@@ -11,6 +11,7 @@ class ManagementController extends Controller
 {
     public function chest()
     {
+     
         $history = Auth::user()->training_histories;
         $point = $history->where('training_point_id', 1)->count();
         $all = $history->where('training_point_id')->count();
@@ -21,6 +22,7 @@ class ManagementController extends Controller
         $athlete_ratio = round($athlete/$point*100);
         $exercise_ratio = round($exercise/$point*100);
         $fitness_ratio = round($fitness/$point*100);
+       
         return view('management.chest', ['point' => $point, 'ratio' => $ratio, 'athlete' => $athlete, 'exercise' => $exercise, 'fitness' => $fitness, 
         'athlete_ratio' => $athlete_ratio, 'exercise_ratio' => $exercise_ratio, 'fitness_ratio' => $fitness_ratio]);
     }
@@ -42,7 +44,7 @@ class ManagementController extends Controller
      public function sholuder()
      {
       $history = Auth::user()->training_histories;
-        $point = $history->where('training_point_id', 3)->count();
+        $point = $history->where('training_point_id', 3)->count()??"";
         $all = $history->where('training_point_id')->count();
         $ratio = round($point/$all*100);
         $athlete = $history->where('course_id', 1)->where('training_point_id', 3)->count();
@@ -51,6 +53,7 @@ class ManagementController extends Controller
         $athlete_ratio = round($athlete/$point*100);
         $exercise_ratio = round($exercise/$point*100);
         $fitness_ratio = round($fitness/$point*100);
+       
         return view('management.sholuder', ['point' => $point, 'ratio' => $ratio, 'athlete' => $athlete, 'exercise' => $exercise, 'fitness' => $fitness, 
         'athlete_ratio' => $athlete_ratio, 'exercise_ratio' => $exercise_ratio, 'fitness_ratio' => $fitness_ratio]);
     }
@@ -86,18 +89,20 @@ class ManagementController extends Controller
     }
      public function leg()
      {
+                
        $history = Auth::user()->training_histories;
-        $point = $history->where('training_point_id', 6)->count();
-        $all = $history->where('training_point_id')->count();
-        $ratio = round($point/$all*100);
-        $athlete = $history->where('course_id', 1)->where('training_point_id', 6)->count();
-        $exercise = $history->where('course_id', 2)->where('training_point_id', 6)->count();
-        $fitness = $history->where('course_id', 3)->where('training_point_id', 6)->count();
-        $athlete_ratio = round($athlete/$point*100);
-        $exercise_ratio = round($exercise/$point*100);
-        $fitness_ratio = round($fitness/$point*100);
-        return view('management.leg', ['point' => $point, 'ratio' => $ratio, 'athlete' => $athlete, 'exercise' => $exercise, 'fitness' => $fitness, 
-        'athlete_ratio' => $athlete_ratio, 'exercise_ratio' => $exercise_ratio, 'fitness_ratio' => $fitness_ratio]);
+       $point = $history->where('training_point_id', 6)->count();
+       $all = $history->where('training_point_id')->count();
+       $ratio = round($point/$all*100);
+       $athlete = $history->where('course_id', 1)->where('training_point_id', 6)->count();
+       $exercise = $history->where('course_id', 2)->where('training_point_id', 6)->count();
+       $fitness = $history->where('course_id', 3)->where('training_point_id', 6)->count();
+       $athlete_ratio = round($athlete/$point*100);
+       $exercise_ratio = round($exercise/$point*100);
+       $fitness_ratio = round($fitness/$point*100);
+      return view('management.leg', ['point' => $point, 'ratio' => $ratio, 'athlete' => $athlete, 'exercise' => $exercise, 'fitness' => $fitness, 
+      'athlete_ratio' => $athlete_ratio, 'exercise_ratio' => $exercise_ratio, 'fitness_ratio' => $fitness_ratio]);
+
     }
      public function hip()
      {

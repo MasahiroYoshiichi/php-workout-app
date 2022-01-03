@@ -81,25 +81,58 @@ class MainController extends Controller
         $hip = $history->where('training_point_id', 7)->count();
         $body = $history->where('training_point_id', 8)->count();
         
-        if ($user->bodyType = 1){
-            $user->bodyType = "痩せ型体型";
-        } elseif($user->bodyType = 2) {
-            $user->bodyType = "筋肉質体型";
+        if(isset($user->bodyType)){
+                if ($user->bodyType = 1){
+                $user->bodyType = "痩せ型体型";
+            } elseif($user->bodyType = 2) {
+                $user->bodyType = "筋肉質体型";
+            } else {
+                $user->bodyType = "肥満型体型";
+            }
         } else {
-            $user->bodyType = "肥満型体型";
+            $user->bodyType ="未設定";
         }
         
-        if (isset($history)) {
-            $user->weight = $history->sortByDesc('created_at')->first()->user_weight;
-            $user->fat = $history->sortByDesc('created_at')->first()->user_fat;
-        }
+        if (empty($history)) {
+            $weight = $user->weight;
+            $fat = $user->fat;
+            $height = $user->height;
+        } else {
+            $weight = $user->weight = $history->where('user_weight', !null)->max()->user_weight??'';
+            $fat = $user->fat = $history->where('user_fat', !null)->max()->user_fat??'';
+            $height = $user->height;
+        } 
+       
         
-        $height = $user->height;
-        $weight = $user->weight;
-        $bmi = round($weight/($height*$height)*100);
+        
+        if (isset($fat))
+        {
+         $bmi = number_format($weight/($height*$height)*10000, 1);
+         $amount_of_fat = $weight*($fat/100);
+         $lbm = $weight-$amount_of_fat;
+         $amount_of_muscle = $lbm/2;
+         $muscular_ratio = $amount_of_muscle/$weight*100;
+         $ffmi = number_format($lbm/(($height/100)*($height/100)), 1);
+         $appropriate_weight = round((($height/100)*($height/100))*22);
+         $age = $user->age;
+         $gender = $user->gender;
+         if($gender == 1)
+         {
+             $basic = round((13.397*$weight)+(4.799*$height)-(5.677*$age)+88.362);
+         } else {
+             $basic = round((9.247*$weight)+(3089*$height)-(4.33*$age)+447.593);
+         }
+         } else {
+             $bmi = '';
+             $lbm = '';
+             $ffmi = '';
+             $basic = '';
+             $appropriate_weight = '';
+         }
+
         $days_in_month = Carbon::now()->daysInMonth;
         
-        return view('main.management',['user' => $user, 'bmi' => $bmi, 'chest' => $chest, 'back' => $back, 'sholuder' => $sholuder, 'bicelder' => $bicelder,'triceps' => $triceps, 'leg' => $leg, 'hip' => $hip, 'body' => $body
+        return view('main.management',['user' => $user, 'bmi' => $bmi, 'lbm' => $lbm, 'ffmi' => $ffmi, 'basic' => $basic, 'appropriate_weight' => $appropriate_weight,  'chest' => $chest, 'back' => $back, 'sholuder' => $sholuder, 'bicelder' => $bicelder,'triceps' => $triceps, 'leg' => $leg, 'hip' => $hip, 'body' => $body
         ,'days_in_month' => $days_in_month] );
     }
     

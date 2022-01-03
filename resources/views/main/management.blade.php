@@ -22,7 +22,7 @@
         }).done(function (results) {
           $('#text').html(results);
         }).fail(function (err) {
-           alert('ファイルの取得に失敗しました。');
+           alert('トレーニングを実施していません。');
        });
       }
     );
@@ -34,7 +34,7 @@
     <div class="row chart-title ">
       <h1 class="chart-text">Body Condition</h1>
     </div>
-    <div class="row">
+    <div class="row" style="background-color: #fff">
         <div class="col-md-2 d-block d-md-none dropdown text-center" aria-labelledby="dropdownMenuButton">
           <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            部位選択
@@ -50,8 +50,8 @@
               <a class="dropdown-item" href="">体幹</a>
            </div>
         </div>
-        <div class="col-md-7 d-none d-md-block " >
-             <div class="management-bottom" role="group" aria-label="bodyType">
+        <div class="col-md-7 d-none d-md-block"  >
+             <div class="management-bottom text-center" role="group" aria-label="bodyType">
                <button type="button" class="btn btn-color click" data-id="management_chest">胸</button>
                <button type="button" class="btn btn-color2 click" data-id="management_back">背中</button>
                <button type="button" class="btn btn-color3 click" data-id="management_sholuder">肩</button>
@@ -61,19 +61,21 @@
                <button type="button" class="btn btn-color7 click" data-id="management_hip">お尻</button>
                <button type="button" class="btn btn-color8 click" data-id="management_body">体幹</button>
             </div>
-            <div class="card text-dark bg-light">
-                  <div class="card-header">トレーニング管理</div>
-  　　    　 　　　　　　　　　　<div class="card-body">
-                        <div id="text">初期表示です</div>
+            <div id="text">
+                <div class="card text-dark training-point-card" style="height: 30rem">
+                    <div class="card-header">トレーニング管理</div>
+  　　    　 　　　　　　　　　<div class="card-body d-flex align-items-center justify-content-center">  
+                         <h4>トレーニング部位を選択して、自分の成果を確認してみましょう!</h4>
                     </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-5 workoutChart" style="height:">
-            <canvas id="workoutCount"></canvas>  
+        <div class="col-md-5 workout-chart-size">
+            <canvas id="workoutCount" height="300"></canvas>  
             <script>
               var count = document.getElementById("workoutCount");
               var workoutRecord = new Chart(count, {
-                type: 'doughnut',
+                type: 'pie',
                 data: {
                   labels: ["胸","背中","肩","上腕二頭筋","上腕三頭筋","足","お尻","体幹"],
                   datasets: [{
@@ -93,6 +95,7 @@
                 options: {
                   title: {
                     display: true,
+                     responsive: true,
                     text: 'ワークアウト分布'
                   },
                   plugins: {
@@ -117,30 +120,28 @@
        </div>
        <canvas id="yAxis" width="0"></canvas>
     </div>
-    <div class="row text-center text-dark">
-      <div class="col-md-12">
-        <h4>body's Stats</h4>
+    <div class="row text-dark" style="border-bottom: solid;">
+      <div class="col-md-12 text-center body-condition-top">
+        body's Stats
       </div>
-      <div class="col-md-6 mx-auto">
-        <p>体型:{{$user->bodyType}}</p>
-        <p>身長:{{$user->height}}cm</p>
-        <p>体重:{{$user->weight}}kg</p>
-        <p>体脂肪:{{$user->fat}}%</p>
+      <div class="col-md-6  body-condition1">
+        <p>体型<span class="condition-list">{{$user->bodyType}}</span></p>
+        <p>身長<span class="condition-list">{{$user->height}}cm</span></p>
+        <p>体重<span class="condition-list">{{$user->weight}}kg</span></p>
+        <p>体脂肪<span class="condition-list">{{$user->fat}}%</span></p>
       </div>
-      <div class="col-md-6 mx-auto">
-        <p>BMI  {{$bmi}}</p>
-        <p>筋力量</p>
-        <p>基礎代謝量</p>
-        <p>活動代謝量</p>
-        <p></p>
+      <div class="col-md-6  body-condition2">
+        <p>BMI<span class="condition-list">{{$bmi}}%</span></p>
+        <p>適正体重<span class="condition-list">{{$appropriate_weight}}kg</span></p>
+        <p>LBI<span class="condition-list">{{$lbm}}kg</span></p>
+        <p>FFMI<span class="condition-list">{{$ffmi}}%</span></p>
+        <p>基礎代謝量<span class="condition-list">{{$basic}}kcal</span></p>
       </div>
     </div>
-    <hr style="background-color: black;">
-    <div class="row text-dark text-center">
+    <div class="row text-dark text-center guide">
       <div class="col-md-12">
-        <h4>数値の見方</h4>
-       
-      </div>
+        　指数ガイド
+       </div>
     </div>
     <div class="row text-dark text-center">
       <div class="col-md-6">
