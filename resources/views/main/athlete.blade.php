@@ -3,6 +3,29 @@
 @section('title', 'アスリートコース')
 
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+
+<script>
+<!--
+var slider = new Swiper ('#slider', {
+nextButton: '.swiper-button-next',
+prevButton: '.swiper-button-prev'
+})
+var thumbs = new Swiper('#thumbs', {
+centeredSlides: true,
+spaceBetween: 10,
+slidesPerView: "auto",
+touchRatio: 0.2,
+slideToClickedSlide: true
+});
+slider.params.control = thumbs;
+thumbs.params.control = slider;
+-->
+</script>
+
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 bg-light text-dark">
@@ -33,11 +56,26 @@
             </div>
         </div>
          @if($today == $history_time) 
-          <div class="col-md-10 text-center pt-3  bg-secondary">
-             <div class="movie-zone">
-                   @foreach($before_trainings as $before_training)
-                   <iframe width="950" height="534" src="{{$before_training->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="col-md-10  bg-secondary">
+             <div id="slider" class="swiper-container">
+                <div class="swiper-wrapper">
+                  @foreach($before_trainings as $before_training)
+                     <div class="swiper-slide">
+                         <iframe width="950" height="534" src="{{$before_training->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     </div>
                    @endforeach
+                </div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+                <div class="swiper-button-next swiper-button-white"></div>
+             </div>
+             <div id="thumbs" class="swiper-container">
+               <div class="swiper-wrapper">
+                  @foreach($before_trainings as $before_training)
+                 <div class="swiper-slide">
+                    <iframe width="950" height="534" src="{{$before_training->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>  
+                  @endforeach
+               </div>
              </div>
              <div class="row bg-light text-dark text-center  justify-content-center">
                    <div class="col-md-12 training-after">
@@ -138,3 +176,32 @@
     </div>
 </div>
 @endsection
+
+<!--<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+             <div class="carousel-indicators">
+ 　　　　　　　　　　　　   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+   　　　　　　　　　　　 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+   　　　　　　　　　　　 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+   　　　　　　　　　　　 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+ 　　　　　　    　　　 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+ 　　　　　　   　　　　 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button> 　　　　 
+ 　　　　　　　　　 </div>
+  　　　　　 　　　<div class="carousel-inner">
+                 <div class="carousel-item active">
+                    <iframe  width="900" height="534" src="{{$before_training->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 </div>
+                  @foreach($before_trainings as $before_training)
+                 <div class="carousel-item">
+                   <iframe width="900" height="534" src="{{$before_training->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                @endforeach
+            </div>
+           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+           </button>
+           <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+           </button>
+         </div>-->

@@ -29,6 +29,27 @@
    });
 </script>
 
+<script>
+   $(function() {
+         $('.date').click(function() {
+          var day = $(this).data('id');
+          let init_div = document.getElementById('composition');
+          init_div.textContent = null;
+          $.ajax({
+          type: 'GET',
+          url: 'composition',
+          data: {day},
+          dataType: 'html',
+        }).done(function (results) {
+          $('#composition').html(results);
+        }).fail(function (err) {
+           alert('データの取得に失敗しました。');
+       });
+      }
+    );
+   });
+</script>
+
 
 <div class="container-fluid bg-light">
     <div class="row chart-title ">
@@ -114,55 +135,39 @@
     <div class="row chart-title2">
         <h1>Body Composition</h1>
     </div>
-    <div class="scrollableChartWrapper">
-       <div>
-           <canvas id="chart" style="height: 400px"></canvas>
-       </div>
-       <canvas id="yAxis" width="0"></canvas>
-    </div>
-    <div class="row text-dark" style="border-bottom: solid;">
-      <div class="col-md-12 text-center body-condition-top">
-        body's Stats
-      </div>
-      <div class="col-md-6  body-condition1">
-        <p>体型<span class="condition-list">{{$user->bodyType}}</span></p>
-        <p>身長<span class="condition-list">{{$user->height}}cm</span></p>
-        <p>体重<span class="condition-list">{{$user->weight}}kg</span></p>
-        <p>体脂肪<span class="condition-list">{{$user->fat}}%</span></p>
-      </div>
-      <div class="col-md-6  body-condition2">
-        <p>BMI<span class="condition-list">{{$bmi}}%</span></p>
-        <p>適正体重<span class="condition-list">{{$appropriate_weight}}kg</span></p>
-        <p>LBI<span class="condition-list">{{$lbm}}kg</span></p>
-        <p>FFMI<span class="condition-list">{{$ffmi}}%</span></p>
-        <p>基礎代謝量<span class="condition-list">{{$basic}}kcal</span></p>
-      </div>
-    </div>
-    <div class="row text-dark text-center guide">
-      <div class="col-md-12">
-        　指数ガイド
-       </div>
-    </div>
-    <div class="row text-dark text-center">
-      <div class="col-md-6">
-        <p>BMIとは...</p>
-      </div>
-      <div class="col-md-6">
-        <p>筋力量とは...</p>
-      </div>
-      <div class="col-md-6">
-        <p>基礎代謝量とは...</p>
-      </div>
-      <div class="col-md-6">
-        <p>活動代謝量とは...</p>
-      </div>
-    </div>
-
-
-
-
-</div>
-  
+    <div id="composition">
+      <script>
+   $(function() {
+         $('.date').click(function() {
+          var day = $(this).data('id');
+          let init_div = document.getElementById('composition');
+          init_div.textContent = null;
+          $.ajax({
+          type: 'GET',
+          url: 'composition',
+          data: {day},
+          dataType: 'html',
+        }).done(function (results) {
+          $('#composition').html(results);
+        }).fail(function (err) {
+           alert('データの取得に失敗しました。');
+       });
+      }
+    );
+   });
+</script>
+        <div class="month_change">
+            <button class="date" data-id='{"days_in_manth":"{{$prev_days}}","get_ym":"{{$prev_date}}"}'><</button>
+            <span class="month">{{ $get_ym }}</span>
+            <button class="date" data-id='{"days_in_manth":"{{$next_days}}","get_ym":"{{$next_date}}"}'>></button>
+        </div>
+        <div class="scrollableChartWrapper">
+           <div>
+               <canvas id="chart" style="height: 400px"></canvas>
+           </div>
+           <canvas id="yAxis" width="0"></canvas>
+        </div>
+          
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 
 <script>
@@ -179,14 +184,14 @@ var data2 = [];
 
 
 for (i = 1; i <= {{$days_in_month}}; i++) {
-  [60, 65, 70, 65, 60, 65].forEach(x => { data.push(x); });
-  [15, 17, 19, 17, 15, 17].forEach(x => { data2.push(x); });
+  [@forEach ($month_user_weight as $e) {{$e}}, @endforeach].forEach(x => { data.push(x); });
+  [@forEach ($month_user_fat as $a) {{$a}}, @endforeach].forEach(x => { data2.push(x); });
   
   labels.push(i + "日");
 }
 
 // X軸の1データ当たりの幅
-var xAxisStepSize= 10;
+var xAxisStepSize= 1.47;
 // グラフ全体の幅を計算
 var chartWidth = data.length * xAxisStepSize;
 
@@ -269,12 +274,15 @@ var myChart = new Chart(ctxChart, {
             yAxisID: 'weight',
             type: 'line',
             data: data,
+            spanGaps: true,
             borderColor: "#333",
             backgroundColor: "rgba(0,0,0,0)"
+            
         },{
             label: '体脂肪',
             yAxisID: 'fat',
             data: data2,
+            spanGaps: true,
             backgroundColor: "#B0E0E6"
             }],
         labels: labels,
@@ -304,7 +312,7 @@ var myChart = new Chart(ctxChart, {
           type: 'linear',
           position: 'right',
           ticks: {
-            max: 40,
+            max: 30,
              min: 0,
              stepSize: 5,
              callback: function(value){
@@ -327,6 +335,53 @@ var myChart = new Chart(ctxChart, {
 });
 </script>
 
+
+    </div>
+    <div class="row text-dark" style="border-bottom: solid;">
+      <div class="col-md-12 text-center body-condition-top">
+        body's Stats
+        
+      </div>
+      <div class="col-md-6  body-condition1">
+        <p>体型<span class="condition-list">{{$user->bodyType}}</span></p>
+        <p>身長<span class="condition-list">{{$user->height}}cm</span></p>
+        <p>体重<span class="condition-list">{{$user->weight}}kg</span></p>
+        <p>体脂肪<span class="condition-list">{{$user->fat}}%</span></p>
+      </div>
+      <div class="col-md-6  body-condition2">
+        <p>BMI<span class="condition-list">{{$bmi}}%</span></p>
+        <p>適正体重<span class="condition-list">{{$appropriate_weight}}kg</span></p>
+        <p>LBI<span class="condition-list">{{$lbm}}kg</span></p>
+        <p>FFMI<span class="condition-list">{{$ffmi}}%</span></p>
+        <p>基礎代謝量<span class="condition-list">{{$basic}}kcal</span></p>
+      </div>
+    </div>
+    <div class="row text-dark text-center guide">
+      <div class="col-md-12">
+        　指数ガイド
+       </div>
+    </div>
+    <div class="row text-dark text-center">
+      <div class="col-md-6">
+        <p>BMIとは...</p>
+      </div>
+    
+      <div class="col-md-6">
+        <p>筋力量とは...</p>
+      </div>
+      <div class="col-md-6">
+        <p>基礎代謝量とは...</p>
+      </div>
+      <div class="col-md-6">
+        <p>活動代謝量とは...</p>
+        
+      </div>
+    </div>
+
+
+
+
+</div>
 
   
 

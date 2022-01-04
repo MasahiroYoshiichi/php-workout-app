@@ -131,9 +131,34 @@ class MainController extends Controller
          }
 
         $days_in_month = Carbon::now()->daysInMonth;
+        $before_user_weight = $history->where('training_date', !null)->max('user_weight');
+        $before_user_fat = $history->where('training_date', !null)->max('user_fat');
+        
+        $get_ym = Carbon::now()->format('Y-m');
+        $get_ym_firstday = $get_ym .'-01';
+        $next_days = Carbon::parse($get_ym)->addMonthNoOverflow()->daysInMonth;
+        $next_date = Carbon::parse($get_ym)->addMonthNoOverflow()->format('Y-m');
+        $prev_days = Carbon::parse($get_ym)->subMonthsNoOverflow()->daysInMonth;
+        $prev_date = Carbon::parse($get_ym)->subMonthsNoOverflow()->format('Y-m');
+        
+        for($day = 1; $day <= $days_in_month; $day++) {
+            if($day < 10) 
+            {
+              $get_days[] = Carbon::now()->format('Y-m').'-0'.$day;
+            } else {
+              $get_days[] = Carbon::now()->format('Y-m').'-'.$day;
+            }
+        }
+        
+       
+       foreach($get_days as $get_day)
+       {
+           $month_user_weight[] = $history->where('training_date', $get_day)->where('user_weight', !null)->pluck('user_weight')->first()??$before_user_weight;
+           $month_user_fat[] = $history->where('training_date', $get_day)->where('user_fat', !null)->pluck('user_fat')->first()??$before_user_fat;
+       }
         
         return view('main.management',['user' => $user, 'bmi' => $bmi, 'lbm' => $lbm, 'ffmi' => $ffmi, 'basic' => $basic, 'appropriate_weight' => $appropriate_weight,  'chest' => $chest, 'back' => $back, 'sholuder' => $sholuder, 'bicelder' => $bicelder,'triceps' => $triceps, 'leg' => $leg, 'hip' => $hip, 'body' => $body
-        ,'days_in_month' => $days_in_month] );
+        ,'days_in_month' => $days_in_month, 'month_user_weight' => $month_user_weight, 'month_user_fat' => $month_user_fat, 'next_days' => $next_days, 'next_date' => $next_date, 'prev_days' =>  $prev_days, 'prev_date' => $prev_date, 'get_ym' => $get_ym] );
     }
     
     public function athlete()
@@ -151,7 +176,9 @@ class MainController extends Controller
      $history_points = $user->training_histories->sortByDesc('created_at')->pluck('training_point_id')->take(6)->unique();
      $history_point_names = TrainingPoint::find($history_points);
      $before = $user->training_histories->where('course_id', 1)->sortByDesc('id')->pluck('training_id')->take(6);
-     $before_trainings = Training::find($before);
+     $before_training_set = Training::find($before);
+     $before_trainings = $before_training_set->sortBydesc('id')->take(5)->sortBy('id');
+     $before_training = $before_training_set->first();
      $today = Carbon::today()->format('Y-m-d'); 
      if(!isset($training_history)){
          $history_time = $training_history->created_at??'';
@@ -162,7 +189,7 @@ class MainController extends Controller
         
      }
      return view('main.athlete',['user' => $user, 'training_history' => $training_history, 'history_date' => $history_date, 'training_sets' => $training_sets, 
-     'history_point_names' => $history_point_names, 'today' => $today, 'history_time' => $history_time, 'history_sub_time' =>  $history_sub_time, 'before_trainings' => $before_trainings]);
+     'history_point_names' => $history_point_names, 'today' => $today, 'history_time' => $history_time, 'history_sub_time' =>  $history_sub_time, 'before_trainings' => $before_trainings, 'before_training' => $before_training]);
     } 
     
      public function exercise()

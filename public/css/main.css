@@ -616,3 +616,71 @@ td:nth-of-type(7) {
   padding: 1rem 3rem;
   color: #333;
 }
+
+.swiper-container{
+  text-align: center;
+}
+.swiper-container .swiper-slide img{
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.swiper-container .swiper-slide {
+  position: relative;
+  width: 100%;
+}
+.swiper-container .swiper-slide:before {
+  content:"";
+  display: block;
+  padding-top: 56.25%;
+}
+.swiper-container .swiper-slide iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#thumbs {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+#thumbs .swiper-slide {
+  width: 20%;
+  height: 100%;
+  opacity: 0.2;
+  cursor: pointer;
+}
+#thumbs .swiper-slide:before {
+  content:none;
+}
+#thumbs .swiper-slide-active {
+  opacity: 1;
+}
+
+
+
+#nowLoading {
+  display: table;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: 0.8;
+}
+ 
+#innerMsg {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 140px;
+  z-index:100;
+  background: url("表示するくるくる画像のURL]") center center no-repeat;
+}
+
+.composition{
+  color: #333;
+}

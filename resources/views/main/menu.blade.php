@@ -9,6 +9,7 @@
     
  <script>
   
+  
    $(function() {
        $('.click').click(function() {
         var click = $(this).data('id');
