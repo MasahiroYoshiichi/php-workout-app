@@ -6,12 +6,12 @@
 <div class="jumbotron selection-image">
    <div class="container d-none d-md-block">
        <div class="row">
-           <div class="col-md-3 mx-auto" >
-               <h1 class="selection_title">cours selection</h1>
+           <div class="col-md-6 mx-auto text-center" >
+               <h1 class="selection-title">cours selection</h1>
            </div>
        </div>
        <div class="row">
-           <div class="col-md-12 mt-4 text-center">
+           <div class="col-md-12 selection-bottom text-center">
                <div class="col-md-6 mx-auto">
                    <a type="button" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/athlete" class="btn selection_button">アスリートコース</a>
                </div>

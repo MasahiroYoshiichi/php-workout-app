@@ -4,14 +4,26 @@
 
 @section('content')
  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-
-    
-    
  <script>
-  
-  
+ 　function dispLoading(msg){
+ 　    if( msg == undefined ){
+ 　        msg = "";
+ 　}
+ 　//画面表示
+ 　var dispMsg ="<div class='loadingMsg'>"+msg+"</div>";
+ 　//画面非表示
+ 　if($("#loading").length == 0){
+ 　 $("body").append("<div id='loading'>" + dispMsg + "</div>");
+ 　}
+ }
+ 
+ function removeLoading(){
+  $("#loading").remove();
+}
+
    $(function() {
        $('.click').click(function() {
+       dispLoading("処理中...");
         var click = $(this).data('id');
         $.ajax({
         type: 'GET',
@@ -21,7 +33,9 @@
         $('#movie').html(results);
       }).fail(function (err) {
          alert('ファイルの取得に失敗しました。');
-     });
+      }).always(function(results) {
+         removeLoading();
+      });
     }
   );
  });

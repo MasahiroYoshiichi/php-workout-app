@@ -141,13 +141,11 @@ class ManagementController extends Controller
     $date = $request->day;
     $days_in_month = $date['days_in_manth'];
     $get_ym = $date['get_ym'];
-    $get_ym_firstday = $get_ym .'-01';
-    
+    $get_ym_format = Carbon::parse($get_ym)->format('Y年n月');
     $next_days = Carbon::parse($get_ym)->addMonthNoOverflow()->daysInMonth;
     $next_date = Carbon::parse($get_ym)->addMonthNoOverflow()->format('Y-m');
     $prev_days = Carbon::parse($get_ym)->subMonthsNoOverflow()->daysInMonth;
     $prev_date = Carbon::parse($get_ym)->subMonthsNoOverflow()->format('Y-m');
-    
     for($day = 1; $day <= $days_in_month; $day++) {
        if($day < 10) 
        {
@@ -162,12 +160,10 @@ class ManagementController extends Controller
      $before_user_fat = $history->where('training_date', !null)->max('user_fat');
      foreach($get_days as $get_day)
      {
-       $month_user_weight[] = $history->where('training_date', $get_day)->where('user_weight', !null)->pluck('user_weight')->first()??$before_user_weight;
-       $month_user_fat[] = $history->where('training_date', $get_day)->where('user_fat', !null)->pluck('user_fat')->first()??$before_user_fat;
+       $month_user_weight[] = $history->where('training_date', $get_day)->where('user_weight', !null)->pluck('user_weight')->first()??null;
+       $month_user_fat[] = $history->where('training_date', $get_day)->where('user_fat', !null)->pluck('user_fat')->first()??null;
      }
-
-   
-     return view('main.composition',['get_ym' => $get_ym, '$get_ym_firstday' => $get_ym_firstday, 'next_days' => $next_days, 'next_date' => $next_date, 'prev_days' => $prev_days, 'prev_date' => $prev_date
+     return view('main.composition',['get_ym_format' => $get_ym_format, 'days_in_month' => $days_in_month, 'next_days' => $next_days, 'next_date' => $next_date, 'prev_days' => $prev_days, 'prev_date' => $prev_date
      ,'month_user_weight' => $month_user_weight, 'month_user_fat' => $month_user_fat]);
     }
     

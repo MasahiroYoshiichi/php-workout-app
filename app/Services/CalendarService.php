@@ -19,9 +19,9 @@ class CalendarService
        
         $week .= str_repeat('<td></td>', $day_of_week);
         for ($day = 1; $day <= $days_in_month; $day++, $day_of_week++) {
-            $date = self::getYm() . '-' . $day;
+            $date = self::getYm() . '-' . str_pad($day, 2, 0, STR_PAD_LEFT);
             $record_flg = '0';
-            if (Carbon::now()->format('Y-m-j') === $date) {
+            if (Carbon::now()->format('Y-m-d') === $date) {
                  if(is_null(Auth::user()->training_histories->where('training_date', $date)->first())) 
                  {
                        $week .= '<td class="today">' . $day;
@@ -37,6 +37,8 @@ class CalendarService
                       $week .= '<td class="calendar completed"><button type="button" class="click" data-id="'. $date . '">' . $day;
                       $record_flg = '1';
                 }
+                
+               
             }
             if($record_flg == '1')
             {
@@ -63,6 +65,7 @@ class CalendarService
     
     public function getMonth()
     {
+         
         return Carbon::parse(self::getYm_firstday())->format('Y年n月');
     }
     
@@ -80,6 +83,7 @@ class CalendarService
     {
         if (isset($_GET['ym'])) {
             return $_GET['ym'];
+           
         }
         return Carbon::now()->format('Y-m');
     }

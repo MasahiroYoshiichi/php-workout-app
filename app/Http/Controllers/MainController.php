@@ -135,6 +135,7 @@ class MainController extends Controller
         $before_user_fat = $history->where('training_date', !null)->max('user_fat');
         
         $get_ym = Carbon::now()->format('Y-m');
+        $get_ym_format = Carbon::now()->format('Y年n月');
         $get_ym_firstday = $get_ym .'-01';
         $next_days = Carbon::parse($get_ym)->addMonthNoOverflow()->daysInMonth;
         $next_date = Carbon::parse($get_ym)->addMonthNoOverflow()->format('Y-m');
@@ -153,12 +154,12 @@ class MainController extends Controller
        
        foreach($get_days as $get_day)
        {
-           $month_user_weight[] = $history->where('training_date', $get_day)->where('user_weight', !null)->pluck('user_weight')->first()??$before_user_weight;
-           $month_user_fat[] = $history->where('training_date', $get_day)->where('user_fat', !null)->pluck('user_fat')->first()??$before_user_fat;
+           $month_user_weight[] = $history->where('training_date', $get_day)->where('user_weight', !null)->pluck('user_weight')->first()??null;
+           $month_user_fat[] = $history->where('training_date', $get_day)->where('user_fat', !null)->pluck('user_fat')->first()??null;
        }
-        
+    
         return view('main.management',['user' => $user, 'bmi' => $bmi, 'lbm' => $lbm, 'ffmi' => $ffmi, 'basic' => $basic, 'appropriate_weight' => $appropriate_weight,  'chest' => $chest, 'back' => $back, 'sholuder' => $sholuder, 'bicelder' => $bicelder,'triceps' => $triceps, 'leg' => $leg, 'hip' => $hip, 'body' => $body
-        ,'days_in_month' => $days_in_month, 'month_user_weight' => $month_user_weight, 'month_user_fat' => $month_user_fat, 'next_days' => $next_days, 'next_date' => $next_date, 'prev_days' =>  $prev_days, 'prev_date' => $prev_date, 'get_ym' => $get_ym] );
+        ,'days_in_month' => $days_in_month, 'month_user_weight' => $month_user_weight, 'month_user_fat' => $month_user_fat, 'next_days' => $next_days, 'next_date' => $next_date, 'prev_days' =>  $prev_days, 'prev_date' => $prev_date, 'get_ym_format' => $get_ym_format] );
     }
     
     public function athlete()

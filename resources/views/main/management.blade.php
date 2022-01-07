@@ -4,10 +4,9 @@
 
 @section('content')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="./js/chartjs-plugin-labels.js"></script>
-
 <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
 <script>
    $(function() {
          $('.click').click(function() {
@@ -56,22 +55,7 @@
       <h1 class="chart-text">Body Condition</h1>
     </div>
     <div class="row" style="background-color: #fff">
-        <div class="col-md-2 d-block d-md-none dropdown text-center" aria-labelledby="dropdownMenuButton">
-          <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           部位選択
-           </button>
-           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="">胸</a>
-              <a class="dropdown-item" href="">背中</a>
-              <a class="dropdown-item" href="">肩</a>
-              <a class="dropdown-item" href="">上腕二頭筋</a>
-              <a class="dropdown-item" href="">上腕三頭筋</a>
-              <a class="dropdown-item" href="">足</a>
-              <a class="dropdown-item" href="">お尻</a>
-              <a class="dropdown-item" href="">体幹</a>
-           </div>
-        </div>
-        <div class="col-md-7 d-none d-md-block"  >
+        <div class="col-md-7 col-sm-12">
              <div class="management-bottom text-center" role="group" aria-label="bodyType">
                <button type="button" class="btn btn-color click" data-id="management_chest">胸</button>
                <button type="button" class="btn btn-color2 click" data-id="management_back">背中</button>
@@ -81,12 +65,13 @@
                <button type="button" class="btn btn-color6 click" data-id="management_leg">足</button>
                <button type="button" class="btn btn-color7 click" data-id="management_hip">お尻</button>
                <button type="button" class="btn btn-color8 click" data-id="management_body">体幹</button>
-            </div>
-            <div id="text">
-                <div class="card text-dark training-point-card" style="height: 30rem">
-                    <div class="card-header">トレーニング管理</div>
-  　　    　 　　　　　　　　　<div class="card-body d-flex align-items-center justify-content-center">  
-                         <h4>トレーニング部位を選択して、自分の成果を確認してみましょう!</h4>
+        </div>
+        <div id="text">
+            <div class="card text-dark training-point-card" style="height: 30rem">
+                <div class="card-header">トレーニング管理</div>
+                    <div class="card-body d-flex align-items-center justify-content-center">  
+                         <h4 class="d-none d-md-block">トレーニング部位を選択して、自分の成果を確認してみましょう!</h4>
+                         <h4 class="d-block d-md-none">トレーニング部位を選択して、<br>自分の成果を確認してみましょう!</h4>
                     </div>
                 </div>
             </div>
@@ -130,263 +115,285 @@
                 }
               });
           </script>
-      </div>
+    　　</div>
     </div>
     <div class="row chart-title2">
         <h1>Body Composition</h1>
     </div>
-    <div id="composition">
-      <script>
-   $(function() {
-         $('.date').click(function() {
-          var day = $(this).data('id');
-          let init_div = document.getElementById('composition');
-          init_div.textContent = null;
-          $.ajax({
-          type: 'GET',
-          url: 'composition',
-          data: {day},
-          dataType: 'html',
-        }).done(function (results) {
-          $('#composition').html(results);
-        }).fail(function (err) {
-           alert('データの取得に失敗しました。');
-       });
-      }
-    );
-   });
-</script>
-        <div class="month_change">
+    <div class="row">
+      <div class="col-md-10 mx-auto composition">
+    　　<div id="composition">
+    　　 <script>
+         $(function() {
+            $('.date').click(function() {
+                var day = $(this).data('id');
+                let init_div = document.getElementById('composition');
+                init_div.textContent = null;
+                $.ajax({
+                type: 'GET',
+                url: 'composition',
+                data: {day},
+                dataType: 'html',
+              }).done(function (results) {
+                $('#composition').html(results);
+              }).fail(function (err) {
+              alert('データの取得に失敗しました。');
+            });
+            }
+           );
+        });
+        </script>
+        <div class="month_change text-center">
             <button class="date" data-id='{"days_in_manth":"{{$prev_days}}","get_ym":"{{$prev_date}}"}'><</button>
-            <span class="month">{{ $get_ym }}</span>
+            <span class="month">{{ $get_ym_format }}</span>
             <button class="date" data-id='{"days_in_manth":"{{$next_days}}","get_ym":"{{$next_date}}"}'>></button>
         </div>
-        <div class="scrollableChartWrapper">
-           <div>
-               <canvas id="chart" style="height: 400px"></canvas>
-           </div>
-           <canvas id="yAxis" width="0"></canvas>
-        </div>
-          
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
-
-<script>
-
-// Y軸コピー用 canvas
-var cvsYAxis = document.getElementById('yAxis');
-var ctxYAxis = cvsYAxis.getContext('2d');
-
-// テスト用データの用意
-var data = [];
-var labels = [];
-var colors = [];
-var data2 = [];
-
-
-for (i = 1; i <= {{$days_in_month}}; i++) {
-  [@forEach ($month_user_weight as $e) {{$e}}, @endforeach].forEach(x => { data.push(x); });
-  [@forEach ($month_user_fat as $a) {{$a}}, @endforeach].forEach(x => { data2.push(x); });
-  
-  labels.push(i + "日");
-}
-
-// X軸の1データ当たりの幅
-var xAxisStepSize= 1.47;
-// グラフ全体の幅を計算
-var chartWidth = data.length * xAxisStepSize;
-
-// グラフ描画用 canvas
-var cvsChart = document.getElementById('chart');
-var ctxChart = cvsChart.getContext('2d');
-
-// グラフ描画用canvasのstyle.width(すなわち全データを描画するのに必要なサイズ)に上記の幅を設定
-cvsChart.style.width = chartWidth + "px";
-
-// canvas.width(height)はグラフ描画時に Chart により変更される(らしい)ので、下記は不要
-//cvsChart.width = chartWidth;
-//cvsChart.height = chartHeight;
-
-
-
-// 二重実行防止用フラグ
-var copyYAxisCalled = false;
-
-// Y軸イメージのコピー関数
-function copyYAxisImage(chart) {
-  //console.log("copyYAxisCalled="+copyYAxisCalled);
-
-  if (copyYAxisCalled) return;
-
-  copyYAxisCalled = true;
-
-  // グラフ描画後は、canvas.width(height):canvas.style.width(height) 比は、下記 scale の値になっている
-  var scale = window.devicePixelRatio;
-
-  // Y軸のスケール情報
-  var yAxScale = chart.scales['y-axis-0'];
-
-  // Y軸部分としてグラフからコピーすべき幅 (TODO: 良く分かっていない)
-  var yAxisStyleWidth0 = yAxScale.width - 10;
-
-  // canvas におけるコピー幅(yAxisStyleWidth0を直接使うと微妙にずれるので、整数値に切り上げる)
-  var copyWidth = Math.ceil(yAxisStyleWidth0 * scale);
-  // Y軸canvas の幅(右側に少し空白部を残す)
-  var yAxisCvsWidth = copyWidth + 4;
-  // 実際の描画幅(styleに設定する)
-  var yAxisStyleWidth = yAxisCvsWidth / scale;
-
-  // Y軸部分としてグラフからコピーすべき高さ (TODO: 良く分かっていない) ⇒これを実際の描画高とする(styleに設定)
-  var yAxisStyleHeight = yAxScale.height + yAxScale.top + 10;
-  // canvas におけるコピー高
-  var copyHeight = yAxisStyleHeight * scale;
-  // Y軸canvas の高さ
-  var yAxisCvsHeight = copyHeight;
-
-  
-
-  // 下記はやってもやらなくても結果が変わらないっぽい
-  //ctxYAxis.scale(scale, scale);
-
-  // Y軸canvas の幅と高さを設定
-  cvsYAxis.width = yAxisCvsWidth;
-  cvsYAxis.height = yAxisCvsHeight;
-
-  // Y軸canvas.style(実際に描画される大きさ)の幅と高さを設定
-  cvsYAxis.style.width = yAxisStyleWidth + "px";
-  cvsYAxis.style.height = yAxisStyleHeight + "px";
-
-  // グラフcanvasからY軸部分のイメージをコピーする
-  ctxYAxis.drawImage(cvsChart, 0, 0, copyWidth, copyHeight, 0, 0, copyWidth, copyHeight);
-
-  // 軸ラベルのフォント色を透明に変更して、以降、再表示されても見えないようにする
-  chart.options.scales.yAxes[0].ticks.fontColor = 'rgba(0,0,0,0)';
-  chart.update();
-  // 最初に描画されたグラフのY軸ラベル部分をクリアする
-  ctxChart.clearRect(0, 0, yAxisStyleWidth, yAxisStyleHeight);
-}
-
-// グラフ描画
-var myChart = new Chart(ctxChart, {
-    type: 'bar',
-    data: {
-        datasets: [{
-            label: '体重',
-            yAxisID: 'weight',
-            type: 'line',
-            data: data,
-            spanGaps: true,
-            borderColor: "#333",
-            backgroundColor: "rgba(0,0,0,0)"
-            
-        },{
-            label: '体脂肪',
-            yAxisID: 'fat',
-            data: data2,
-            spanGaps: true,
-            backgroundColor: "#B0E0E6"
-            }],
-        labels: labels,
-    },
-    options: {
-      tooltips: {
-            mode: 'nearest',
-            intersect: false,
-          },
-      responsive: false,  // true（デフォルト）にすると画面の幅に合わせてしまう
-      scales: {
-        yAxes: [{
-          id: 'weight',
-          type: 'linear',
-          position: 'left',
-          ticks: {
-            max: 120,
-             min: 30,
-             stepSize: 5,
-             callback: function(value){
-             return value + 'kg'
-             },
-            beginAtZero: true
-          },
-        }, {
-          id: 'fat',
-          type: 'linear',
-          position: 'right',
-          ticks: {
-            max: 30,
-             min: 0,
-             stepSize: 5,
-             callback: function(value){
-             return value + '%'
-             },
-            beginAtZero: true
-          },
-           gridLines: {
-            drawOnChartArea: false,
-            },
-        }]
-      }
-    },
-    plugins: [{
-      // 描画完了後に copyYAxisImage() を呼び出す
-      // see https://www.chartjs.org/docs/latest/developers/plugins.html
-      //     https://stackoverflow.com/questions/55416218/what-is-the-order-in-which-the-hooks-plugins-of-chart-js-are-executed
-      afterRender: copyYAxisImage
-    }]
-});
-</script>
-
-
-    </div>
-    <div class="row text-dark" style="border-bottom: solid;">
-      <div class="col-md-12 text-center body-condition-top">
-        body's Stats
+        <canvas id="chart"></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
         
-      </div>
-      <div class="col-md-6  body-condition1">
-        <p>体型<span class="condition-list">{{$user->bodyType}}</span></p>
-        <p>身長<span class="condition-list">{{$user->height}}cm</span></p>
-        <p>体重<span class="condition-list">{{$user->weight}}kg</span></p>
-        <p>体脂肪<span class="condition-list">{{$user->fat}}%</span></p>
-      </div>
-      <div class="col-md-6  body-condition2">
-        <p>BMI<span class="condition-list">{{$bmi}}%</span></p>
-        <p>適正体重<span class="condition-list">{{$appropriate_weight}}kg</span></p>
-        <p>LBI<span class="condition-list">{{$lbm}}kg</span></p>
-        <p>FFMI<span class="condition-list">{{$ffmi}}%</span></p>
-        <p>基礎代謝量<span class="condition-list">{{$basic}}kcal</span></p>
-      </div>
+        <script>
+        var data = [];
+        var labels = [];
+        var colors = [];
+        var data2 = [];
+        for (i = 1; i <= {{$days_in_month}}; i++) {
+          labels.push(i + "日");
+        }
+        var user_weight = [@foreach ($month_user_weight as $user_weight) {{$user_weight}}, @endforeach]
+        var user_fat = [@foreach ($month_user_fat as $user_fat) {{$user_fat}}, @endforeach]
+        var cvsChart = document.getElementById('chart');
+        var ctxChart = cvsChart.getContext('2d');
+        var myChart = new Chart(ctxChart, {
+            type: 'bar',
+            data: {
+                datasets: [{
+                    label: '体重',
+                    yAxisID: 'weight',
+                    type: 'line',
+                    data: user_weight,
+                    spanGaps: true,
+                    borderColor: "#333",
+                    backgroundColor: "rgba(0,0,0,0)"
+                    
+                },{
+                    label: '体脂肪',
+                    yAxisID: 'fat',
+                    data: user_fat,
+                    spanGaps: true,
+                    backgroundColor: "#B0E0E6"
+                    }],
+                labels: labels,
+            },
+            options: {
+              tooltips: {
+                    mode: 'nearest',
+                    intersect: false,
+                  },
+                  responsive: true,
+              scales: {
+                yAxes: [{
+                  id: 'weight',
+                  type: 'linear',
+                  position: 'left',
+                  ticks: {
+                    max: 120,
+                     min: 30,
+                     stepSize: 5,
+                     callback: function(value){
+                     return value + 'kg'
+                     },
+                    beginAtZero: true
+                  },
+                }, {
+                  id: 'fat',
+                  type: 'linear',
+                  position: 'right',
+                  ticks: {
+                    max: 30,
+                     min: 0,
+                     stepSize: 5,
+                     callback: function(value){
+                     return value + '%'
+                     },
+                    beginAtZero: true
+                  },
+                   gridLines: {
+                    drawOnChartArea: false,
+                    },
+                }]
+              }
+            },
+        });
+        </script>
+        </div>
+     </div>
     </div>
-    <div class="row text-dark text-center guide">
-      <div class="col-md-12">
+    <div class="row text-dark pb-4" style="border-bottom: solid;">
+        <div class="col-md-12 text-center body-condition-top">
+          body's Stats
+        </div>
+        <div class="col-md-6 d-none d-md-block body-condition1">
+            <div class="stats-title">
+               <現在の体組成>
+            </div>
+            <div class="stats-text">
+                <p>体型<span class="condition-list">{{$user->bodyType}}</span></p>
+                <p>身長<span class="condition-list">{{$user->height}}cm</span></p>
+                <p>体重<span class="condition-list">{{$user->weight}}kg</span></p>
+                <p>体脂肪<span class="condition-list">{{$user->fat}}%</span></p>
+            </div>
+        </div>
+        <div class="col-md-6 d-none d-md-block body-condition2">
+            <div class="stats-title">
+                <現在の体指数>
+            </div>
+            <div class="stats-text">
+              <p>BMI<span class="condition-list">{{$bmi}}%</span></p>
+              <p>適正体重<span class="condition-list">{{$appropriate_weight}}kg</span></p>
+              <p>LBI<span class="condition-list">{{$lbm}}kg</span></p>
+              <p>FFMI<span class="condition-list">{{$ffmi}}%</span></p>
+            </div>
+        </div>
+        <div class="col-md-6 d-md-none d-block body-condition1-sm">
+            <div class="stats-title">
+                現在の体組成
+            </div>
+            <div class="stats-text">
+                <p>体型<span class="condition-list">{{$user->bodyType}}</span></p>
+                <p>身長<span class="condition-list">{{$user->height}}cm</span></p>
+                <p>体重<span class="condition-list">{{$user->weight}}kg</span></p>
+                <p>体脂肪<span class="condition-list">{{$user->fat}}%</span></p>
+            </div>
+        </div>
+        <div class="col-md-6 d-md-none d-block body-condition2-sm">
+            <div class="stats-title">
+                現在の体指数
+            </div>
+            <div class="stats-text">
+                <p>BMI<span class="condition-list">{{$bmi}}%</span></p>
+                <p>適正体重<span class="condition-list">{{$appropriate_weight}}kg</span></p>
+                <p>LBI<span class="condition-list">{{$lbm}}kg</span></p>
+                <p>FFMI<span class="condition-list">{{$ffmi}}%</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="row text-dark text-center">
+      <div class="col-md-12 guide-top">
         　指数ガイド
        </div>
     </div>
-    <div class="row text-dark text-center">
-      <div class="col-md-6">
-        <p>BMIとは...</p>
-      </div>
-    
-      <div class="col-md-6">
-        <p>筋力量とは...</p>
-      </div>
-      <div class="col-md-6">
-        <p>基礎代謝量とは...</p>
-      </div>
-      <div class="col-md-6">
-        <p>活動代謝量とは...</p>
-        
+    <div class="row text-dark text-center" style="padding: 3rem;">
+      <div class="col-md-6 text-center">
+        <div class="guide-title">
+            BMIと適正体重
+        </div>
+        <div class="guide-text d-none d-md-block">
+            <p>BMIとは、肥満度を表す指標として国際的に用いられている体格指数です。<br>
+               BMIが22の時が最も病気になりにくい状態であり、適正体重と言われています。<br>
+               また、BMIが25以上を肥満、18.5未満を低体重と分類しています。<br>
+               健康を意識されている方は日頃から、これらの指標をチェックしましょう。
+            </p>
+        </div>
+        <div class="guide-text d-md-none d-block">
+            <p>BMIとは、肥満度を表す指標として<br>国際的に用いられている体格指数です。<br>
+               BMIが22の時は最も病気になりにくい状態であり、適正体重と言われています。<br>
+               また、BMIが25以上を肥満、<br>18.5未満を低体重と分類しています。<br>
+               健康を意識されている方は日頃から、<br>これらの指標をチェックしましょう。
+            </p>
+        </div>
+          <table class="table table-bordered guide-table">
+            <thead>
+                <tr>
+                  <th scope="col" style="color: #008B8B;">BMI値</th>
+                  <th scope="col" style="color: #008B8B;">判定</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <th scope="row" style="color: black;">16.00〜16.99以下</th>
+                  <td style="color: black;">痩せ</td>
+              </tr>
+              <tr>
+                  <th scope="row" style="color: black;">17.00〜18.49以下</th>
+                  <td style="color: black;">痩せぎみ</td>
+              </tr>
+              <tr>
+                  <th scope="row" style="color: black;">18.50〜24.99以下</th>
+                  <td style="color: black;">普通体重</td>
+              </tr>
+              <tr>
+                  <th scope="row" style="color: black;">25.00〜29.99以下</th>
+                  <td style="color: black;">前肥満</td>
+              </tr>
+              <tr>
+                  <th scope="row" style="color: black;">30.00〜34.99以下</th>
+                  <td style="color: black;">肥満(1度)</td>
+              </tr>
+              <tr>
+                  <th scope="row" style="color: black;">35.00〜39.99以下</th>
+                  <td style="color: black;">肥満(2度)</td>
+              </tr>
+              <tr>
+                  <th scope="row" style="color: black;">40.00以上</th>
+                  <td style="color: black;">肥満(3度)</td>
+              </tr>
+            </tbody>
+         </table>
+        </div>
+      <div class="col-md-6 ">
+        <div class="guide-title">
+            LBIとFFMI
+        </div>
+        <div class="guide-text d-md-none d-block">
+            <p>FFMIとは自分の体の筋肉量を<br>測ることを目的とした指標です。<br>
+            　このFFMIを計算するときに、<br>LBI(除脂肪体重)が必要です。<br>
+            　この数値で自身の体脂肪以外の重量を<br>確認することができます。<br>
+          　　肥満度ではなく筋肉量の多さを<br>測ることができるため,<br>
+              筋力量の向上を目標とする場合に指標になります。<br>
+              筋力をつけたい方は、<br>日頃からこれらの指標をチェックしましょう。
+            </p>
+        </div>
+        <div class="guide-text d-none d-md-block">
+            <p>FFMIとは自分の体の筋肉量を測ることを目的とした指標です。<br>
+            　このFFMIを計算するときに、LBI(除脂肪体重)が必要です。<br>
+            　この数値で自身の体脂肪以外の重量を確認することができます。<br>
+          　　肥満度ではなく筋肉量の多さを測ることができるため,<br>
+              筋力量の向上を目標とする場合に指標になります。<br>
+              筋力をつけたい方は、日頃からこれらの指標をチェックしましょう。
+            </p>
+        </div>
+        <table class="table table-bordered guide-table">
+            <thead>
+              <tr>
+                  <th scope="col" style="color: #008B8B;">FFMI値</th>
+                  <th scope="col" style="color: #008B8B;">判定</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <th scope="row" style="color: black;">～18</th>
+                  <td style="color: black;">平均以下</td>
+              </tr>
+              <tr>
+                  <th scope="row" style="color: black;">18～19.5</th>
+                  <td style="color: black;">平均</td>
+              </tr>
+              <tr>
+                  <th scope="row" style="color: black;">19.5～21</th>
+                  <td style="color: black;">平均よりも多い</td>
+              </tr>
+              <tr>
+                  <th scope="row" style="color: black;">22.5～26</th>
+                  <td style="color: black;">アスリート並</td>
+              </tr>
+              <tr>
+                  <th scope="row" style="color: black;">26～</th>
+                  <td style="color: black;">ドーピングの可能性あり</td>
+              </tr>
+            </tbody>
+         </table>
       </div>
     </div>
-
-
-
-
 </div>
 
-  
-
 @endsection
-
-
- 
- 

@@ -26,7 +26,7 @@
                   <p>{{$history_date->course->course_name}}</p>
                   <label class="history-point-label">前回トレーニング部位</label>
                   @foreach ($history_point_names as $history_point_name)
-                  <p class="history-point">{{$history_point_name->training_point_name}}</p>
+                  <p>{{$history_point_name->training_point_name}}</p>
                   @endforeach
               @endif
             </div>

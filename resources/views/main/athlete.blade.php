@@ -3,29 +3,69 @@
 @section('title', 'アスリートコース')
 
 @section('content')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-<!--
-var slider = new Swiper ('#slider', {
-nextButton: '.swiper-button-next',
-prevButton: '.swiper-button-prev'
-})
-var thumbs = new Swiper('#thumbs', {
-centeredSlides: true,
-spaceBetween: 10,
-slidesPerView: "auto",
-touchRatio: 0.2,
-slideToClickedSlide: true
+const swiper = new Swiper('.swiper-container', {
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
 });
-slider.params.control = thumbs;
-thumbs.params.control = slider;
--->
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var yt = [];
+function onYouTubeIframeAPIReady() {
+    
+    let w = '100%';
+    let h = '100%';
+    
+    //スライド1枚目の動画
+    yt['player1'] = new YT.Player('player1', {
+        width: w,
+        height: h,
+        videoId: '4d118fHF8QE',
+        events: {
+            'onReady': onPlayerReady,
+        },
+    });
+}
+
+//スライド1枚目の自動再生用
+function onPlayerReady(event) {
+    event.target.mute();
+    event.target.playVideo();
+}
+
+swiper.on('transitionStart', function(){
+    yt['player1'].pauseVideo();
+    yt['player2'].pauseVideo();
+    yt['player3'].pauseVideo();
+});
+
+//スライド切り替え完了時にアクティブスライドの動画を再生する
+swiper.on('transitionEnd', function(){
+
+    var index = this.realIndex;
+    var slide = document.getElementsByClassName('swiper-slide')[index];
+    var slideVideo = slide.getElementsByTagName('iframe')[0];
+    var slideVideoId = slideVideo.getAttribute('id');
+
+    if(slideVideo != null || slideVideo != undefined){
+        yt[slideVideoId].mute();
+        yt[slideVideoId].playVideo();
+    }
+});
 </script>
-
-
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 bg-light text-dark">
@@ -56,32 +96,17 @@ thumbs.params.control = slider;
             </div>
         </div>
          @if($today == $history_time) 
-          <div class="col-md-10  bg-secondary">
-             <div id="slider" class="swiper-container">
-                <div class="swiper-wrapper">
-                  @foreach($before_trainings as $before_training)
-                     <div class="swiper-slide">
-                         <iframe width="950" height="534" src="{{$before_training->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                     </div>
+           <div class="col-md-10 text-center pt-3  bg-secondary">
+             <div class="movie-zone">
+                   @foreach($before_trainings as $before_training)
+                   <iframe width="950" height="534" src="{{$before_training->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                    @endforeach
-                </div>
-                <div class="swiper-button-prev swiper-button-white"></div>
-                <div class="swiper-button-next swiper-button-white"></div>
              </div>
-             <div id="thumbs" class="swiper-container">
-               <div class="swiper-wrapper">
-                  @foreach($before_trainings as $before_training)
-                 <div class="swiper-slide">
-                    <iframe width="950" height="534" src="{{$before_training->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>  
-                  @endforeach
-               </div>
-             </div>
-             <div class="row bg-light text-dark text-center  justify-content-center">
+             <div class="row bg-light text-dark text-center justify-content-center pt-3">
                    <div class="col-md-12 training-after">
                        <h4>トレーニングお疲れ様でした！</h4>
                        <h4>アスリートコースのトレーニングは完了しました。</h4>
-                   </div>
+                  </div>
              </div>
           </div>
          @elseif ($today == $history_sub_time)
