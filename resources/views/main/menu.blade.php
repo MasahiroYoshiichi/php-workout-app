@@ -1,27 +1,24 @@
 @extends('layouts.general')
-
 @section('title', 'トレーニングメニュー')
-
 @section('content')
+
  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
  <script>
- 　function dispLoading(msg){
+ function dispLoading(msg){
  　    if( msg == undefined ){
  　        msg = "";
- 　}
- 　//画面表示
- 　var dispMsg ="<div class='loadingMsg'>"+msg+"</div>";
- 　//画面非表示
- 　if($("#loading").length == 0){
+ }
+ var dispMsg ="<div class='loadingMsg'>"+msg+"</div>";
+ if($("#loading").length == 0){
  　 $("body").append("<div id='loading'>" + dispMsg + "</div>");
- 　}
+  }
  }
  
  function removeLoading(){
   $("#loading").remove();
-}
+ }
 
-   $(function() {
+$(function() {
        $('.click').click(function() {
        dispLoading("処理中...");
         var click = $(this).data('id');
@@ -70,8 +67,11 @@
             </div>
         </div>
         <div class="col-md-10 training_view">
-             <div id="movie"></div>
+             <div id="movie">
+                 <h1>トレーニングにチャレンジしよう！！</h1>
+             </div>
         </div>
     </div>
 </div>
+
 @endsection

@@ -2,6 +2,7 @@
   background-image: url("https://cdn.pixabay.com/photo/2016/06/12/20/15/sports-1452965_1280.jpg");
   background-size: cover;
   position: relative;
+  background-position: center;
   height: 100vh;
 }
 
@@ -10,10 +11,21 @@ input[type=radio] {
   margin-top: 4.5rem;
 }
 
-.profile_image {
+.profile-image {
   height: 300px;
   width: 300px;
-  margin: 0 0 4rem 4rem;
+  margin-left: 7rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+
+.profile-image-sm {
+  height: 250px;
+  width: 250px;
+  margin-bottom: 1rem;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -31,6 +43,11 @@ input[type=file] {
   border-bottom: solid #FF0000 0.5rem;
   font-size: 5em;
   padding-right: 2rem;
+}
+
+.selection-title-sm {
+  border-bottom: solid #FF0000;
+  margin-bottom: 2rem;
 }
 
 
@@ -83,8 +100,12 @@ input[type=file] {
 }
 
 
-.month_change{
+.month-change{
   font-size:2rem;
+}
+
+.month-change-sm{
+  font-size:1.5rem;
 }
 
 .table_link {
@@ -99,8 +120,22 @@ input[type=file] {
   margin-left: 1.5rem;
 }
 
+.record-title-sm{
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+
 .record-card{
-  margin: 3rem 2.5rem 3rem 0;
+  margin: 4rem 2.5rem 3rem 0;
+}
+
+.record-card-sm{
+  margin: 4rem 2.5rem 3rem 2.5;
+}
+
+.record-card-sm{
+  margin: 0.5rem 2rem 3rem 2rem;
 }
 
 .record-card-body{
@@ -109,10 +144,22 @@ input[type=file] {
  margin-top: -1.5rem;
 }
 
+.record-card-body-sm{
+ background-color: #fff;  
+ padding:0;
+ margin-top: -1.5rem;
+}
+
+
 .record-card-text{
   font-size: 1rem;
   margin-left:2rem;
   margin-bottom:1rem;
+}
+
+.record-card-text-sm{
+  letter-spacing: 0.2rem;
+  margin-top: -1rem;
 }
 
 .record-name-text{
@@ -127,17 +174,28 @@ input[type=file] {
   letter-spacing: 0.2rem;
 }
 
+.record-card-time-sm{
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 3rem;
+}
+
 .record-date{
   font-size: 1.5rem;
   background-color: #6495ed;
   color: #fff;
-  padding-left:3rem;
 }
 
-.day_table {
+.day-table {
   line-height: 4rem;
   background-color: #fff;
   table-layout: fixed;
+}
+
+.day-table-sm{
+ line-height: 2rem;
+  background-color: #fff;
+  table-layout: fixed; 
 }
 
 .record-text{
@@ -151,16 +209,18 @@ input[type=file] {
 
 th:nth-of-type(1),
 td:nth-of-type(1) {
-  color: #FF5F17;
+  color: #008b8b;
+  font-weight: bold;
 }
 
 th:nth-of-type(7),
 td:nth-of-type(7) {
-  color: #508393;
+  color: #008b8b;
+  font-weight: bold;
 }
 
 .today {
-  background-color: #FFF0F5;
+  background-color: #b0c4de;
   position: relative;
   transition: color 300ms, background-color 300ms;
 }
@@ -375,10 +435,7 @@ td:nth-of-type(7) {
   margin-left:2rem;
 }
 
-.training_view{
-  background-color: #fff;
-  padding-top:1rem;
-}
+
 
 .training-point-title{
   color: #333;
@@ -770,3 +827,30 @@ td:nth-of-type(7) {
 .selection-bottom{
   margin-top: 4rem;  
 }
+
+.menu-image{
+  background-image: url("https://image.freepik.com/free-photo/cycling-equipment-healthy-fit-fitness_1139-686.jpg");
+  background-size: cover;
+}
+
+.profile-title{
+  padding:0.2rem 0;
+  background-color:#cd853f;
+  color: #fff;
+  
+}
+
+.profile-register{
+   width: 45rem; 
+   height:4rem;
+  }
+  
+  .profile-register-sm{
+    width: 20rem;
+   height:4rem;
+   margin-bottom: 1rem;
+  }
+  
+  .btn-gender{
+    width: 4rem;
+  }

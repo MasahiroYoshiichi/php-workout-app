@@ -165,7 +165,7 @@ return [
         'bodyType' => '体型',
         'introduction' => '自己紹介',
         'age' => '年齢',
-        'name' => '名前',
+        'name' => '氏名',
         'accountName' => 'アカウント名'
         ],
 ];

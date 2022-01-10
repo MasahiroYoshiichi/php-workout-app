@@ -1,8 +1,49 @@
 @extends('layouts.async')
-
 @section('content')
-<div class="card record-card text-dark">
-     <div class="card-header record-date stext-center">{{$training_date->created_at->isoformat('YYYY年M月DD日(ddd)')}}</div>
+
+<div class="d-block d-md-none card record-card-sm text-dark">
+     <div class="card-header record-date text-center">{{$training_date->created_at->isoformat('YYYY年M月DD日(ddd)')}}</div>
+     　<div class="record-card-body-sm text-center">
+     　     <div class="record-title-sm">
+     　         <選択コース>
+     　     </div>
+     　    <ul class="record-card-text-sm">
+     　         @foreach($training_courses as $training_course)
+     　              <ol>
+     　                 {{$training_course->course_name}}
+     　              </ol>
+     　         @endforeach
+     　    </ul>
+     　     <div class="record-title-sm">
+     　         <トレーニング内容>
+     　     </div>
+     　     <ul class="record-card-text-sm">
+     　           @foreach($training_names as $training_name)
+     　           <ol>
+     　               {{$training_name->training->training_name}}
+     　           </ol>
+     　            @endforeach
+     　     </ul>
+     　     <div class="record-title-sm">
+     　         <トレーニング部位>
+     　     </div>
+     　     <ul class="record-card-text-sm">
+     　          @foreach($training_parts as $training_part)
+     　              <ol>
+     　                 {{$training_part->training_point_name}}  
+     　              </ol>
+     　            @endforeach      
+     　     </ul>
+     　     <div class="record-title-sm">
+     　         <トレーニング終了時間>
+     　     </div>
+     　     <div class="record-card-time-sm">
+     　             {{$training_time->created_at->format('Y年m月d日 H時:i分')}}
+     　     </div>
+      </div>
+ </div>
+ <div class="d-none d-md-block card record-card text-dark">
+     <div class="card-header record-date text-center">{{$training_date->created_at->isoformat('YYYY年M月DD日(ddd)')}}</div>
      　<div class="record-card-body">
      　     <div class="record-title">
      　         <選択コース>

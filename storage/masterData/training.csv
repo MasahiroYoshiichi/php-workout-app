@@ -38,7 +38,7 @@ id,video_url,course_id,training_point_id,training_name
 37,https://www.youtube.com/embed/Rcvf6rAIOZU,3,2,足つき懸垂
 38,https://www.youtube.com/embed/-JFRViTYmJ4,3,2,チューブベントオーバーロウイング
 39,https://www.youtube.com/embed/qqyamIY3pD0,1,3,バーベルショルダープレス
-40,https://www.youtube.com/embed/LexKPaiIjVs,1,3,ダンベルリアラテラテラルライズ
+40,https://www.youtube.com/embed/LexKPaiIjVs,1,3,ダンベルリアラテラルライズ
 41,https://www.youtube.com/embed/_MlHLUMd7l4,1,3,バーベルアップライトロウ
 42,https://www.youtube.com/embed/w5pHxxa3udQ,1,3,ダンベルサイドレイズ
 43,https://www.youtube.com/embed/i3Fc-OYdoo0,1,3,ダンベルフロントレイズ
@@ -128,7 +128,7 @@ id,video_url,course_id,training_point_id,training_name
 127,https://www.youtube.com/embed/eyRweAG7jZE,1,8,プランクサーキット
 128,https://www.youtube.com/embed/GTX63djcDEo,1,8,ダンベルトゥークランチ
 129,https://www.youtube.com/embed/7CA9ZB6d37I,2,8,足あげクランチ
-130,https://www.youtube.com/embed/uSOPqUrGjGw,2,8,シット
+130,https://www.youtube.com/embed/uSOPqUrGjGw,2,8,Vシット
 131,https://www.youtube.com/embed/o0ltazoR2ck,2,8,ロールダウン
 132,https://www.youtube.com/embed/FTmrij1l2Rw,2,8,ツイストレッグレイズ
 133,https://www.youtube.com/embed/6zPeLUr0jiM,2,8,デットバグ
@@ -147,10 +147,10 @@ id,video_url,course_id,training_point_id,training_name
 146,https://www.youtube.com/embed/WjX8-uYpBfM,3,5,上腕三頭筋のストレッチ
 147,https://www.youtube.com/embed/rm8qjygvHV8,3,6,足のストレッチ
 148,https://www.youtube.com/embed/VSP-1uDP8Zc,3,7,お尻のストレッチ
-149,https://www.youtube.com/embed,3,1,胸のストレッチ2
-150,https://www.youtube.com/embed,3,2,背中のストレッチ2
-151,https://www.youtube.com/embed,3,3,肩のストレッチ2
-152,https://www.youtube.com/embed,3,4,上腕二頭筋のストレッチ2
-153,https://www.youtube.com/embed,3,5,上腕三頭筋のストレッチ2
-154,https://www.youtube.com/embed,3,6,足のストレッチ2
-155,https://www.youtube.com/embed,3,7,お尻のストレッチ2
+149,https://www.youtube.com/embed/olTrgrdC6Qc,3,1,胸のストレッチ2
+150,https://www.youtube.com/embed/qXYgjJ0AQ24,3,2,背中のストレッチ2
+151,https://www.youtube.com/embed/4zC3TO8DQms,3,3,肩のストレッチ2
+152,https://www.youtube.com/embed/Iib7YhM2SpQ,3,4,上腕二頭筋のストレッチ2
+153,https://www.youtube.com/embed/LbsBmhy_UhQ,3,5,上腕三頭筋のストレッチ2
+154,https://www.youtube.com/embed/SZJljLoZHuY,3,6,足のストレッチ2
+155,https://www.youtube.com/embed/BMoGgdQ2wXQ,3,7,お尻のストレッチ2

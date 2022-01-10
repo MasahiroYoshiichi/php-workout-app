@@ -21,14 +21,14 @@ class User extends Authenticatable
     
     
     public static $rules = array(
-        'name' => 'required',
-        'accountName' => 'required',
-        'age' => 'required',
+        'name' => 'required|string|max:20|min:2',
+        'accountName' => 'required|string|max:20',
+        'age' => 'required|integer|max:120',
         'gender' => 'required',
-        'height' => 'required',
-        'weight' => 'required',
+        'height' => 'required|integer|max:250',
+        'weight' => 'required|integer|max:300',
         'bodyType' => 'required',
-        'introduction' => 'required',
+        'introduction' => 'required|string|max:150',
     );  
     /**
      * The attributes that should be hidden for arrays.
