@@ -15,8 +15,8 @@ class TrainingHistory extends Model
         'training_id' => 'required',
         'course_id' => 'required',
         'training_point_id' => 'required',
-        'user_weight' => 'required',
-        'user_fat' => 'required'
+        'user_weight' => 'required|integer|max:150',
+        'user_fat' => 'required|integer|max:50'
        );
         
         

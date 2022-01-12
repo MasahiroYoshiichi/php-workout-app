@@ -66,9 +66,11 @@ $(function() {
                 <button class="dropdown-item click training-name" data-id="body">体幹</button>
             </div>
         </div>
-        <div class="col-md-10 training_view">
+        <div class="col-md-10 overflow-auto pt-4 pb-4" style="height:635px;">
              <div id="movie">
-                 <h1>トレーニングにチャレンジしよう！！</h1>
+                <div class="before-menu text-center">
+                    <h1 class="before-menu-text"></h1>
+                </div>
              </div>
         </div>
     </div>

@@ -272,7 +272,7 @@
             <div class="stats-text">
                 <p>BMI<span class="condition-list">{{$bmi}}%</span></p>
                 <p>適正体重<span class="condition-list">{{$appropriate_weight}}kg</span></p>
-                <p>LBI<span class="condition-list">{{$lbm}}kg</span></p>
+                <p>LBM<span class="condition-list">{{$lbm}}kg</span></p>
                 <p>FFMI<span class="condition-list">{{$ffmi}}%</span></p>
             </div>
         </div>
@@ -342,11 +342,11 @@
         </div>
       <div class="col-md-6 ">
         <div class="guide-title">
-            LBIとFFMI
+            LBMとFFMI
         </div>
         <div class="guide-text d-md-none d-block">
             <p>FFMIとは自分の体の筋肉量を<br>測ることを目的とした指標です。<br>
-            　このFFMIを計算するときに、<br>LBI(除脂肪体重)が必要です。<br>
+            　このFFMIを計算するときに、<br>LBM(除脂肪体重)が必要です。<br>
             　この数値で自身の体脂肪以外の重量を<br>確認することができます。<br>
           　　肥満度ではなく筋肉量の多さを<br>測ることができるため,<br>
               筋力量の向上を目標とする場合に指標になります。<br>
@@ -355,7 +355,7 @@
         </div>
         <div class="guide-text d-none d-md-block">
             <p>FFMIとは自分の体の筋肉量を測ることを目的とした指標です。<br>
-            　このFFMIを計算するときに、LBI(除脂肪体重)が必要です。<br>
+            　このFFMIを計算するときに、LBM(除脂肪体重)が必要です。<br>
             　この数値で自身の体脂肪以外の重量を確認することができます。<br>
           　　肥満度ではなく筋肉量の多さを測ることができるため,<br>
               筋力量の向上を目標とする場合に指標になります。<br>

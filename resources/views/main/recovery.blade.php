@@ -95,7 +95,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-2 text-center recovery_list">
+        <div class="col-md-2 pt-3 text-center recovery_list overflow-auto" style="height:620px;">
            <h5 class="list_title">栄養素一覧</h5>
            <button class="dropdown-item click recovery-list-bottom" data-id="whey">ホエイプロテイン</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="gazein">ガゼインプロテイン</button>
@@ -150,7 +150,7 @@
            <button class="dropdown-item click recovery-list-bottom" data-id="citric">クエン酸</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="probiotics">プロバイオティクス</button>
         </div>
-        <div class="col-md-10 recovery_view">
+        <div class="col-md-10 recovery_view overflow-auto" style="height:620px;">
                 <div id="text"></div>
         </div>
     </div>

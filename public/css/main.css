@@ -388,6 +388,22 @@ td:nth-of-type(7) {
   border: solid;
 }
 
+.main_training_label{
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  border: solid;
+  margin:1.5rem 0 0.5rem 0;
+}
+
+.main_training_label_sm{
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: solid;
+  margin:1.5rem 0 0.5rem 0;
+}
+
 .menu-selection{
   padding-bottom: 2rem;
 }
@@ -400,7 +416,15 @@ td:nth-of-type(7) {
   font-weight: bold;
   line-height: 2rem;
   border-bottom: solid;
-  
+  padding-left: 1rem;
+ 
+}
+
+.recovery_name_last{
+  font-weight: bold;
+  line-height: 2rem;
+  padding-left: 1rem;
+ 
 }
 
 .recovery_view{
@@ -417,7 +441,6 @@ td:nth-of-type(7) {
 .recovery_list{
   background-color: #fff;
   color:#333;
-  padding-top:2rem;
 }
 
 .list_title{
@@ -559,6 +582,11 @@ td:nth-of-type(7) {
 }
 .history-label{
   font-weight: bold;
+}
+
+.history-label-sm{
+  font-weight: bold;
+  padding-right: 0.5rem;
 }
 
 .history-point-label{
@@ -854,3 +882,27 @@ td:nth-of-type(7) {
   .btn-gender{
     width: 4rem;
   }
+  
+ .before-menu{
+   background-image: url(https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_1280.jpg);
+   background-size: cover;
+   margin: -1.5rem;
+   height: 39.7rem;
+ }
+ 
+ .before-menu-text{
+   padding-top: 20rem;
+ }
+ 
+ .history-top{
+   font-size: 1rem;
+   margin:1rem 0 0 0;
+   border: solid;
+ }
+ 
+ .history-text{
+   margin-bottom: 1rem;
+   margin:0.5rem auto;
+   padding:0 ;
+   font-size:0.8rem;
+ }
