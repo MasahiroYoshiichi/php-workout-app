@@ -166,6 +166,8 @@ return [
         'introduction' => '自己紹介',
         'age' => '年齢',
         'name' => '氏名',
-        'accountName' => 'アカウント名'
+        'accountName' => 'アカウント名',
+        'user_weight' => '体重',
+        'user_fat' => '体脂肪率'
         ],
 ];

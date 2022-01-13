@@ -43,7 +43,7 @@ $(function() {
         <h1>Training List</h1>
     </div>
     <div class="row">
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 col-8 mx-auto text-center">
             <div class="cours-point-title">
                 <h5>コース選択</h5>
             </div>

@@ -26,9 +26,10 @@ class User extends Authenticatable
         'age' => 'required|integer|max:120',
         'gender' => 'required',
         'height' => 'required|integer|max:250',
-        'weight' => 'required|integer|max:300',
+        'weight' => 'required|integer|max:200',
+        'fat' => 'nullable|integer|max:50',
         'bodyType' => 'required',
-        'introduction' => 'required|string|max:150',
+        'introduction' => 'required|string|max:300',
     );  
     /**
      * The attributes that should be hidden for arrays.

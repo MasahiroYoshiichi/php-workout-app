@@ -44,7 +44,7 @@
 }
 
 .event-image {
-  background-image: url("/images/event.jpeg");
+  background-image: url("https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_1280.jpg");
   background-size: cover;
 }
 

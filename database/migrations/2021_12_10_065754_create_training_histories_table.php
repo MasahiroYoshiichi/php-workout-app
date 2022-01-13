@@ -21,7 +21,7 @@ class CreateTrainingHistoriesTable extends Migration
             $table->unsignedBigInteger('training_point_id');
             $table->integer('user_weight')->nullable();
             $table->integer('user_fat')->nullable();
-            $table->date('training_date') ;
+            $table->date('training_date') 
             $table->timestamps();
             
              $table->foreign('user_id')

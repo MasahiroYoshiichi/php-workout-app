@@ -61,7 +61,7 @@
          <h3>身長</h3>
     </div>
     <div class="col-md-2 mt-4">
-         <input type="number" class="form-control" name="height" placeholder="height" value="{{ old('height') }}">
+         <input type="number" required class="form-control" name="height" placeholder="height" value="{{ old('height') }}">
     </div>
     <div class="col-md-1 align-self-end">
          <h5>cm</h5>
@@ -173,7 +173,7 @@
   <div class="form-group row">
     <div class="col-12 text-center mt-4"><h3>身長</h3></div>
     <div class="col-7 offset-2 mt-2 mb-4">
-         <input type="number" maxlength="3" required class="form-control" name="height" placeholder="height" value="{{ old('height') }}">
+         <input type="number" required class="form-control" name="height" placeholder="height" value="{{ old('height') }}">
     </div>
     <div class="col-1 mt-3 p-0"><h5>cm</h5></div>
   </div>    

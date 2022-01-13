@@ -93,41 +93,30 @@ class MainController extends Controller
             $user->bodyType ="未設定";
         }
         
-        if (empty($history)) {
-            $weight = $user->weight;
-            $fat = $user->fat;
-            $height = $user->height;
-        } else {
-            $weight = $user->weight = $history->where('user_weight', !null)->max()->user_weight??'';
-            $fat = $user->fat = $history->where('user_fat', !null)->max()->user_fat??'';
-            $height = $user->height;
-        } 
        
-        
-        
-        if (isset($fat))
+            $weight = $user->weight = $history->where('user_weight', !null)->max()->user_weight??$user->weight;
+            $fat = $user->fat = $history->where('user_fat', !null)->max()->user_fat??$user->fat;
+            $height = $user->height;
+
+        if ($height == null)
         {
-         $bmi = number_format($weight/($height*$height)*10000, 1);
-         $amount_of_fat = round($weight*($fat/100));
-         $lbm = $weight-$amount_of_fat;
-         $amount_of_muscle = $lbm/2;
-         $muscular_ratio = $amount_of_muscle/$weight*100;
-         $ffmi = number_format($lbm/(($height/100)*($height/100)), 1);
-         $appropriate_weight = round((($height/100)*($height/100))*22);
-         $age = $user->age;
-         $gender = $user->gender;
-         if($gender == 1)
-         {
-             $basic = round((13.397*$weight)+(4.799*$height)-(5.677*$age)+88.362);
-         } else {
-             $basic = round((9.247*$weight)+(3089*$height)-(4.33*$age)+447.593);
-         }
-         } else {
              $bmi = '';
              $lbm = '';
              $ffmi = '';
-             $basic = '';
              $appropriate_weight = '';
+         } elseif ($fat == null) {
+             $bmi = number_format($weight/($height*$height)*10000, 1);
+             $appropriate_weight = round((($height/100)*($height/100))*22);
+             $lbm = '';
+             $ffmi = '';
+         } else {
+             $bmi = number_format($weight/($height*$height)*10000, 1);
+             $amount_of_fat = round($weight*($fat/100));
+             $lbm = $weight-$amount_of_fat;
+             $amount_of_muscle = $lbm/2;
+             $muscular_ratio = $amount_of_muscle/$weight*100;
+             $ffmi = number_format($lbm/(($height/100)*($height/100)), 1);
+             $appropriate_weight = round((($height/100)*($height/100))*22);
          }
 
         $days_in_month = Carbon::now()->daysInMonth;
@@ -158,29 +147,27 @@ class MainController extends Controller
            $month_user_fat[] = $history->where('training_date', $get_day)->where('user_fat', !null)->pluck('user_fat')->first()??null;
        }
     
-        return view('main.management',['user' => $user, 'bmi' => $bmi, 'lbm' => $lbm, 'ffmi' => $ffmi, 'basic' => $basic, 'appropriate_weight' => $appropriate_weight,  'chest' => $chest, 'back' => $back, 'sholuder' => $sholuder, 'bicelder' => $bicelder,'triceps' => $triceps, 'leg' => $leg, 'hip' => $hip, 'body' => $body
+        return view('main.management',['user' => $user, 'bmi' => $bmi, 'lbm' => $lbm, 'ffmi' => $ffmi, 'appropriate_weight' => $appropriate_weight,  'chest' => $chest, 'back' => $back, 'sholuder' => $sholuder, 'bicelder' => $bicelder,'triceps' => $triceps, 'leg' => $leg, 'hip' => $hip, 'body' => $body
         ,'days_in_month' => $days_in_month, 'month_user_weight' => $month_user_weight, 'month_user_fat' => $month_user_fat, 'next_days' => $next_days, 'next_date' => $next_date, 'prev_days' =>  $prev_days, 'prev_date' => $prev_date, 'get_ym_format' => $get_ym_format] );
     }
     
     public function athlete()
     {
+        
      $user = Auth::user();
      $training_history = $user->training_histories->where('course_id', 1)->max();
      if(!isset($training_history)) {
          $training_sets = Training::find(explode("_", TrainingSet::find(1)->next_show_trainings));
          
      } else {
-     $next_trainings = TrainingSet::where('training_id', $training_history->training_id)->first();
+     $next_trainings = TrainingSet::where('training_id', $training_history->training_id)->value('next_show_trainings');
      $training_sets = Training::find(explode("_", $next_trainings));
      }
-    
      $history_date = $user->training_histories->max();
      $history_points = $user->training_histories->sortByDesc('created_at')->pluck('training_point_id')->take(6)->unique();
      $history_point_names = TrainingPoint::find($history_points);
      $before = $user->training_histories->where('course_id', 1)->sortByDesc('id')->pluck('training_id')->take(6);
-     $before_training_set = Training::find($before);
-     $before_trainings = $before_training_set->sortBydesc('id')->take(5)->sortBy('id');
-     $before_training = $before_training_set->first();
+     $before_trainings = Training::find($before);
      $today = Carbon::today()->format('Y-m-d'); 
      if(!isset($training_history)){
          $history_time = $training_history->created_at??'';
@@ -193,7 +180,7 @@ class MainController extends Controller
          $history_sub_time = $history_date->created_at->format('Y-m-d');
      }
      return view('main.athlete',['user' => $user, 'training_history' => $training_history, 'history_date' => $history_date, 'training_sets' => $training_sets, 
-     'history_point_names' => $history_point_names, 'today' => $today, 'history_time' => $history_time, 'history_sub_time' =>  $history_sub_time, 'before_trainings' => $before_trainings, 'before_training' => $before_training]);
+     'history_point_names' => $history_point_names, 'today' => $today, 'history_time' => $history_time, 'history_sub_time' =>  $history_sub_time, 'before_trainings' => $before_trainings,]);
     } 
     
      public function exercise()
@@ -204,9 +191,10 @@ class MainController extends Controller
          $training_sets = Training::find(explode("_", TrainingSet::find(21)->next_show_trainings));
          
      } else {
-     $next_trainings = TrainingSet::where('training_id', $training_history->training_id)->first();
+     $next_trainings = TrainingSet::where('training_id', $training_history->training_id)->value('next_show_trainings');
      $training_sets = Training::find(explode("_", $next_trainings));
      }
+
      $history_date = $user->training_histories->max();
      $history_points = $user->training_histories->sortByDesc('created_at')->pluck('training_point_id')->take(6)->unique();
      $history_point_names = TrainingPoint::find($history_points);
@@ -236,7 +224,7 @@ class MainController extends Controller
          $training_sets = Training::find(explode("_", TrainingSet::find(37)->next_show_trainings));
          
      } else {
-     $next_trainings = TrainingSet::where('training_id', $training_history->training_id)->first();
+     $next_trainings = TrainingSet::where('training_id', $training_history->training_id)->value('next_show_trainings');
      $training_sets = Training::find(explode("_", $next_trainings));
      }
      $history_date = $user->training_histories->max();

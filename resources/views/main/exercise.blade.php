@@ -35,23 +35,23 @@
         <div class="col-12 d-block d-md-none">
             <div class="col-8 mx-auto  history-top text-center">ワークアウト履歴</div>
             @if(empty($history_date))
-              <div class="col-8 offset-2 history-text">
+              <div class="col-8 offset-2 pl-4 history-text">
             　  <span class="history-label-sm">前回トレーニング日</span>履歴はありません
               </div>
-              <div class="col-8 offset-2 history-text">
+              <div class="col-8 offset-2 pl-4 history-text">
             　  <span class="history-label-sm">前回トレーニングコース</span>履歴はありません
               </div>
-              <div class="col-8 offset-2 history-text">
+              <div class="col-8 offset-2 pl-4 history-text">
             　  <span class="history-label-sm">前回トレーニング部位</span>履歴はありません
               </div>
             @else
-              <div class="col-8 offset-2 history-text">
+              <div class="col-8 offset-2 pl-4 history-text">
             　  <p><span class="history-label-sm">前回トレーニング日</span>{{$history_date->created_at->isoformat('YYYY年M月DD日(ddd)')}}</p>
               </div>
-              <div class="col-8 offset-2 history-text">
+              <div class="col-8 offset-2 pl-4 history-text">
                 <p><span class="history-label-sm">前回トレーニングコース</span>{{$history_date->course->course_name}}</p>
               </div>
-              <div class="col-10 offset-2 history-text">
+              <div class="col-8 offset-2 pl-4 history-text">
                  <p><span class="history-label-sm">前回トレーニング部位</span>
                    @foreach ($history_point_names as $history_point_name)
                    <span>{{$history_point_name->training_point_name}}</span>
@@ -75,8 +75,6 @@
               </div>
            </div>
          </div>
-         
-         
          <div class="col-md-10 d-block d-md-none" style="background-color: #778899">
             <div class="movie-zone text-center overflow-auto pb-4" style="height:635px;">
                  @foreach($before_trainings as $before_training)
@@ -91,8 +89,6 @@
                 </div>
            </div>
          </div>
-         
-         
          @elseif ($today == $history_sub_time)
           <div class="col-md-10 d-none d-md-block" style="background-color: #778899">
             <form action="{{ action('MainController@various_training_register') }}" method="post" enctype="multipart/form-data">
@@ -125,7 +121,6 @@
                </div>
              </form>
           </div>
-          
           <div class="col-md-10 d-block d-md-none" style="background-color: #778899">
             <form action="{{ action('MainController@various_training_register') }}" method="post" enctype="multipart/form-data">
                  @if (count($errors) > 0)
@@ -157,19 +152,16 @@
                </div>
              </form>
           </div>
-          
-          
-          
          @else
            <div class="col-md-10 d-none d-md-block" style="background-color: #778899">
-            <form action="{{ action('MainController@various_training_register') }}" method="post" enctype="multipart/form-data">
-                 @if (count($errors) > 0)
-                   <ul>
-                       @foreach($errors->all() as $e)
-                         <li>{{ $e }}</li>
-                       @endforeach
-                   </ul>
-                 @endif
+            <form action="{{ action('MainController@training_register') }}" method="post" enctype="multipart/form-data">
+                @if (count($errors) > 0)
+                  <ul class="text-center m-0 p-0">
+                   @foreach($errors->all() as $e)
+                     <ol>{{ $e }}</ol>
+                   @endforeach
+                  </ul>
+                @endif
                <div class="movie-zone text-center overflow-auto pb-4" style="height:635px;">
                    @foreach($training_sets as $training_set)
                    <label class="main_training_label">{{$training_set->training_name}}</label>
@@ -195,7 +187,7 @@
                <div class="row bg-light text-dark text-center justify-content-center pt-3">
                    <div class="col-md-3">
                        <label class="form-label" for="weight">体重を入力</label>
-                       <input type="number" class="form-control" name="user_weight" id="weight" placeholder="kg">
+                       <input type="number" required class="form-control" name="user_weight" id="weight" placeholder="kg">
                    </div>
                    <div class="unit">
                        <p>kg</p>
@@ -213,20 +205,20 @@
                    <div class="col-md-5">
                        {{ csrf_field() }}
                        <button type="submit" class="btn btn-dark btn-lg">ワークアウトを完了する</button>
-                       <p>※体重、体脂肪率の入力はなくてもワークアウトは完了できます。</p>
+                       <p>※体脂肪率の入力はしなくてもワークアウトを完了できます。</p>
                    </div>
                </div>
             </form>
          </div>
          <div class="col-md-10 d-block d-md-none" style="background-color: #778899">
-            <form action="{{ action('MainController@various_training_register') }}" method="post" enctype="multipart/form-data">
-                 @if (count($errors) > 0)
-                   <ul>
-                       @foreach($errors->all() as $e)
-                         <li>{{ $e }}</li>
-                       @endforeach
-                   </ul>
-                 @endif
+            <form action="{{ action('MainController@training_register') }}" method="post" enctype="multipart/form-data">
+                @if (count($errors) > 0)
+                  <ul class="text-center m-0 p-0">
+                   @foreach($errors->all() as $e)
+                     <ol>{{ $e }}</ol>
+                   @endforeach
+                  </ul>
+                @endif
                <div class="movie-zone text-center overflow-auto pb-4" style="height:635px;">
                    @foreach($training_sets as $training_set)
                    <label class="main_training_label_sm">{{$training_set->training_name}}</label>
@@ -252,7 +244,7 @@
                <div class="row bg-light text-dark text-center pt-3">
                    <div class="col-4 offset-2">
                        <label class="form-label" for="weight">体重を入力</label>
-                       <input type="number" class="form-control text-center" name="user_weight" id="weight" placeholder="kg">
+                       <input type="number" required class="form-control text-center" name="user_weight" id="weight" placeholder="kg">
                        <span> kg</span>
                    </div>
                    <div class="col-4">
@@ -266,7 +258,7 @@
                    <div class="col-md-5">
                        {{ csrf_field() }}
                        <button type="submit" class="btn btn-dark mb-3">ワークアウトを完了する</button>
-                       <p>※体重、体脂肪率の入力はなくてもワークアウトは完了できます。</p>
+                       <p>※体脂肪率の入力はしなくてもワークアウトを完了できます。</p>
                    </div>
                </div>
             </form>
