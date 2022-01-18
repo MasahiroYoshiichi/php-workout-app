@@ -18,11 +18,11 @@
  <div class="recovery_name">
           <label class="recovery_label">摂取タイミング</label>
      　    <P>１日の摂取量は200mg~500mgを目安に摂取しましょう
-     　    <br>●効率的な摂取タイミング
+     　    <br>●効率的な摂取方法
      　    <br>特に決まりはありません。摂取量を守って摂取してください。
      　     </P>
  </div>
-  <div class="recovery_name">
+  <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>●L-カルニチン×CLA(共役リノール酸)
      　    <br>同時に摂取することで、体脂肪の分解から運搬、そして燃焼までを効率よく行うことができるます。

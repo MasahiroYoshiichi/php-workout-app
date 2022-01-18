@@ -25,7 +25,7 @@
      　    <br>・トレーニングの翌日
      　    <br></P>
  </div>
- <div class="recovery_name">
+ <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>EAA×プロテイン
      　    <br>糖質を同時に摂取することで、菌合成作用を高めることができる。

@@ -24,7 +24,7 @@
      　    <br>水に溶けやすい成分なので、スープやお味噌汁など汁物での摂取をお勧めします。
      　     </P>
  </div>
-  <div class="recovery_name">
+  <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>組み合わせはありません。摂取量を守って摂るようにしてください。</P>
  </div>

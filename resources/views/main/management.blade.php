@@ -250,7 +250,7 @@
             <div class="stats-text">
               <p>BMI<span class="condition-list">{{$bmi}}%</span></p>
               <p>適正体重<span class="condition-list">{{$appropriate_weight}}kg</span></p>
-              <p>LBI<span class="condition-list">{{$lbm}}kg</span></p>
+              <p>LBM<span class="condition-list">{{$lbm}}kg</span></p>
               <p>FFMI<span class="condition-list">{{$ffmi}}%</span></p>
             </div>
         </div>

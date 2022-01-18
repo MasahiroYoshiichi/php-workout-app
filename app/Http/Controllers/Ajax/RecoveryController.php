@@ -113,14 +113,130 @@ class RecoveryController extends Controller
   {
       return view('recovery.alanine');
   }
-   public function tyrosine()
-  {
-      return view('recovery.tyrosine');
-  }
+  
    public function agmatin()
   {
       return view('recovery.agmatin');
   }
   
+  public function biotin()
+  {
+      return view('recovery.biotin');
+  }
+  
+   public function calcium()
+  {
+      return view('recovery.calcium');
+  }
+  
+   public function caroten()
+  {
+      return view('recovery.caroten');
+  }
+  
+   public function citric()
+  {
+      return view('recovery.citric');
+  }
+  
+   public function copper()
+  {
+      return view('recovery.copper');
+  }
+  
+   public function folic()
+  {
+      return view('recovery.folic');
+  }
+  
+   public function iron()
+  {
+      return view('recovery.iron');
+  }
+  
+   public function kuromu()
+  {
+      return view('recovery.kuromu');
+  }
+  
+   public function line()
+  {
+      return view('recovery.line');
+  }
+  
+   public function lipo()
+  {
+      return view('recovery.lipo');
+  }
+  
+   public function lutein()
+  {
+      return view('recovery.lutein');
+  }
+  
+   public function lycopene()
+  {
+      return view('recovery.lycopene');
+  }
+   public function magnesium()
+  {
+      return view('recovery.magnesium');
+  }
+   public function mangan()
+  {
+      return view('recovery.mangan');
+  }
+   public function moribuden()
+  {
+      return view('recovery.moribuden');
+  }
+   public function niacin()
+  {
+      return view('recovery.niacin');
+  }
+  
+   public function potassium()
+  {
+      return view('recovery.potassium');
+  }
+  
+  
+   public function pantothenic()
+  {
+      return view('recovery.pantothenic');
+  }
+  
+   public function polyphenol()
+  {
+      return view('recovery.polyphenol');
+  }
+  
+   public function probiotics()
+  {
+      return view('recovery.probiotics');
+  }
+  
+   public function seren()
+  {
+      return view('recovery.seren');
+  }
+  
+   public function sodium()
+  {
+      return view('recovery.sodium');
+  }
+  
+   public function tyrosine()
+  {
+      return view('recovery.tyrosine');
+  }
+   public function youso()
+  {
+      return view('recovery.youso');
+  }
+   public function zinc()
+  {
+      return view('recovery.zinc');
+  }
   
 }

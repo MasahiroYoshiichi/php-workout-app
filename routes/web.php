@@ -14,15 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::group(["middleware" => "guest"], function() {
 Route::get('top','TopController@top');
 Route::get('introduction', 'TopController@introduction');
 });
-
 Route::get('event', 'TopController@event');
-Route::get('community', 'TopController@community');
-
 Route::group(["middleware" => "auth"],function() {
 Route::get('selection', 'MainController@selection');
 Route::get('information', 'MainController@information');
@@ -51,6 +47,7 @@ Route::get('body', 'Ajax\MenuController@body');
 Route::get('ath', 'Ajax\MenuController@ath');
 Route::get('exe', 'Ajax\MenuController@exe');
 Route::get('fit', 'Ajax\MenuController@fit');
+
 Route::get('arginine', 'Ajax\RecoveryController@arginine');
 Route::get('bcaa', 'Ajax\RecoveryController@bcaa');
 Route::get('citrulline', 'Ajax\RecoveryController@citrulline');
@@ -78,7 +75,32 @@ Route::get('ornithine', 'Ajax\RecoveryController@ornithine');
 Route::get('alanine', 'Ajax\RecoveryController@alanine');
 Route::get('tyrosine', 'Ajax\RecoveryController@tyrosine');
 Route::get('agmatin', 'Ajax\RecoveryController@agmatin');
-
+Route::get('biotin', 'Ajax\RecoveryController@biotin');
+Route::get('calcium', 'Ajax\RecoveryController@calcium');
+Route::get('caroten', 'Ajax\RecoveryController@caroten');
+Route::get('citric', 'Ajax\RecoveryController@citric');
+Route::get('copper', 'Ajax\RecoveryController@copper');
+Route::get('folic', 'Ajax\RecoveryController@folic');
+Route::get('iron', 'Ajax\RecoveryController@iron');
+Route::get('kuromu', 'Ajax\RecoveryController@kuromu');
+Route::get('line', 'Ajax\RecoveryController@line');
+Route::get('lipo', 'Ajax\RecoveryController@lipo');
+Route::get('lutein', 'Ajax\RecoveryController@lutein');
+Route::get('lycopene', 'Ajax\RecoveryController@lycopene');
+Route::get('magnesium', 'Ajax\RecoveryController@magnesium');
+Route::get('mangan', 'Ajax\RecoveryController@mangan');
+Route::get('moribuden', 'Ajax\RecoveryController@moribuden');
+Route::get('niacin', 'Ajax\RecoveryController@niacin');
+Route::get('pantothenic', 'Ajax\RecoveryController@pantothenic');
+Route::get('potassium', 'Ajax\RecoveryController@potassium');
+Route::get('polyphenol', 'Ajax\RecoveryController@polyphenol');
+Route::get('probiotics', 'Ajax\RecoveryController@probiotics');
+Route::get('seren', 'Ajax\RecoveryController@seren');
+Route::get('sodium', 'Ajax\RecoveryController@sodium');
+Route::get('soy', 'Ajax\RecoveryController@soy');
+Route::get('tyrosine', 'Ajax\RecoveryController@tyrosine');
+Route::get('youso', 'Ajax\RecoveryController@youso');
+Route::get('zinc', 'Ajax\RecoveryController@zinc');
 Route::get('management_chest', 'Ajax\ManagementController@chest');
 Route::get('management_back', 'Ajax\ManagementController@back');
 Route::get('management_sholuder', 'Ajax\ManagementController@sholuder');
@@ -97,6 +119,8 @@ Route::get('edit', 'Admin\MainController@edit');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index');
+
+//Route::get('community', 'TopController@community');
 
 
 

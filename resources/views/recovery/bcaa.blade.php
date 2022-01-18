@@ -27,7 +27,7 @@
      　    <br>睡眠中や起床後はエネルギーが枯渇しています。摂取するには良いタイミングです。
      　    </P>
  </div>
- <div class="recovery_name">
+ <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>●BCAA×プロテイン
      　    <br>トレーニング後にこの2つを一緒に摂るときは、BCAAのメリットである吸収スピードを生かすために、BCAA→プロテインの順に飲むことをおすすめします。

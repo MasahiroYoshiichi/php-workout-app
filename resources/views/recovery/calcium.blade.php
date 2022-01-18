@@ -21,7 +21,7 @@
      　    <br>トレーニング前
      　    <br>トレーニング前に摂取することで、トレーニング中の疲労感を軽減することができます。</P>
  </div>
- <div class="recovery_name">
+ <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>●β-アラニン✖︎BCAA、EAA
      　    <br>ワークアウトドリンクとして同時摂取することで、筋分解抑制と疲労軽減に効果があります。

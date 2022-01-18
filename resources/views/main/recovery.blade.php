@@ -81,21 +81,9 @@
              <button class="dropdown-item click" data-id="epa">EPA</button>
            </div>
         </div>
-        <div class="dropdown recovery_botton ">
-           <button class="btn btn-light btn-lg dropdown-toggle" type="button" id="team_id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           摂取タイミング
-           </button>
-           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-             <button class="dropdown-item click" data-id=""></button>
-             <button class="dropdown-item click" data-id=""></button>
-             <button class="dropdown-item click" data-id=""></button>
-             <button class="dropdown-item click" data-id=""></button>
-             <button class="dropdown-item click" data-id=""></button>
-           </div>
-        </div>
     </div>
     <div class="row">
-        <div class="col-md-2 pt-3 text-center recovery_list overflow-auto" style="height:620px;">
+        <div class="col-md-2 pt-3 d-none d-md-block text-center recovery_list overflow-auto" style="height:620px;">
            <h5 class="list_title">栄養素一覧</h5>
            <button class="dropdown-item click recovery-list-bottom" data-id="whey">ホエイプロテイン</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="gazein">ガゼインプロテイン</button>
@@ -146,12 +134,14 @@
            <button class="dropdown-item click recovery-list-bottom" data-id="kuromu">クロム</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="moribuden">モリブデン</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="sodium">重炭酸ナトリウム</button>
-           <button class="dropdown-item click recovery-list-bottom" data-id="nitrate">硝酸塩</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="citric">クエン酸</button>
            <button class="dropdown-item click recovery-list-bottom" data-id="probiotics">プロバイオティクス</button>
         </div>
         <div class="col-md-10 recovery_view overflow-auto" style="height:620px;">
-                <div id="text"></div>
+                <div id="text">
+                    <div class="before-recovery text-center">
+                </div>
+            </div>
         </div>
     </div>
   </div>

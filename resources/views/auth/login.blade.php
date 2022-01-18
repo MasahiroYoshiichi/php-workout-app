@@ -28,9 +28,6 @@
                             <strong>{{ $message }}</strong>
                         </span>
                      @enderror
-                     @if (Route::has('password.request'))
-                              <a class="btn btn-link"  href="{{ route('password.request') }}">パスワードをお忘れですか？</a>
-                     @endif
                  </div>
                  <div class="col-md-1 form-group mx-auto text-center">
                         <button type="submit" class="btn btn-light">ログイン</button>

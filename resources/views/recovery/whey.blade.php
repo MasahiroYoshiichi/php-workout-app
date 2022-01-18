@@ -26,7 +26,7 @@
      　    <br>トレーニング終了後
      　     </P>
  </div>
-  <div class="recovery_name">
+  <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>ホエイプロテイン×グルタミン
      　    <br>トレーニング終了後はグルタミンが大量に消費されています。プロテインと同時に摂取することで、栄養を補給しましょう。

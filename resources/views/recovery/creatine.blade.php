@@ -23,7 +23,7 @@
      　    <br>・トレーニング終了後
      　    </P>
  </div>
- <div class="recovery_name">
+ <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>●クレアチン×プロテイン
      　    <br>クレアチンは、主にインスリンの作用により筋肉中に迅速に取り込まれます。クレアチンと糖質はセットにして摂取することがおすすめです。

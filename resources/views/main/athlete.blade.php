@@ -205,7 +205,7 @@
                    <div class="col-md-5">
                        {{ csrf_field() }}
                        <button type="submit" class="btn btn-dark btn-lg">ワークアウトを完了する</button>
-                       <p>※体重、体脂肪率の入力はなくてもワークアウトは完了できます。</p>
+                       <p>※体脂肪率の入力はなくてもワークアウトは完了できます。</p>
                    </div>
                </div>
             </form>
@@ -258,7 +258,7 @@
                    <div class="col-md-5">
                        {{ csrf_field() }}
                        <button type="submit" class="btn btn-dark mb-3">ワークアウトを完了する</button>
-                       <p>※体重、体脂肪率の入力はなくてもワークアウトは完了できます。</p>
+                       <p>※体脂肪率の入力はなくてもワークアウトは完了できます。</p>
                    </div>
                </div>
             </form>

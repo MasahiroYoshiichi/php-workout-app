@@ -25,7 +25,7 @@
      　    <br>●効率的な摂取タイミング
      　    <br>運動援護や就寝前が良いとされています。</P>
  </div>
- <div class="recovery_name">
+ <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>●アルギニン×オルニチン
      　    <br>アルギニンとオルニチンを同時に摂取することで、運動による成長ホルモン分泌量が増加したことが確認されています

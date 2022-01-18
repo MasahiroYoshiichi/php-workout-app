@@ -22,7 +22,7 @@
      　    <br>・起床後
      　    </P>
  </div>
- <div class="recovery_name">
+ <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>食事とセットで摂取することを心がけましょう。
      　    <br>タンパク質と摂取するとより吸収が速くなることが認められています。</P>

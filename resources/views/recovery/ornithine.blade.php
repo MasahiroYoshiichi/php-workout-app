@@ -23,7 +23,7 @@
      　     </P>
  </div>
   <div class="recovery_name">
-          <label class="recovery_label">おすすめの組み合わせ</label>
+          <label class="recovery_label_last">おすすめの組み合わせ</label>
      　    <P>●オルニチン×アルギニン
      　    <br>同時に摂取することで、運動による成長ホルモンの分泌と筋肉増強効果が確認されています。
      　    </p>

@@ -21,7 +21,7 @@
      　    <br>必要に応じて食事やサプリメントを活用して摂取しましょう。
      　    </p>
  </div>
-  <div class="recovery_name">
+  <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>組み合わせはありません。摂取量を守って摂るようにしてください。</P>
  </div>

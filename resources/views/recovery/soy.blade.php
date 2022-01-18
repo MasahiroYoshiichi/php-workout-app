@@ -25,7 +25,7 @@
      　    <br>・トレーニング後
      　     </P>
  </div>
-  <div class="recovery_name">
+  <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>特に組み合わせる必要はありません。
      　    <br>メーカー毎にビタミンやミネラルをブレンドして販売しているものが多いので、自分に適したものを選びましょう。

@@ -24,7 +24,7 @@
      　    <br>・トレーニング直後
      　    </P>
  </div>
- <div class="recovery_name">
+ <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>● BCAA.EAA×グルタミン
      　    <br>ワークアウト中のドリンクに混ぜて飲用することで、筋肉の分解抑制を図れます。

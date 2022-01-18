@@ -44,9 +44,6 @@
                      <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/event">イベント</a>
                    </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/community">コミュニティ</a>
-                   </li>
-                   <li class="nav-item">
                      <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/login">ログイン</a>
                    </li>
                     <li class="nav-item">
@@ -75,9 +72,6 @@
                    </li>
                    <li class="nav-item">
                      <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/event">イベント</a>
-                    </li>
-                   <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/community">コミュニティー</a>
                     </li>
                     <li class="nav-item">
                      <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/management">トレーニング管理</a>

@@ -22,7 +22,7 @@
      　    <br>朝に摂取することで、血液と肝臓の中性脂肪が低下が認められています。
      　    </P>
  </div>
- <div class="recovery_name">
+ <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>EPAやDHAはn-3系脂肪酸（オメガ３）と言われて販売されているサプリメントがあります。
      　    <br>普段の食生活で青魚などを食べることが少ない方は、サプリメントで効率的に摂取することを推奨します。

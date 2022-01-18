@@ -23,7 +23,7 @@
      　    <br>・トレーニング後
      　     </P>
  </div>
-  <div class="recovery_name">
+  <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>特に組み合わせる必要はありません。
      　    <br>トレーニング前の場合はゼリータイプやドリンクタイプの炭水化物の摂取をお勧めします。

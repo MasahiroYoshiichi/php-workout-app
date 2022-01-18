@@ -813,7 +813,7 @@ td:nth-of-type(7) {
 
 .composition{
   color: #333;
-  padding: 0;
+  padding: 0 1rem;
 }
 
 .guide-top{
@@ -890,9 +890,11 @@ td:nth-of-type(7) {
    height: 39.7rem;
  }
  
- .before-menu-text{
-   padding-top: 20rem;
+ .before-recovery{
+   background-size: cover;
+   height: 39.7rem;
  }
+ 
  
  .history-top{
    font-size: 1rem;
@@ -906,3 +908,5 @@ td:nth-of-type(7) {
    padding:0 ;
    font-size:0.8rem;
  }
+ 
+ 

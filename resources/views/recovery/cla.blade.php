@@ -21,7 +21,7 @@
      　    <br>・トレーニング開始30分前
      　    </P>
  </div>
- <div class="recovery_name">
+ <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>●CLA×L-カルニチン
      　    <br>同時に摂取することで、脂肪燃焼の促進が期待できます。

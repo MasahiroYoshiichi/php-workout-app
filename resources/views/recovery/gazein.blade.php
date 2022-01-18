@@ -4,7 +4,7 @@
 
  <div class="recovery_name">
           <label class="recovery_label">名称</label>
-     　    <h2>がゼインプロテイン</h2>
+     　    <h2>ガゼインプロテイン</h2>
  </div>
  <div class="recovery_name">
           <label class="recovery_label">効果</label>
@@ -26,7 +26,7 @@
      　    <br>・トレーニングをしない日
      　     </P>
  </div>
-  <div class="recovery_name">
+  <div class="recovery_name_last">
           <label class="recovery_label">おすすめの組み合わせ</label>
      　    <P>がゼインプロテイン×ホエイプロテイン
      　    <br>同時に摂取することで、時間差で吸収が持続するため、体づくりの効率がアップします。
