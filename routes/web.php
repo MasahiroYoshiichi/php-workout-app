@@ -18,7 +18,9 @@ Route::group(["middleware" => "guest"], function() {
 Route::get('top','TopController@top');
 Route::get('introduction', 'TopController@introduction');
 });
+
 Route::get('event', 'TopController@event');
+
 Route::group(["middleware" => "auth"],function() {
 Route::get('selection', 'MainController@selection');
 Route::get('information', 'MainController@information');
