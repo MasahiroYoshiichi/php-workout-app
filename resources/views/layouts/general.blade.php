@@ -31,23 +31,23 @@
       <header>
         @guest
         <nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
-            <a class="navbar-brand" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/top">Exprosive Workout</a>
+            <a class="navbar-brand" href="/top">Exprosive Workout</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon bg-secondary"></span>
             </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav nav-position">
                    <li class="nav-item active">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/introduction">コース紹介 <span class="sr-only">(current)</span></a>
+                     <a class="nav-link" href="/introduction">コース紹介 <span class="sr-only">(current)</span></a>
                    </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/event">イベント</a>
+                     <a class="nav-link" href="/event">イベント</a>
                    </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/login">ログイン</a>
+                     <a class="nav-link" href="/login">ログイン</a>
                    </li>
                     <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/register">新規登録</a>
+                     <a class="nav-link" href="/register">新規登録</a>
                    </li>
                 <ul>
             </div>
@@ -62,22 +62,22 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav nav-position">
                    <li class="nav-item active">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/record">レコード<span class="sr-only">(current)</span></a>
+                     <a class="nav-link" href="/record">レコード<span class="sr-only">(current)</span></a>
                    </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/menu#">各種トレーニング</a>
+                     <a class="nav-link" href="/menu">各種トレーニング</a>
                    </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/recovery">リカバリー</a>
+                     <a class="nav-link" href="/recovery">リカバリー</a>
                    </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/event">イベント</a>
+                     <a class="nav-link" href="/event">イベント</a>
                     </li>
                     <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/management">トレーニング管理</a>
+                     <a class="nav-link" href="/management">トレーニング管理</a>
                     </li>
                     <li class="nav-item">
-                     <a class="nav-link" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/information">プロフィール編集</a>
+                     <a class="nav-link" href="/information">プロフィール編集</a>
                     </li>
                     <li class="nav-item">
                      <a class="nav-link" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">ログアウト</a>

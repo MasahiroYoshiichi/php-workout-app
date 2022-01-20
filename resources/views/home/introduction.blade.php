@@ -69,7 +69,7 @@
             <img class="img-fluid" src="https://image.freepik.com/free-photo/doing-abs-on-the-floor-in-the-gym-beautiful-female-fitness-woman_146671-16454.jpg" width="720%">
         </div>
         <div class="col-md-12 text-center mt-4">
-            <a type="button" class="btn btn-light btn-lg" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/register">Let's Workout</a>
+            <a type="button" class="btn btn-light btn-lg" href="/register">Let's Workout</a>
         </div>
     </div>
 </div>
