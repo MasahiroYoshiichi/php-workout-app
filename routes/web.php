@@ -118,7 +118,4 @@ Route::get('edit', 'Admin\MainController@edit');
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 
-//Route::get('community', 'TopController@community');
-
-
 
