@@ -17,8 +17,8 @@
  <div class="recovery_name">
           <label class="recovery_label">摂取タイミング</label>
      　    <P>1日の摂取量900~1000ugを目安に摂取してください。
-     　    <br>効率的な摂取方法
-     　    <br>●葉酸は水溶性ビタミンなので、加熱や蒸すといった調理方法で効率的に摂取することができます。
+     　    <br>●効率的な摂取方法
+     　    <br>葉酸は水溶性ビタミンなので、加熱や蒸すといった調理方法で効率的に摂取することができます。
      　     </P>
  </div>
   <div class="recovery_name_last">

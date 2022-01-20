@@ -47,7 +47,6 @@ Route::get('body', 'Ajax\MenuController@body');
 Route::get('ath', 'Ajax\MenuController@ath');
 Route::get('exe', 'Ajax\MenuController@exe');
 Route::get('fit', 'Ajax\MenuController@fit');
-
 Route::get('arginine', 'Ajax\RecoveryController@arginine');
 Route::get('bcaa', 'Ajax\RecoveryController@bcaa');
 Route::get('citrulline', 'Ajax\RecoveryController@citrulline');
@@ -112,7 +111,6 @@ Route::get('management_body', 'Ajax\ManagementController@body');
 Route::get('day/test', 'Ajax\CarenderController@day_test');
 Route::get('composition', 'Ajax\ManagementController@composition');
 });
-
 Route::get('create', 'Admin\MainController@create');
 Route::get('index', 'Admin\MainController@index');
 Route::get('edit', 'Admin\MainController@edit');

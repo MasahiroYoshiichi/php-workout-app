@@ -4,7 +4,7 @@
 
  <div class="recovery_name">
           <label class="recovery_label">名称</label>
-     　    <h2>チロシン</h2>
+     　    <h2>L-チロシン</h2>
  </div>
  <div class="recovery_name">
           <label class="recovery_label">効果</label>
@@ -16,7 +16,8 @@
  </div>
  <div class="recovery_name">
           <label class="recovery_label">摂取タイミング</label>
-     　    <P>食事では乳製品やナッツ類から摂取できます。
+     　    <P>●効率的な摂取方法
+     　     <br>食事では乳製品やナッツ類から摂取できます。
      　    <br>サプリメントから摂取する場合は、製品の摂取量を守って摂取してください。
      　    </P>
  </div>

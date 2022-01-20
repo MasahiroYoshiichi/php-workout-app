@@ -18,7 +18,7 @@
  <div class="recovery_name">
           <label class="recovery_label">摂取タイミング</label>
      　    <P>１日の摂取量としては,500mgを目安に摂取してください。
-     　    <br>●効率的な摂取タイミング
+     　    <br>●効率的な摂取方法
      　    <br>・食後
      　    <br>・トレーニング終了後
      　    </P>

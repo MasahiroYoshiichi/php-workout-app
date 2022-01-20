@@ -110,7 +110,7 @@ input[type=file] {
 
 .table_link {
   text-decoration: none;
-  color: #333;
+  color: #fff;
 }
 
 .record-title{
@@ -450,12 +450,12 @@ td:nth-of-type(7) {
 
 .recovery-pru{
   background-color: #808080;
-  height: 4rem;
+
 }
 
 .recovery_botton{
-  padding-top:0.5rem;
-  margin-left:2rem;
+  margin:0.8rem;
+  width: 13.5rem;
 }
 
 
@@ -884,15 +884,26 @@ td:nth-of-type(7) {
   }
   
  .before-menu{
-   background-image: url(https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247_1280.jpg);
+   background-image: url("https://cdn.pixabay.com/photo/2015/07/02/10/23/training-828741_1280.jpg");
    background-size: cover;
-   margin: -1.5rem;
-   height: 39.7rem;
+   position: relative;
+   background-position: center;
+   margin: -2rem;
+   height: 40rem;
  }
  
  .before-recovery{
+   background-image: url("https://cdn.pixabay.com/photo/2014/09/28/19/49/fitness-465203_1280.jpg");
    background-size: cover;
+   position: relative;
+   background-position: center;
+   margin: -2rem;
    height: 39.7rem;
+ }
+ 
+ .record-view{
+    background-image: url("https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_1280.jpg");
+    background-size:cover;
  }
  
  

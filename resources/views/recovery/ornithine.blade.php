@@ -18,11 +18,11 @@
  <div class="recovery_name">
           <label class="recovery_label">摂取タイミング</label>
      　    <P>１日の摂取量は400mg~800mgを目安に摂取しましょう
-     　    <br>●効率的な摂取タイミング
+     　    <br>●効率的な摂取方法
      　    <br>特に決まりはありません。摂取量を守って摂取してください。
      　     </P>
  </div>
-  <div class="recovery_name">
+  <div class="recovery_name_last">
           <label class="recovery_label_last">おすすめの組み合わせ</label>
      　    <P>●オルニチン×アルギニン
      　    <br>同時に摂取することで、運動による成長ホルモンの分泌と筋肉増強効果が確認されています。

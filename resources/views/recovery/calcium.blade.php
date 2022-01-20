@@ -17,8 +17,7 @@
  <div class="recovery_name">
           <label class="recovery_label">摂取方法</label>
      　    <P>一日の摂取量は3.2g~6.4gを目安に摂取してください。
-     　    <br>●効率的な摂取タイミング
-     　    <br>トレーニング前
+     　    <br>●効率的な摂取方法
      　    <br>トレーニング前に摂取することで、トレーニング中の疲労感を軽減することができます。</P>
  </div>
  <div class="recovery_name_last">

@@ -18,7 +18,7 @@
  <div class="recovery_name">
           <label class="recovery_label">摂取タイミング</label>
      　    <P>１日の摂取量は５〜１０gを目安に摂取してください。
-     　    <br>●効率的な摂取タイミング
+     　    <br>●効率的な摂取方法
      　    <br>・起床後
      　    <br>・食間
      　    <br>・トレーニング直後

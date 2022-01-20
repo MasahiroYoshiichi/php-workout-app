@@ -24,13 +24,13 @@
    });
 </script>
  
-<div class="container-fluid bg-light">
+<div class="container-fluid record-view">
     <div class="row record-top">
         <h1>Record</h1>
     </div>
     <div class="row">
         <div class="col-md-6 d-none d-md-block text-center record-table">
-             <div class="month-change">
+             <div class="month-change text-light">
                  <a class="table_link" href="?ym={{ $prev }}">&lt;</a>
                  <span class="month">{{ $month }}</span>
                  <a class="table_link" href="?ym={{ $next }}">&gt;</a>

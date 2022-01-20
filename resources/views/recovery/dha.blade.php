@@ -17,7 +17,7 @@
  <div class="recovery_name">
           <label class="recovery_label">摂取タイミング</label>
      　    <P>１日の摂取量は100~150mgを目安に摂取してください。
-     　    <br>●効率的な摂取タイミング
+     　    <br>●効率的な摂取方法
      　    <br>・朝
      　    <br>朝に摂取することで、血液と肝臓の中性脂肪が低下が認められています。
      　    </P>
