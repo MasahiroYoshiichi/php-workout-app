@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.top');
 });
 Route::group(["middleware" => "guest"], function() {
 Route::get('top','TopController@top');
@@ -118,6 +118,6 @@ Route::get('index', 'Admin\MainController@index');
 Route::get('edit', 'Admin\MainController@edit');
 
 Auth::routes();
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'MainController@selection');
 
 

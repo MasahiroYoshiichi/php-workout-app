@@ -55,7 +55,7 @@
         @endguest
         @auth
          <nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
-            <a class="navbar-brand" href="https://38a82c3a634c4395a4d13f060d111e4e.vfs.cloud9.us-east-2.amazonaws.com/selection">Exprosive Workout</a>
+            <a class="navbar-brand" href="/selection">Exprosive Workout</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon bg-secondary"></span>
             </button>
