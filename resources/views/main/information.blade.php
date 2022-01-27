@@ -136,14 +136,14 @@
     @endif
   <div class="form-group row mt-5">
     <div class="col-12 text-center"><h3>氏名</h3></div>  
-      <div class="col-8 mx-auto mt-2 mb-4">
+      <div class="col-9 mx-auto mt-2 mb-4">
         <label for="name">姓と名の間にスペースを入れてください</label>
         <input type="text" class="form-control" required maxlength="20" name="name" id="name" placeholder="name" value="{{ old('name') }}">
       </div>
   </div>
   <div class="form-group row">
   <div class="col-12 text-center"><h3>アカウント名</h3></div>  
-    <div class="col-8 mx-auto mt-2 mb-4">
+    <div class="col-9 mx-auto mt-2 mb-4">
       <label for="accountName">コミュニティで使用する名前です</label>
       <input type="text" class="form-control" required maxlength="20" name="accountName" id="accountName" placeholder="account name" value="{{ old('accountName') }}">
     </div>
@@ -195,13 +195,13 @@
     <div class="col-12 text-center mt-2"><h3>体型</h3></div>
     <div class="col-md-12 mt-2 mb-4 text-center">
       <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
-        <label class="btn btn-dark active">
+        <label class="btn btn-dark active mx-1">
             <input type="radio" name="bodyType" required value="01" {{(old('bodyType')=="01")? "checked":"" }}> 痩せ型体型
         </label>
-        <label class="btn btn-dark">
+        <label class="btn btn-dark mx-1">
              <input type="radio" name="bodyType" required value="02" {{(old('bodyType')=="02")? "checked":"" }}> 筋肉質体型
         </label>
-        <label class="btn btn-dark">
+        <label class="btn btn-dark mx-1">
               <input type="radio" name="bodyType" required value="03" {{(old('bodyType')=="03")? "checked":"" }}> 肥満型体型
         </label>
       </div>
@@ -229,7 +229,7 @@
   <div class="row">
     <div class="col-12 text-center mt-2">
       {{ csrf_field() }}
-      <p>※体脂肪率の入力は必須ではありません。<br>入力するとより緻密なトレーニング管理を行えます。</p>
+      <p>※体脂肪率の入力は必須ではありません。<br>入力すると緻密なトレーニング管理を行えます。</p>
       <p class="pb-3">※プロフィール画像の入力は必須ではありません。<br>プロフィール画像はコミュニティで使用します。</p>
       <button type="submit" class="btn btn-dark  profile-register-sm">
         プロフィールを登録

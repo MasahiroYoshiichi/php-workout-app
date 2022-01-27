@@ -4,13 +4,13 @@
 
 @section('content')
 <div class="container-fluid event-image ">
-    <div class="row justify-content-center">
-        <div class="col-md-5  bg-light">
+    <div class="row">
+        <div class="col-md-5 mx-auto  bg-light">
            <p class="text-dark text-center" style="font-size: 4rem;">event</p>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-md-5 bg-light vh-100">
+    <div class="row">
+        <div class="col-md-5 mx-auto bg-light vh-100">
             <p class="text-dark text-center" style="font-size: 1.5rem">新着記事</p>
             <ul class="text-dark">
                 <dl>

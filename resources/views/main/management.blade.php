@@ -55,7 +55,7 @@
       <h1 class="chart-text">Body Condition</h1>
     </div>
     <div class="row" style="background-color: #fff">
-        <div class="col-md-7 col-sm-12">
+        <div class="col-md-7 ">
              <div class="management-bottom text-center" role="group" aria-label="bodyType">
                <button type="button" class="btn btn-color click" data-id="management_chest">胸</button>
                <button type="button" class="btn btn-color2 click" data-id="management_back">背中</button>
@@ -70,8 +70,8 @@
             <div class="card text-dark training-point-card" style="height: 30rem">
                 <div class="card-header">トレーニング管理</div>
                     <div class="card-body d-flex align-items-center justify-content-center">  
-                         <h4 class="d-none d-md-block">トレーニング部位を選択して、自分の成果を確認してみましょう!</h4>
-                         <h4 class="d-block d-md-none">トレーニング部位を選択して、<br>自分の成果を確認してみましょう!</h4>
+                         <h4 class="d-none d-md-block">部位を選択して、成果を確認してみよう!</h4>
+                         <h5 class="d-block d-md-none">部位を選択して、<br>成果を確認してみよう!</h5>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,10 @@
           </script>
     　　</div>
     </div>
-    <div class="row chart-title2">
+    <div class="row d-none d-md-block chart-title2">
+        <h1>Body Composition</h1>
+    </div>
+    <div class="row d-block d-md-none chart-title2-sm">
         <h1>Body Composition</h1>
     </div>
     <div class="row">
@@ -254,7 +257,7 @@
               <p>FFMI<span class="condition-list">{{$ffmi}}%</span></p>
             </div>
         </div>
-        <div class="col-md-6 d-md-none d-block body-condition1-sm">
+        <div class="col-12 text-center d-block d-md-none body-condition1-sm">
             <div class="stats-title">
                 現在の体組成
             </div>
@@ -265,7 +268,7 @@
                 <p>体脂肪<span class="condition-list">{{$user->fat}}%</span></p>
             </div>
         </div>
-        <div class="col-md-6 d-md-none d-block body-condition2-sm">
+        <div class="col-12 text-center d-md-none d-block body-condition2-sm">
             <div class="stats-title">
                 現在の体指数
             </div>
@@ -294,12 +297,12 @@
                健康を意識されている方は日頃から、これらの指標をチェックしましょう。
             </p>
         </div>
-        <div class="guide-text d-md-none d-block">
-            <p>BMIとは、肥満度を表す指標として<br>国際的に用いられている体格指数です。<br>
-               BMIが22の時は最も病気になりにくい状態であり、適正体重と言われています。<br>
-               また、BMIが25以上を肥満、<br>18.5未満を低体重と分類しています。<br>
-               健康を意識されている方は日頃から、<br>これらの指標をチェックしましょう。
-            </p>
+        <div class="guide-text text-left d-md-none d-block">
+         <p>BMIとは、肥満度を表す指標として国際的に用いられている体格指数です。
+            BMIが22の時は最も病気になりにくい状態であり、適正体重と言われています。
+            また、BMIが25以上を肥満、18.5未満を低体重と分類しています。
+            健康を意識されている方は日頃から、これらの指標をチェックしましょう。
+          </p>
         </div>
           <table class="table table-bordered guide-table">
             <thead>
@@ -344,14 +347,14 @@
         <div class="guide-title">
             LBMとFFMI
         </div>
-        <div class="guide-text d-md-none d-block">
-            <p>FFMIとは自分の体の筋肉量を<br>測ることを目的とした指標です。<br>
-            　このFFMIを計算するときに、<br>LBM(除脂肪体重)が必要です。<br>
-            　この数値で自身の体脂肪以外の重量を<br>確認することができます。<br>
-          　　肥満度ではなく筋肉量の多さを<br>測ることができるため,<br>
-              筋力量の向上を目標とする場合に指標になります。<br>
-              筋力をつけたい方は、<br>日頃からこれらの指標をチェックしましょう。
-            </p>
+        <div class="guide-text d-md-none d-block text-left">
+         <p>FFMIとは自分の体の筋肉量を測ることを目的とした指標です。
+            このFFMIを計算するときに、LBM(除脂肪体重)が必要です。
+            この数値で自身の体脂肪以外の重量を確認することができます。
+            肥満度ではなく筋肉量の多さを測ることができるため,
+            筋力量の向上を目標とする場合に指標になります。
+            筋力重視の方は、日頃からこの指標をチェックしましょう。
+         </p>
         </div>
         <div class="guide-text d-none d-md-block">
             <p>FFMIとは自分の体の筋肉量を測ることを目的とした指標です。<br>
@@ -359,7 +362,7 @@
             　この数値で自身の体脂肪以外の重量を確認することができます。<br>
           　　肥満度ではなく筋肉量の多さを測ることができるため,<br>
               筋力量の向上を目標とする場合に指標になります。<br>
-              筋力をつけたい方は、日頃からこれらの指標をチェックしましょう。
+              筋力重視の方は、日頃からこの指標をチェックしましょう。
             </p>
         </div>
         <table class="table table-bordered guide-table">
@@ -388,7 +391,7 @@
               </tr>
               <tr>
                   <th scope="row" style="color: black;">26～</th>
-                  <td style="color: black;">ドーピングの可能性あり</td>
+                  <td style="color: black;">ドーピングの可能性</td>
               </tr>
             </tbody>
          </table>

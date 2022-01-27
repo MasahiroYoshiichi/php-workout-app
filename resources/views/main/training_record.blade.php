@@ -3,7 +3,7 @@
 
 <div class="d-block d-md-none card record-card-sm text-dark">
      <div class="card-header record-date text-center">{{$training_date->created_at->isoformat('YYYY年M月DD日(ddd)')}}</div>
-     　<div class="record-card-body-sm text-center">
+     　<div class="record-card-body-sm text-center"  style="font-size: 0.7rem">
      　     <div class="record-title-sm">
      　         <選択コース>
      　     </div>

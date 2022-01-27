@@ -48,7 +48,15 @@ input[type=file] {
 
 .selection-title-sm {
   border-bottom: solid #FF0000;
-  margin-bottom: 2rem;
+  font-size:2rem;
+}
+
+.selection-button-sm{
+  color: #333;
+  font-size: 2rem;
+  background-color: #fff;
+  width: 20rem;
+  margin-top: 5rem;
 }
 
 .selection_button {
@@ -171,6 +179,7 @@ input[type=file] {
   letter-spacing: 0.2rem;
 }
 
+
 .record-card-time {
   font-size: 1rem;
   margin-left: 3rem;
@@ -179,7 +188,6 @@ input[type=file] {
 
 .record-card-time-sm {
   font-size: 1rem;
-  letter-spacing: 0.2rem;
   margin-bottom: 3rem;
 }
 
@@ -252,49 +260,49 @@ td:nth-of-type(7) {
 
 .btn-color {
   background-color: #ff6347;
-  width: 10rem;
+  width: 9rem;
   margin: 0.5rem;
 }
 
 .btn-color2 {
   background-color: #00bfff;
-  width: 10rem;
+  width: 9rem;
   margin: 0.5rem;
 }
 
 .btn-color3 {
   background-color: #40e0d0;
-  width: 10rem;
+  width: 9rem;
   margin: 0.5rem;
 }
 
 .btn-color4 {
   background-color: #90ee90;
-  width: 10rem;
+  width: 9rem;
   margin: 0.5rem;
 }
 
 .btn-color5 {
   background-color: #ffd700;
-  width: 10rem;
+  width: 9rem;
   margin: 0.5rem;
 }
 
 .btn-color6 {
   background-color: #ffa07a;
-  width: 10rem;
+  width: 9rem;
   margin: 0.5rem;
 }
 
 .btn-color7 {
   background-color: #ffb6c1;
-  width: 10rem;
+  width: 9rem;
   margin: 0.5rem;
 }
 
 .btn-color8 {
   background-color: #b0c4de;
-  width: 10rem;
+  width: 9rem;
   margin: 0.5rem;
 }
 
@@ -396,6 +404,13 @@ td:nth-of-type(7) {
   padding: 0.5rem 0 0 1.3rem;
 }
 
+.chart-title2-sm {
+  background-color: #483d8b;
+  padding: 0.5rem 0 0 1.3rem;
+  margin-top: -10rem;
+}
+
+
 .training_label {
   color: #333;
   font-size: 1.2rem;
@@ -413,10 +428,17 @@ td:nth-of-type(7) {
 
 .main_training_label_sm {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   border: solid;
   margin: 1.5rem 0 0.5rem 0;
+}
+
+.training_label_sm {
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  border: solid;
 }
 
 .menu-selection {
@@ -468,6 +490,11 @@ td:nth-of-type(7) {
 .recovery_botton {
   margin: 0.8rem;
   width: 13.5rem;
+}
+
+.recovery_botton_sm {
+  margin: 0.5rem;
+  width: 10rem;
 }
 
 .training-point-title {
@@ -640,14 +667,12 @@ td:nth-of-type(7) {
   font-size: 1.5rem;
   line-height: 2rem;
   letter-spacing: 0.5rem;
-  padding-left: 10rem;
 }
 
 .body-condition2-sm {
   font-size: 1.5rem;
   line-height: 2rem;
   letter-spacing: 0.5rem;
-  padding-left: 10rem;
 }
 
 .stats-title {
@@ -675,7 +700,7 @@ td:nth-of-type(7) {
 }
 
 .training-point-card {
-  margin: 2rem 3rem;
+  margin: 1rem 1rem;
 }
 
 .training-point-card-text {
@@ -699,7 +724,7 @@ td:nth-of-type(7) {
 }
 
 .chest-point-card-body-sm {
-  padding: 3rem 0 3rem 4rem;
+  padding: 3rem 0 3rem 1rem;
   border: solid #ff6347 0.1rem;
   margin-top: -2rem;
 }
@@ -716,7 +741,7 @@ td:nth-of-type(7) {
 }
 
 .back-point-card-body-sm {
-  padding: 3rem 0 3rem 4rem;
+  padding: 3rem 0 3rem 1rem;
   border: solid #00bfff 0.1rem;
   margin-top: -2rem;
 }
@@ -733,7 +758,7 @@ td:nth-of-type(7) {
 }
 
 .sholuder-point-card-body-sm {
-  padding: 3rem 0 3rem 4rem;
+  padding: 3rem 0 3rem 1rem;
   border: solid #40e0d0 0.1rem;
   margin-top: -2rem;
 }
@@ -750,7 +775,7 @@ td:nth-of-type(7) {
 }
 
 .bicelder-point-card-body-sm {
-  padding: 3rem 0 3rem 4rem;
+  padding: 3rem 0 3rem 1rem;
   border: solid #90ee90 0.1rem;
   margin-top: -2rem;
 }
@@ -767,7 +792,7 @@ td:nth-of-type(7) {
 }
 
 .triceps-point-card-body-sm {
-  padding: 3rem 0 3rem 4rem;
+  padding: 3rem 0 3rem 1rem;
   border: solid #ffd700 0.1rem;
   margin-top: -2rem;
 }
@@ -784,7 +809,7 @@ td:nth-of-type(7) {
 }
 
 .leg-point-card-body-sm {
-  padding: 3rem 0 3rem 4rem;
+  padding: 3rem 0 3rem 1rem;
   border: solid #ffa07a 0.1rem;
   margin-top: -2rem;
 }
@@ -801,7 +826,7 @@ td:nth-of-type(7) {
 }
 
 .hip-point-card-body-sm {
-  padding: 3rem 0 3rem 4rem;
+  padding: 3rem 0 3rem 1rem;
   border: solid #ffb6c1 0.1rem;
   margin-top: -2rem;
 }
@@ -818,7 +843,7 @@ td:nth-of-type(7) {
 }
 
 .body-point-card-body-sm {
-  padding: 3rem 0 3rem 4rem;
+  padding: 3rem 0 3rem 1rem;
   border: solid #b0c4de 0.1rem;
   margin-top: -2rem;
 }
@@ -847,6 +872,12 @@ td:nth-of-type(7) {
   font-size: 1rem;
   margin-top: 1rem;
 }
+
+.guide-text-sm {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
 
 #loading {
   display: table;
@@ -895,6 +926,7 @@ td:nth-of-type(7) {
 
 .btn-gender {
   width: 4rem;
+  margin: 0 0.5rem;
 }
 
 .before-menu {

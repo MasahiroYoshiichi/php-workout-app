@@ -26,20 +26,20 @@
    </div>
    <div class="container d-block d-md-none">
        <div class="row">
-           <div class="col-md-12 text-center" >
-               <h1 class="selection-title-sm">cours selection</h1>
+           <div class="col-12 text-center selection-title-sm">
+               cours selection
            </div>
        </div>
        <div class="row justify-content-center">
            <div class="col-xs-12 mt-4">
                <div class="col-xs-12">
-                   <a type="button" href="/athlete" class="btn selection_button">アスリートコース</a>
+                   <a type="button" href="/athlete" class="btn selection-button-sm">アスリートコース</a>
                </div>
                <div class="col-xs-12">
-                   <a type="button" href="/exercise" class="btn selection_button">エクササイズコース</a>
+                   <a type="button" href="/exercise" class="btn selection-button-sm">エクササイズコース</a>
                </div>
                <div class="col-xs-12">
-                   <a type="button" href="/fitness" class="btn selection_button">フィットネスコース</a>
+                   <a type="button" href="/fitness" class="btn selection-button-sm">フィットネスコース</a>
                </div>
            </div>
         </div>

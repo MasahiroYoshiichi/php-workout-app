@@ -5,7 +5,10 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 bg-light text-dark">
+        <div class="col-md-12 bg-light d-none d-md-block text-dark">
+            <h1 class="cours-title">FitnessCours</h1>
+        </div>
+         <div class="col-md-12 d-block d-md-none bg-light text-dark text-center">
             <h1 class="cours-title">FitnessCours</h1>
         </div>
         <div class="col-md-2 d-none d-md-block">
@@ -45,13 +48,13 @@
             　  <span class="history-label-sm">前回トレーニング部位</span>履歴はありません
               </div>
             @else
-              <div class="col-8 offset-2 pl-4 history-text">
+             <div class="col-12 text-center history-text">
             　  <p><span class="history-label-sm">前回トレーニング日</span>{{$history_date->created_at->isoformat('YYYY年M月DD日(ddd)')}}</p>
               </div>
-              <div class="col-8 offset-2 pl-4 history-text">
+              <div class="col-12 text-center history-text">
                 <p><span class="history-label-sm">前回トレーニングコース</span>{{$history_date->course->course_name}}</p>
               </div>
-              <div class="col-8 offset-2 pl-4 history-text">
+              <div class="col-12 text-center history-text">
                  <p><span class="history-label-sm">前回トレーニング部位</span>
                    @foreach ($history_point_names as $history_point_name)
                    <span>{{$history_point_name->training_point_name}}</span>
@@ -71,7 +74,7 @@
            <div class="row bg-light text-dark text-center justify-content-center pt-3">
               <div class="col-md-12 training-after">
                   <h4>トレーニングお疲れ様でした！</h4>
-                  <h4>フィットネスコースのトレーニングは完了しています。</h4>
+                  <h4>本日のフィットネスコースは実施しました。</h4>
               </div>
            </div>
          </div>
@@ -85,7 +88,7 @@
            <div class="row bg-light text-dark text-center justify-content-center pt-3">
                  <div class="col-md-12 training-after">
                      <h5>トレーニングお疲れ様でした！</h5>
-                     <h5>フィットネスコースのトレーニングは完了しています。</h5>
+                     <h6>本日のフィットネスコースは実施しました。</h6>
                 </div>
            </div>
          </div>
@@ -114,7 +117,7 @@
                 <div class="row bg-light text-dark text-center justify-content-center">
                    <div class="col-md-12  training-after">
                        <h4>トレーニングお疲れ様でした！</h4>
-                       <h4>ワークアウトを完了して、トレーニング履歴を残しましょう。</h4>
+                       <h4>ワークアウトを完了して、履歴を残しましょう。</h4>
                        {{ csrf_field() }}
                        <button type="submit" class="btn btn-dark btn-lg">ワークアウトを完了する</button>
                    </div>
@@ -145,7 +148,7 @@
                 <div class="row bg-light text-dark text-center justify-content-center">
                    <div class="col-md-12  training-after">
                        <h5>トレーニングお疲れ様でした！</h5>
-                       <h6>ワークアウトを完了して、トレーニング履歴を残しましょう。</h6>
+                       <h6>ワークアウトを完了して、履歴を残しましょう。</h6>
                        {{ csrf_field() }}
                        <button type="submit" class="btn btn-dark mt-2">ワークアウトを完了する</button>
                    </div>
@@ -178,7 +181,7 @@
                    <div class="col-md-12 pt-2">
                        <h4>トレーニングお疲れ様でした！</h4>
                        <br>
-                       <p>体重と体脂肪率を入力して、日々の成果を履歴に記しましょう！</p>
+                       <p>日々の成果を履歴に残しましょう！</p>
                        <p>記録はトレーニング管理で確認することができます。</p>
                        <br>
                    </div>
@@ -204,7 +207,7 @@
                    <div class="col-md-5">
                        {{ csrf_field() }}
                        <button type="submit" class="btn btn-dark btn-lg">ワークアウトを完了する</button>
-                       <p>※体脂肪率の入力はなくてもワークアウトは完了できます。</p>
+                       <p>※体脂肪率の入力はなくても完了できます。</p>
                    </div>
                </div>
             </form>
@@ -233,8 +236,7 @@
                <div class="row bg-light text-dark text-center justify-content-center pt-3">
                    <div class="col-md-12 pt-2">
                        <h4>トレーニングお疲れ様でした！</h4>
-                       <br>
-                       <p>体重と体脂肪率を入力して、日々の成果を履歴に記しましょう！</p>
+                    　 <p>日々の成果を履歴に残しましょう！</p>
                        <p>記録はトレーニング管理で確認することができます。</p>
                        <br>
                    </div>
@@ -242,12 +244,12 @@
                <hr class="cours-line">
                <div class="row bg-light text-dark text-center pt-3">
                    <div class="col-4 offset-2">
-                       <label class="form-label" for="weight">体重を入力</label>
+                       <label class="form-label" for="weight">体重</label>
                        <input type="number" required class="form-control text-center" name="user_weight" id="weight" placeholder="kg">
                        <span> kg</span>
                    </div>
                    <div class="col-4">
-                       <label class="form-label" for="fat">体脂肪率を入力</label>
+                       <label class="form-label" for="fat">体脂肪率</label>
                        <input type="number" class="form-control text-center" name="user_fat" id="fat" placeholder="%">
                         <span>%</span>
                    </div>
@@ -257,7 +259,7 @@
                    <div class="col-md-5">
                        {{ csrf_field() }}
                        <button type="submit" class="btn btn-dark mb-3">ワークアウトを完了する</button>
-                       <p>※体脂肪率の入力はなくてもワークアウトは完了できます。</p>
+                        <p>※体脂肪率の入力はなくても完了できます。</p>
                    </div>
                </div>
             </form>

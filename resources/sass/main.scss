@@ -47,7 +47,7 @@ input[type=file] {
 
 .selection-title-sm {
   border-bottom: solid #FF0000;
-  margin-bottom: 2rem;
+  font-size: 10rem;
 }
 
 
@@ -99,6 +99,10 @@ input[type=file] {
   transform: translateX(49%);
 }
 
+.selection-button-sm{
+  color: #333;
+  font-size: 10rem;
+}
 
 .month-change{
   font-size:2rem;
@@ -454,8 +458,13 @@ td:nth-of-type(7) {
 }
 
 .recovery_botton{
-  margin:0.8rem;
+  margin: 0.8rem;
   width: 13.5rem;
+}
+
+.recovery_botton_sm{
+  margin: 0.8rem;
+  width: 20rem;
 }
 
 

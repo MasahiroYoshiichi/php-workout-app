@@ -53,7 +53,7 @@
             </table>   
         </div>
         <div class="col-md-6 d-block d-md-none text-center record-table">
-             <div class="month-change-sm">
+             <div class="month-change-sm text-light">
                   <a class="table_link" href="?ym={{ $prev }}">&lt;</a>
                   <span class="month">{{ $month }}</span>
                   <a class="table_link" href="?ym={{ $next }}">&gt;</a>
@@ -90,7 +90,7 @@
                         トレーニング記録管理
                     </div>
 　                  <div class="card-body d-flex align-item-center justify-content-center">
-　                     <h5>トレーニングした日付をクリックして、記録を確認してみましょう！</h5>
+　                     日付をクリックして<br>記録を確認してみましょう！
 　                  </div>
                 </div>
             </div>
