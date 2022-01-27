@@ -7,7 +7,7 @@
    <div class="container d-none d-md-block">
        <div class="row">
            <div class="col-md-6 mx-auto text-center" >
-               <h1 class="selection-title">cours selection</h1>
+               <h1 class="selection-title">course selection</h1>
            </div>
        </div>
        <div class="row">
@@ -27,7 +27,7 @@
    <div class="container d-block d-md-none">
        <div class="row">
            <div class="col-12 text-center selection-title-sm">
-               cours selection
+               course selection
            </div>
        </div>
        <div class="row justify-content-center">

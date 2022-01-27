@@ -48,10 +48,10 @@ input[type=file] {
 
 .selection-title-sm {
   border-bottom: solid #FF0000;
-  font-size:2rem;
+  font-size: 2rem;
 }
 
-.selection-button-sm{
+.selection-button-sm {
   color: #333;
   font-size: 2rem;
   background-color: #fff;
@@ -178,7 +178,6 @@ input[type=file] {
   margin-top: -1.5rem;
   letter-spacing: 0.2rem;
 }
-
 
 .record-card-time {
   font-size: 1rem;
@@ -409,7 +408,6 @@ td:nth-of-type(7) {
   padding: 0.5rem 0 0 1.3rem;
   margin-top: -10rem;
 }
-
 
 .training_label {
   color: #333;
@@ -877,7 +875,6 @@ td:nth-of-type(7) {
   font-size: 1rem;
   margin-top: 1rem;
 }
-
 
 #loading {
   display: table;

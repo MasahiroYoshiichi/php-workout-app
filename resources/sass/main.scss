@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .selection-image {
   background-image: url("https://cdn.pixabay.com/photo/2016/06/12/20/15/sports-1452965_1280.jpg");
   background-size: cover;
@@ -18,9 +20,8 @@ input[type=radio] {
   margin-bottom: 1rem;
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-
 
 .profile-image-sm {
   height: 250px;
@@ -28,7 +29,7 @@ input[type=radio] {
   margin-bottom: 1rem;
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 input[type=file] {
@@ -47,14 +48,20 @@ input[type=file] {
 
 .selection-title-sm {
   border-bottom: solid #FF0000;
-  font-size: 10rem;
+  font-size:2rem;
 }
 
+.selection-button-sm{
+  color: #333;
+  font-size: 2rem;
+  background-color: #fff;
+  width: 20rem;
+  margin-top: 5rem;
+}
 
-
-.selection_button{
-  color:#fff;
-  background-color: rgba(0,0,0,0);
+.selection_button {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
   font-size: 3rem;
   margin-bottom: 5rem;
   width: 30rem;
@@ -64,9 +71,10 @@ input[type=file] {
   display: block;
   z-index: 1;
   overflow: hidden;
-  transition: .3s;
+  transition: 0.3s;
   background: transparent;
 }
+
 .selection_button::before,
 .selection_button::after {
   content: "";
@@ -74,42 +82,42 @@ input[type=file] {
   position: absolute;
   top: 0;
   z-index: -1;
-  transition: transform ease .3s;
+  transition: transform ease 0.3s;
 }
+
 .selection_button::before {
   right: -2rem;
   border-right: 4rem solid transparent;
   border-bottom: 5.5rem solid #fff;
   transform: translateX(-100%);
 }
+
 .selection_button::after {
   left: -2rem;
   border-left: 4rem solid transparent;
   border-top: 5.5rem solid #fff;
   transform: translateX(100%);
 }
+
 .selection_button:hover {
   color: #333;
   border: solid #fff;
 }
+
 .selection_button:hover::before {
   transform: translateX(-49%);
 }
+
 .selection_button:hover::after {
   transform: translateX(49%);
 }
 
-.selection-button-sm{
-  color: #333;
-  font-size: 10rem;
+.month-change {
+  font-size: 2rem;
 }
 
-.month-change{
-  font-size:2rem;
-}
-
-.month-change-sm{
-  font-size:1.5rem;
+.month-change-sm {
+  font-size: 1.5rem;
 }
 
 .table_link {
@@ -117,74 +125,73 @@ input[type=file] {
   color: #fff;
 }
 
-.record-title{
+.record-title {
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.5rem;
   margin-left: 1.5rem;
 }
 
-.record-title-sm{
+.record-title-sm {
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.2rem;
 }
 
-.record-card{
+.record-card {
   margin: 4rem 2.5rem 3rem 0;
 }
 
-.record-card-sm{
+.record-card-sm {
   margin: 4rem 2.5rem 3rem 2.5;
 }
 
-.record-card-sm{
+.record-card-sm {
   margin: 0.5rem 2rem 3rem 2rem;
 }
 
-.record-card-body{
- background-color: #fff;  
- padding: 0 0 2.5rem 0;
- margin-top: -1.5rem;
+.record-card-body {
+  background-color: #fff;
+  padding: 0 0 2.5rem 0;
+  margin-top: -1.5rem;
 }
 
-.record-card-body-sm{
- background-color: #fff;  
- padding:0;
- margin-top: -1.5rem;
+.record-card-body-sm {
+  background-color: #fff;
+  padding: 0;
+  margin-top: -1.5rem;
 }
 
-
-.record-card-text{
+.record-card-text {
   font-size: 1rem;
-  margin-left:2rem;
-  margin-bottom:1rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 
-.record-card-text-sm{
+.record-card-text-sm {
   letter-spacing: 0.2rem;
   margin-top: -1rem;
 }
 
-.record-name-text{
+.record-name-text {
   margin-left: 3rem;
   margin-top: -1.5rem;
   letter-spacing: 0.2rem;
 }
 
-.record-card-time{
+
+.record-card-time {
   font-size: 1rem;
   margin-left: 3rem;
   letter-spacing: 0.2rem;
 }
 
-.record-card-time-sm{
+.record-card-time-sm {
   font-size: 1rem;
-  letter-spacing: 0.2rem;
   margin-bottom: 3rem;
 }
 
-.record-date{
+.record-date {
   font-size: 1.5rem;
   background-color: #6495ed;
   color: #fff;
@@ -196,13 +203,13 @@ input[type=file] {
   table-layout: fixed;
 }
 
-.day-table-sm{
- line-height: 2rem;
+.day-table-sm {
+  line-height: 2rem;
   background-color: #fff;
-  table-layout: fixed; 
+  table-layout: fixed;
 }
 
-.record-text{
+.record-text {
   height: 100%;
   margin: 4rem 0;
 }
@@ -241,104 +248,111 @@ td:nth-of-type(7) {
   transition: color 300ms, background-color 300ms;
 }
 
-
-
-
-.workout-chart-size{
-  height:30rem;
+.workout-chart-size {
+  height: 30rem;
   margin-top: 3rem;
   margin-bottom: 10rem;
 }
 
-
-
 .management-bottom {
   margin: 1rem;
-  
 }
 
-.btn-color{
+.btn-color {
   background-color: #ff6347;
-  width:10rem;
-  margin:0.5rem;
-}
-.btn-color2{
-  background-color: #00bfff;
-  width:10rem;
-  margin:0.5rem;  
-}
-.btn-color3{
-  background-color: #40e0d0;
-  width:10rem;
-   margin:0.5rem;
-}
-.btn-color4{
-  background-color: #90ee90;
-  width:10rem;
-   margin:0.5rem;
-}
-.btn-color5{
-  background-color: #ffd700;
-  width:10rem;
-   margin:0.5rem;
-}
-.btn-color6{
-  background-color: #ffa07a;
-  width:10rem;
-   margin:0.5rem;
-}
-.btn-color7{
-  background-color: #ffb6c1;
-  width:10rem;
-   margin:0.5rem;
-}
-.btn-color8{
-  background-color: #b0c4de;
-  width:10rem;
-   margin:0.5rem;
+  width: 9rem;
+  margin: 0.5rem;
 }
 
-.btn-color-sm{
+.btn-color2 {
+  background-color: #00bfff;
+  width: 9rem;
+  margin: 0.5rem;
+}
+
+.btn-color3 {
+  background-color: #40e0d0;
+  width: 9rem;
+  margin: 0.5rem;
+}
+
+.btn-color4 {
+  background-color: #90ee90;
+  width: 9rem;
+  margin: 0.5rem;
+}
+
+.btn-color5 {
+  background-color: #ffd700;
+  width: 9rem;
+  margin: 0.5rem;
+}
+
+.btn-color6 {
+  background-color: #ffa07a;
+  width: 9rem;
+  margin: 0.5rem;
+}
+
+.btn-color7 {
+  background-color: #ffb6c1;
+  width: 9rem;
+  margin: 0.5rem;
+}
+
+.btn-color8 {
+  background-color: #b0c4de;
+  width: 9rem;
+  margin: 0.5rem;
+}
+
+.btn-color-sm {
   background-color: #ff6347;
-  width:7.5rem;
-  margin:0.5rem;
-}
-.btn-color2-sm{
-  background-color: #00bfff;
-  width:7.5rem;
-  margin:0.5rem;  
-}
-.btn-color3-sm{
-  background-color: #40e0d0;
-  width:7.5rem;
-   margin:0.5rem;
-}
-.btn-color4-sm{
-  background-color: #90ee90;
-  width:9rem;
-   margin:0.5rem;
-}
-.btn-color5-sm{
-  background-color: #ffd700;
-  width:9rem;
-   margin:0.5rem;
-}
-.btn-color6-sm{
-  background-color: #ffa07a;
-  width:7.5rem;
-   margin:0.5rem;
-}
-.btn-color7-sm{
-  background-color: #ffb6c1;
-  width:7.5rem;
-   margin:0.5rem;
-}
-.btn-color8-sm{
-  background-color: #b0c4de;
-  width:7.5rem;
-   margin:0.5rem;
+  width: 7.5rem;
+  margin: 0.5rem;
 }
 
+.btn-color2-sm {
+  background-color: #00bfff;
+  width: 7.5rem;
+  margin: 0.5rem;
+}
+
+.btn-color3-sm {
+  background-color: #40e0d0;
+  width: 7.5rem;
+  margin: 0.5rem;
+}
+
+.btn-color4-sm {
+  background-color: #90ee90;
+  width: 9rem;
+  margin: 0.5rem;
+}
+
+.btn-color5-sm {
+  background-color: #ffd700;
+  width: 9rem;
+  margin: 0.5rem;
+}
+
+.btn-color6-sm {
+  background-color: #ffa07a;
+  width: 7.5rem;
+  margin: 0.5rem;
+}
+
+.btn-color7-sm {
+  background-color: #ffb6c1;
+  width: 7.5rem;
+  margin: 0.5rem;
+}
+
+.btn-color8-sm {
+  background-color: #b0c4de;
+  width: 7.5rem;
+  margin: 0.5rem;
+}
 
 .scrollableChartWrapper {
   position: relative;
@@ -346,268 +360,281 @@ td:nth-of-type(7) {
 }
 
 /* スクロール可能グラフを囲む div */
+
 .scrollableChartWrapper > div {
   position: relative;
   overflow-x: scroll;
 }
 
 /* Y軸イメージコピー用 canvas */
+
 .scrollableChartWrapper > canvas {
-  position: absolute;            /* これにより、上の div と重なる位置に canvas が配置される */
+  position: absolute;
+  /* これにより、上の div と重なる位置に canvas が配置される */
   left: 0;
   top: 0;
-  background-color: ghostwhite;  /* ここをコメントアウトすると、背景色が透明になるので、Y軸を透かしてグラフ部分が見えるようになる */
+  background-color: ghostwhite;
+  /* ここをコメントアウトすると、背景色が透明になるので、Y軸を透かしてグラフ部分が見えるようになる */
 }
 
-.cours-title{
+.cours-title {
   margin: 0;
   padding: 0.5rem;
   font-weight: bold;
 }
 
-.unit{
+.unit {
   margin: 2.5rem 0 0 0;
   padding: 0;
 }
 
-.cours-line{
+.cours-line {
   padding: 0;
   margin: 0;
   background-color: #333;
 }
 
-.chart-title{
+.chart-title {
   background-color: #778899;
-  padding :0.5rem 0 0 1.3rem;
-}
-.chart-title2{
-  background-color: #483d8b;
-  padding :0.5rem 0 0 1.3rem;
+  padding: 0.5rem 0 0 1.3rem;
 }
 
-.training_label{
+.chart-title2 {
+  background-color: #483d8b;
+  padding: 0.5rem 0 0 1.3rem;
+}
+
+.chart-title2-sm {
+  background-color: #483d8b;
+  padding: 0.5rem 0 0 1.3rem;
+  margin-top: -10rem;
+}
+
+
+.training_label {
   color: #333;
   font-size: 1.2rem;
   font-weight: bold;
   border: solid;
 }
 
-.main_training_label{
+.main_training_label {
   color: #fff;
   font-size: 2rem;
   font-weight: bold;
   border: solid;
-  margin:1.5rem 0 0.5rem 0;
+  margin: 1.5rem 0 0.5rem 0;
 }
 
-.main_training_label_sm{
+.main_training_label_sm {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   border: solid;
-  margin:1.5rem 0 0.5rem 0;
+  margin: 1.5rem 0 0.5rem 0;
 }
 
-.menu-selection{
+.training_label_sm {
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  border: solid;
+}
+
+.menu-selection {
   padding-bottom: 2rem;
 }
 
-.recovery_title{
-  padding-top:1rem;
+.recovery_title {
+  padding-top: 1rem;
 }
 
-.recovery_name{
+.recovery_name {
   font-weight: bold;
   line-height: 2rem;
   border-bottom: solid;
   padding-left: 1rem;
- 
 }
 
-.recovery_name_last{
+.recovery_name_last {
   font-weight: bold;
   line-height: 2rem;
   padding-left: 1rem;
- 
 }
 
-.recovery_view{
+.recovery_view {
   background-color: #fff;
   color: #333;
 }
 
-.recovery_label{
+.recovery_label {
   color: #008080;
   font-size: 1.5rem;
-  margin-top:1rem;
+  margin-top: 1rem;
 }
 
-.recovery_list{
+.recovery_list {
   background-color: #fff;
-  color:#333;
+  color: #333;
 }
 
-.list_title{
+.list_title {
   margin-bottom: 1rem;
   color: #333;
 }
 
-.recovery-pru{
+.recovery-pru {
   background-color: #808080;
-
 }
 
-.recovery_botton{
+.recovery_botton {
   margin: 0.8rem;
   width: 13.5rem;
 }
 
-.recovery_botton_sm{
-  margin: 0.8rem;
-  width: 20rem;
+.recovery_botton_sm {
+  margin: 0.5rem;
+  width: 10rem;
 }
 
-
-
-.training-point-title{
+.training-point-title {
   color: #333;
   margin-top: 2rem;
 }
 
-.cours-point-title{
+.cours-point-title {
   color: #333;
   margin-top: 1rem;
 }
 
-.training-top{
-  background-color:#ff8c00;
+.training-top {
+  background-color: #ff8c00;
   padding-top: 1rem;
   padding-left: 1rem;
 }
 
-.course-name{
+.course-name {
   margin-bottom: 0.5rem;
-  background-color:#333;
+  background-color: #333;
   color: #fff;
   box-shadow: 0 2px #333;
 }
 
-.course-name:focus{
+.course-name:focus {
   background-color: #222222;
   color: #fff;
   box-shadow: none;
   position: relative;
-  top:2px;
+  top: 2px;
 }
 
-.course-name:active{
+.course-name:active {
   box-shadow: none;
   position: relative;
-  top:2px;
+  top: 2px;
 }
 
-.course-name:hover{
+.course-name:hover {
   background-color: #222222;
   color: #fff;
-  
 }
-.training-name:focus{
-  background-color:#333;
+
+.training-name:focus {
+  background-color: #333;
   color: #fff;
   box-shadow: none;
   position: relative;
-  top:2px;
- 
+  top: 2px;
 }
 
-.training-name:active{
-  
-  box-shadow:none;
+.training-name:active {
+  box-shadow: none;
   position: relative;
-  top:2px;
+  top: 2px;
 }
 
-.training-name:hover{
+.training-name:hover {
   background-color: #222222;
   color: #fff;
-  
 }
 
-.training-name{
-   margin-bottom: 0.5rem;
-   background-color:#333;
-   color: #fff;
-   box-shadow: 0 2px #333;
+.training-name {
+  margin-bottom: 0.5rem;
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 2px #333;
 }
 
-.recovery-top{
+.recovery-top {
   background-color: #669999;
   padding-top: 1rem;
   padding-left: 1rem;
 }
 
-.record-top{
+.record-top {
   background-color: #4682b4;
   padding-top: 1rem;
   padding-left: 1rem;
 }
 
-.training-point{
+.training-point {
   margin-bottom: 1rem;
 }
 
-.course-point{
+.course-point {
   margin-bottom: 1rem;
 }
-.recovery-list-bottom{
+
+.recovery-list-bottom {
   margin-bottom: 0.5rem;
-  background-color:#333;
+  background-color: #333;
   color: #fff;
   box-shadow: 0 2px #333;
 }
 
-.recovery-list-bottom:focus{
+.recovery-list-bottom:focus {
   background-color: #222222;
   color: #fff;
   box-shadow: none;
   position: relative;
-  top:2px;
+  top: 2px;
 }
 
-.recovery-list-bottom:active{
+.recovery-list-bottom:active {
   box-shadow: none;
   position: relative;
-  top:2px;
+  top: 2px;
 }
 
-.recovery-list-bottom:hover{
+.recovery-list-bottom:hover {
   background-color: #222222;
   color: #fff;
 }
 
-.training-history{
+.training-history {
   margin-top: 2rem;
-  padding-bottom:1rem;
+  padding-bottom: 1rem;
 }
-.history-label{
+
+.history-label {
   font-weight: bold;
 }
 
-.history-label-sm{
+.history-label-sm {
   font-weight: bold;
   padding-right: 0.5rem;
 }
 
-.history-point-label{
+.history-point-label {
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
-.training-after{
+.training-after {
   margin: 1.5rem 0;
 }
 
-.completed{
+.completed {
   font-weight: bold;
   background-color: #6495ed;
   color: #fff;
@@ -618,227 +645,237 @@ td:nth-of-type(7) {
   color: #fff;
 }
 
-.management-card{
+.management-card {
   margin-bottom: 2rem;
 }
 
-.body-condition1{
+.body-condition1 {
   font-size: 1.5rem;
   line-height: 2rem;
   letter-spacing: 0.5rem;
   padding-left: 25rem;
 }
 
-.body-condition2{
+.body-condition2 {
   font-size: 1.5rem;
   line-height: 2rem;
   letter-spacing: 0.5rem;
   padding-left: 5rem;
 }
 
-.body-condition1-sm{
+.body-condition1-sm {
   font-size: 1.5rem;
   line-height: 2rem;
   letter-spacing: 0.5rem;
-  padding-left: 10rem;
 }
 
-.body-condition2-sm{
+.body-condition2-sm {
   font-size: 1.5rem;
   line-height: 2rem;
   letter-spacing: 0.5rem;
-  padding-left: 10rem;
 }
 
-
-.stats-title{
+.stats-title {
   font-size: 1.8rem;
   margin: 2rem 0;
-  color:#4682B4;
+  color: #4682B4;
 }
-.condition-list{
-  margin:0.5rem;
+
+.condition-list {
+  margin: 0.5rem;
   letter-spacing: 0.2rem;
   color: #1E90FF;
 }
 
-.body-condition-top{
+.body-condition-top {
   font-size: 2rem;
-  margin-top:2rem;
+  margin-top: 2rem;
   border-top: solid;
   border-bottom: solid;
 }
 
-.guide{
-  font-size:1.5rem;
-  margin-top:3rem;
+.guide {
+  font-size: 1.5rem;
+  margin-top: 3rem;
 }
 
-.training-point-card{
-   margin: 2rem 3rem;
+.training-point-card {
+  margin: 1rem 1rem;
 }
-.training-point-card-text{
+
+.training-point-card-text {
   margin-left: 6rem;
 }
 
-
-.training-point-list{
+.training-point-list {
   font-weight: bold;
   letter-spacing: 0.3rem;
 }
 
-.chest-card-header{
+.chest-card-header {
   background-color: #ff6347;
 }
-.chest-point-card-body{
- letter-spacing:1em;
- padding-bottom:3rem;
- border: solid  #ff6347 0.1rem;
- margin-top: -2rem;
+
+.chest-point-card-body {
+  letter-spacing: 1em;
+  padding-bottom: 3rem;
+  border: solid #ff6347 0.1rem;
+  margin-top: -2rem;
 }
 
-.chest-point-card-body-sm{
- padding: 3rem 0 3rem 4rem;
- border: solid  #ff6347 0.1rem;
- margin-top: -2rem;
+.chest-point-card-body-sm {
+  padding: 3rem 0 3rem 1rem;
+  border: solid #ff6347 0.1rem;
+  margin-top: -2rem;
 }
 
-.back-card-header{
-  background-color: #00bfff;}
-  
-.back-point-card-body{
- letter-spacing:1em;
- padding-bottom:3rem;
- border: solid  #00bfff 0.1rem;
- margin-top: -2rem;
+.back-card-header {
+  background-color: #00bfff;
 }
 
-.back-point-card-body-sm{
- padding: 3rem 0 3rem 4rem;
- border: solid  #00bfff 0.1rem;
- margin-top: -2rem;
+.back-point-card-body {
+  letter-spacing: 1em;
+  padding-bottom: 3rem;
+  border: solid #00bfff 0.1rem;
+  margin-top: -2rem;
 }
 
-.sholuder-card-header{
+.back-point-card-body-sm {
+  padding: 3rem 0 3rem 1rem;
+  border: solid #00bfff 0.1rem;
+  margin-top: -2rem;
+}
+
+.sholuder-card-header {
   background-color: #40e0d0;
 }
-.sholuder-point-card-body{
- letter-spacing:1em;
- padding-bottom:3rem;
- border: solid  #40e0d0 0.1rem;
- margin-top: -2rem;
+
+.sholuder-point-card-body {
+  letter-spacing: 1em;
+  padding-bottom: 3rem;
+  border: solid #40e0d0 0.1rem;
+  margin-top: -2rem;
 }
 
-.sholuder-point-card-body-sm{
- padding: 3rem 0 3rem 4rem;
- border: solid  #40e0d0 0.1rem;
- margin-top: -2rem;
+.sholuder-point-card-body-sm {
+  padding: 3rem 0 3rem 1rem;
+  border: solid #40e0d0 0.1rem;
+  margin-top: -2rem;
 }
 
-.bicelder-card-header{
+.bicelder-card-header {
   background-color: #90ee90;
 }
-.bicelder-point-card-body{
- letter-spacing:1em;
- padding-bottom:3rem;
- border: solid  #90ee90 0.1rem;
- margin-top: -2rem;
+
+.bicelder-point-card-body {
+  letter-spacing: 1em;
+  padding-bottom: 3rem;
+  border: solid #90ee90 0.1rem;
+  margin-top: -2rem;
 }
 
-.bicelder-point-card-body-sm{
- padding: 3rem 0 3rem 4rem;
- border: solid  #90ee90 0.1rem;
- margin-top: -2rem;
+.bicelder-point-card-body-sm {
+  padding: 3rem 0 3rem 1rem;
+  border: solid #90ee90 0.1rem;
+  margin-top: -2rem;
 }
 
-.triceps-card-header{
+.triceps-card-header {
   background-color: #ffd700;
 }
-.triceps-point-card-body{
- letter-spacing:1em;
- padding-bottom:3rem;
- border: solid  #ffd700 0.1rem;
- margin-top: -2rem;
+
+.triceps-point-card-body {
+  letter-spacing: 1em;
+  padding-bottom: 3rem;
+  border: solid #ffd700 0.1rem;
+  margin-top: -2rem;
 }
 
-.triceps-point-card-body-sm{
- padding: 3rem 0 3rem 4rem;
- border: solid  #ffd700 0.1rem;
- margin-top: -2rem;
+.triceps-point-card-body-sm {
+  padding: 3rem 0 3rem 1rem;
+  border: solid #ffd700 0.1rem;
+  margin-top: -2rem;
 }
 
-.leg-card-header{
+.leg-card-header {
   background-color: #ffa07a;
 }
-.leg-point-card-body{
- letter-spacing:1em;
- padding-bottom:3rem;
- border: solid  #ffa07a 0.1rem;
- margin-top: -2rem;
+
+.leg-point-card-body {
+  letter-spacing: 1em;
+  padding-bottom: 3rem;
+  border: solid #ffa07a 0.1rem;
+  margin-top: -2rem;
 }
 
-.leg-point-card-body-sm{
- padding: 3rem 0 3rem 4rem;
- border: solid  #ffa07a 0.1rem;
- margin-top: -2rem;
+.leg-point-card-body-sm {
+  padding: 3rem 0 3rem 1rem;
+  border: solid #ffa07a 0.1rem;
+  margin-top: -2rem;
 }
 
-.hip-card-header{
+.hip-card-header {
   background-color: #ffb6c1;
 }
-.hip-point-card-body{
- letter-spacing:1em;
- padding-bottom:3rem;
- border: solid  #ffb6c1 0.1rem;
- margin-top: -2rem;
+
+.hip-point-card-body {
+  letter-spacing: 1em;
+  padding-bottom: 3rem;
+  border: solid #ffb6c1 0.1rem;
+  margin-top: -2rem;
 }
 
-.hip-point-card-body-sm{
- padding: 3rem 0 3rem 4rem;
- border: solid  #ffb6c1 0.1rem;
- margin-top: -2rem;
+.hip-point-card-body-sm {
+  padding: 3rem 0 3rem 1rem;
+  border: solid #ffb6c1 0.1rem;
+  margin-top: -2rem;
 }
 
-.body-card-header{
+.body-card-header {
   background-color: #b0c4de;
 }
-.body-point-card-body{
- letter-spacing:1em;
- padding-bottom:3rem;
- border: solid  #b0c4de 0.1rem;
- margin-top: -2rem;
+
+.body-point-card-body {
+  letter-spacing: 1em;
+  padding-bottom: 3rem;
+  border: solid #b0c4de 0.1rem;
+  margin-top: -2rem;
 }
 
-.body-point-card-body-sm{
- padding: 3rem 0 3rem 4rem;
- border: solid  #b0c4de 0.1rem;
- margin-top: -2rem;
+.body-point-card-body-sm {
+  padding: 3rem 0 3rem 1rem;
+  border: solid #b0c4de 0.1rem;
+  margin-top: -2rem;
 }
 
-.record-table{
+.record-table {
   padding: 1rem 3rem;
   color: #333;
 }
 
-.composition{
+.composition {
   color: #333;
   padding: 0 1rem;
 }
 
-.guide-top{
-  font-size:2rem;
-  margin-top:2rem;
+.guide-top {
+  font-size: 2rem;
+  margin-top: 2rem;
   color: #008080;
 }
 
-.guide-title{
-  font-size:1.5rem;
+.guide-title {
+  font-size: 1.5rem;
 }
 
-.guide-text{
- font-size:1rem;
- margin-top: 1rem;
- 
+.guide-text {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.guide-text-sm {
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 
@@ -852,7 +889,7 @@ td:nth-of-type(7) {
   background-color: #fff;
   opacity: 0.8;
 }
- 
+
 #loading .loadingMsg {
   display: table-cell;
   text-align: center;
@@ -861,72 +898,70 @@ td:nth-of-type(7) {
   background: url("/images/icon_loader_a_gw_01_s1.gif") center center no-repeat;
 }
 
-.selection-bottom{
-  margin-top: 4rem;  
+.selection-bottom {
+  margin-top: 4rem;
 }
 
-.menu-image{
+.menu-image {
   background-image: url("https://image.freepik.com/free-photo/cycling-equipment-healthy-fit-fitness_1139-686.jpg");
   background-size: cover;
 }
 
-.profile-title{
-  padding:0.2rem 0;
-  background-color:#cd853f;
+.profile-title {
+  padding: 0.2rem 0;
+  background-color: #cd853f;
   color: #fff;
-  
 }
 
-.profile-register{
-   width: 45rem; 
-   height:4rem;
-  }
-  
-  .profile-register-sm{
-    width: 20rem;
-   height:4rem;
-   margin-bottom: 1rem;
-  }
-  
-  .btn-gender{
-    width: 4rem;
-  }
-  
- .before-menu{
-   background-image: url("https://cdn.pixabay.com/photo/2015/07/02/10/23/training-828741_1280.jpg");
-   background-size: cover;
-   position: relative;
-   background-position: center;
-   margin: -2rem;
-   height: 40rem;
- }
- 
- .before-recovery{
-   background-image: url("https://cdn.pixabay.com/photo/2014/09/28/19/49/fitness-465203_1280.jpg");
-   background-size: cover;
-   position: relative;
-   background-position: center;
-   margin: -2rem;
-   height: 39.7rem;
- }
- 
- .record-view{
-    background-image: url("https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_1280.jpg");
-    background-size:cover;
- }
- 
- 
- .history-top{
-   font-size: 1rem;
-   margin:1rem 0 0 0;
-   border: solid;
- }
- 
- .history-text{
-   margin-bottom: 1rem;
-   margin:0.5rem auto;
-   padding:0 ;
-   font-size:0.8rem;
- }
- 
- 
+.profile-register {
+  width: 45rem;
+  height: 4rem;
+}
+
+.profile-register-sm {
+  width: 20rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+
+.btn-gender {
+  width: 4rem;
+  margin: 0 0.5rem;
+}
+
+.before-menu {
+  background-image: url("https://cdn.pixabay.com/photo/2015/07/02/10/23/training-828741_1280.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  margin: -2rem;
+  height: 40rem;
+}
+
+.before-recovery {
+  background-image: url("https://cdn.pixabay.com/photo/2014/09/28/19/49/fitness-465203_1280.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  margin: -2rem;
+  height: 39.7rem;
+}
+
+.record-view {
+  background-image: url("https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_1280.jpg");
+  background-size: cover;
+}
+
+.history-top {
+  font-size: 1rem;
+  margin: 1rem 0 0 0;
+  border: solid;
+}
+
+.history-text {
+  margin-bottom: 1rem;
+  margin: 0.5rem auto;
+  padding: 0;
+  font-size: 0.8rem;
+}
+

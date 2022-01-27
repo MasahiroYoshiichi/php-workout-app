@@ -65,10 +65,11 @@ dd {
   border: red;
 }
 
-.top-title{
-  font-size: 2rem;
+.top-title {
+  font-size: 3rem;
 }
 
-.top-title-sm{
+.top-title-sm {
   font-size: 1.3rem;
 }
+
