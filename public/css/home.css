@@ -73,3 +73,10 @@ dd {
   font-size: 1.3rem;
 }
 
+.introduction-title {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  color: #333;
+  background-color: #fff;
+}
+

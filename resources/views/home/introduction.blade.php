@@ -5,6 +5,9 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
+        <div class="col-md-12 introduction-title">
+            コース紹介
+        </div>
         <div class="col-md-7 d-block d-md-none pt-4 a-cours">
             <h2>アスリートコース</h2>
             <br>
@@ -24,7 +27,7 @@
              <p>さぁ!アスリートコースで新たな肉体、能力を手に入れましょう!</p>
         </div>
         <div class="col-md-5 a-cours  px-0 mx-0">
-            <img class="img-fluid" src="https://image.freepik.com/free-photo/unstoppable-young-muscular-caucasian-athlete-practicing-squats-in-gym-with-the-weight-male-model-doing-strength-exercises-training-lower-body-wellness-healthy-lifestyle-bodybuilding-concept_155003-28004.jpg" width="720%">
+            <img class="img-fluid" src="https://image.freepik.com/free-photo/fitness-in-the-gym-weightlifting_144627-31106.jpg"width="720%">
         </div>
         <div class="col-md-7 d-block d-md-none pt-4 e-cours">
             <h2>エクササイズコース</h2>
@@ -69,7 +72,7 @@
             <img class="img-fluid" src="https://image.freepik.com/free-photo/doing-abs-on-the-floor-in-the-gym-beautiful-female-fitness-woman_146671-16454.jpg" width="720%">
         </div>
         <div class="col-md-12 text-center mt-4">
-            <a type="button" class="btn btn-light btn-lg" href="/register">Let's Workout</a>
+            <a type="button" class="btn btn-light btn-lg" href="/register">新規登録</a>
         </div>
     </div>
 </div>
