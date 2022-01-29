@@ -69,7 +69,6 @@ $(function() {
         <div class="col-md-10 overflow-auto pt-4 pb-4" style="height:635px;">
              <div id="movie">
                 <div class="before-menu text-center">
-                    <h1 class="before-menu-text"></h1>
                 </div>
              </div>
         </div>

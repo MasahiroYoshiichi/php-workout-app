@@ -482,7 +482,7 @@ td:nth-of-type(7) {
 }
 
 .recovery-pru {
-  background-color: #808080;
+  background-color: #fff;
 }
 
 .recovery_botton {
@@ -682,7 +682,9 @@ td:nth-of-type(7) {
 .condition-list {
   margin: 0.5rem;
   letter-spacing: 0.2rem;
-  color: #1E90FF;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
 }
 
 .body-condition-top {
@@ -854,6 +856,8 @@ td:nth-of-type(7) {
 .composition {
   color: #333;
   padding: 0 1rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .guide-top {
@@ -929,19 +933,17 @@ td:nth-of-type(7) {
 .before-menu {
   background-image: url("https://cdn.pixabay.com/photo/2015/07/02/10/23/training-828741_1280.jpg");
   background-size: cover;
-  position: relative;
   background-position: center;
-  margin: -2rem;
-  height: 40rem;
+  margin: -2rem -1rem;
+  height: 40.2rem;
 }
 
 .before-recovery {
   background-image: url("https://cdn.pixabay.com/photo/2014/09/28/19/49/fitness-465203_1280.jpg");
   background-size: cover;
-  position: relative;
   background-position: center;
-  margin: -2rem;
-  height: 39.7rem;
+  margin: -2rem -1rem;
+  height: 39.5rem;
 }
 
 .record-view {
@@ -960,5 +962,11 @@ td:nth-of-type(7) {
   margin: 0.5rem auto;
   padding: 0;
   font-size: 0.8rem;
+}
+
+.date {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #483C8A;
 }
 

@@ -125,7 +125,7 @@
     </div>
     <div class="row">
       <div class="col-md-10 mx-auto composition">
-    　　<div id="composition">
+    　　<div id="composition" style="width: 1200px; height: 30rem;">
     　　 <script>
          $(function() {
             $('.date').click(function() {
@@ -151,7 +151,7 @@
             <span class="month">{{ $get_ym_format }}</span>
             <button class="date" data-id='{"days_in_manth":"{{$next_days}}","get_ym":"{{$next_date}}"}'>></button>
         </div>
-        <canvas id="chart"></canvas>
+        <canvas id="chart" style="width: 1200px; height: 25rem;"></canvas>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
         
         <script>
@@ -192,7 +192,7 @@
                     mode: 'nearest',
                     intersect: false,
                   },
-                  responsive: true,
+                  responsive: false,
               scales: {
                 yAxes: [{
                   id: 'weight',

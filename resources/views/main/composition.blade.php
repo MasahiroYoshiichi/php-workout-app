@@ -32,7 +32,7 @@
      <span class="month">{{ $get_ym_format }}</span>
      <button class="date" data-id='{"days_in_manth":"{{$next_days}}","get_ym":"{{$next_date}}"}'>></button>
 </div>
- <canvas id="chart"></canvas>
+<canvas id="chart" style="width: 1200px; height: 25rem;"></canvas>
  
  
   
@@ -80,7 +80,7 @@ var myChart = new Chart(ctxChart, {
             mode: 'nearest',
             intersect: false,
           },
-          responsive: true,  // true（デフォルト）にすると画面の幅に合わせてしまう
+          responsive: false,  // true（デフォルト）にすると画面の幅に合わせてしまう
       scales: {
         yAxes: [{
           id: 'weight',
