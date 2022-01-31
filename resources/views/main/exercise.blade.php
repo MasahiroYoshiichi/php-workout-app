@@ -38,13 +38,13 @@
         <div class="col-12 p-0 d-block d-md-none">
             <div class="col-8 mx-auto  history-top text-center">ワークアウト履歴</div>
             @if(empty($history_date))
-              <div class="col-8 offset-2 pl-4 history-text">
+              <div class="col-12 text-center  history-text">
             　  <span class="history-label-sm">前回トレーニング日</span>履歴はありません
               </div>
-              <div class="col-8 offset-2 pl-4 history-text">
+              <div class="col-12 text-center history-text">
             　  <span class="history-label-sm">前回トレーニングコース</span>履歴はありません
               </div>
-              <div class="col-8 offset-2 pl-4 history-text">
+              <div class="col-12 text-center history-text">
             　  <span class="history-label-sm">前回トレーニング部位</span>履歴はありません
               </div>
             @else
