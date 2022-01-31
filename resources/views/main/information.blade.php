@@ -24,20 +24,20 @@
     <div class="col-md-2 offset-3 mt-4 pt-2"><h3>氏名</h3></div>  
       <div class="col-md-4">
         <label for="name">姓と名の間にスペースを入れてください</label>
-        <input type="text" class="form-control" required maxlength='20' name="name" id="name" placeholder="name" value="{{ old('name') }}">
+        <input type="text" class="form-control border-dark" style="box-shadow:none !important;" required maxlength='20' name="name" id="name" placeholder="name" value="{{ old('name') }}">
       </div>
   </div>
   <div class="form-group row">
   <div class="col-md-2 offset-3 mt-4 pt-2"><h3>アカウント名</h3></div>  
     <div class="col-md-4">
       <label for="accountName">コミュニティで使用する名前です</label>
-      <input type="text" class="form-control" required maxlength='20' name="accountName" id="accountName" placeholder="account name" value="{{ old('accountName') }}">
+      <input type="text" class="form-control border-dark" style="box-shadow:none !important;" required maxlength='20' name="accountName" id="accountName" placeholder="account name" value="{{ old('accountName') }}">
     </div>
   </div>
   <div class="row">
     <div class="col-md-2 offset-3 mt-4 pt-2"><h3>年齢</h3></div>
     <div class="col-md-3 mt-4">
-       <input type="number" required class="form-control" name="age" placeholder="age" value="{{ old('age') }}">
+       <input type="number" required class="form-control border-dark" style="box-shadow:none !important;" name="age" placeholder="age" value="{{ old('age') }}">
     </div>
     <div class="col-md-1 align-self-end">
       <h5>歳</h5>
@@ -61,7 +61,7 @@
          <h3>身長</h3>
     </div>
     <div class="col-md-2 mt-4">
-         <input type="number" required class="form-control" name="height" placeholder="height" value="{{ old('height') }}">
+         <input type="number" required class="form-control border-dark" style="box-shadow:none !important;" name="height" placeholder="height" value="{{ old('height') }}">
     </div>
     <div class="col-md-1 align-self-end">
          <h5>cm</h5>
@@ -70,14 +70,14 @@
   <div class="form-group row">
     <div class="col-md-2 offset-3 mt-4 pt-2"><h3>体重</h3></div>
     <div class="col-md-2 mt-4">
-         <input type="number" required class="form-control" name="weight" placeholder="body weight" value="{{ old('weight') }}">
+         <input type="number" required class="form-control border-dark" style="box-shadow:none !important;" name="weight" placeholder="body weight" value="{{ old('weight') }}">
     </div>
     <div class="col-md-1 align-self-end"><h5>kg</h5></div>
   </div>
   <div class="form-group row">
     <div class="col-md-2 offset-3 mt-4 pt-2"><h3>体脂肪率</h3></div>
     <div class="col-md-2 mt-4">
-       <input type="number" class="form-control" name="fat" placeholder="body Fat" value="{{ old('fat') }}">
+       <input type="number" class="form-control border-dark" style="box-shadow:none !important;" name="fat" placeholder="body Fat" value="{{ old('fat') }}">
     </div>
     <div class="col-md-1 align-self-end"><h5>%</h5></div>
   </div>
@@ -101,7 +101,7 @@
     <div class="col-md-2 offset-3 mt-4 pt-2"><h3>自己紹介</h3></div>
     <div class="col-md-4 mt-4">
        <label for="self_introduction"></label>
-       <textarea class="form-control" maxlength='300' required name="introduction" id="self_introduction" rows="8">{{ old('introduction') }}</textarea>
+       <textarea class="form-control border-dark" style="box-shadow:none !important;" maxlength='300' required name="introduction" id="self_introduction" rows="8">{{ old('introduction') }}</textarea>
     </div>
   </div>
   <div class="row">
@@ -138,20 +138,20 @@
     <div class="col-12 text-center"><h3>氏名</h3></div>  
       <div class="col-9 mx-auto mt-2 mb-4">
         <label for="name">姓と名の間にスペースを入れてください</label>
-        <input type="text" class="form-control" required maxlength="20" name="name" id="name" placeholder="name" value="{{ old('name') }}">
+        <input type="text" class="form-control border-dark" style="box-shadow:none !important;" required maxlength="20" name="name" id="name" placeholder="name" value="{{ old('name') }}">
       </div>
   </div>
   <div class="form-group row">
   <div class="col-12 text-center"><h3>アカウント名</h3></div>  
     <div class="col-9 mx-auto mt-2 mb-4">
       <label for="accountName">コミュニティで使用する名前です</label>
-      <input type="text" class="form-control" required maxlength="20" name="accountName" id="accountName" placeholder="account name" value="{{ old('accountName') }}">
+      <input type="text" class="form-control border-dark" style="box-shadow:none !important;" required maxlength="20" name="accountName" id="accountName" placeholder="account name" value="{{ old('accountName') }}">
     </div>
   </div>
   <div class="row">
     <div class="col-12 text-center"><h3>年齢</h3></div>
     <div class="col-7 offset-2 mt-2 mb-4">
-       <input type="number" required class="form-control" name="age" placeholder="age" value="{{ old('age') }}">
+       <input type="number" required class="form-control border-dark" style="box-shadow:none !important;" name="age" placeholder="age" value="{{ old('age') }}">
     </div>
     <div class="col-1 mt-3 p-0">
       <h5>歳</h5>
@@ -173,21 +173,21 @@
   <div class="form-group row">
     <div class="col-12 text-center mt-4"><h3>身長</h3></div>
     <div class="col-7 offset-2 mt-2 mb-4">
-         <input type="number" required class="form-control" name="height" placeholder="height" value="{{ old('height') }}">
+         <input type="number" required class="form-control border-dark" style="box-shadow:none !important;" name="height" placeholder="height" value="{{ old('height') }}">
     </div>
     <div class="col-1 mt-3 p-0"><h5>cm</h5></div>
   </div>    
   <div class="form-group row">
     <div class="col-12 text-center mt-2"><h3>体重</h3></div>
     <div class="col-7 offset-2 mt-2 mb-4">
-         <input type="number" required class="form-control" name="weight" placeholder="body weight" value="{{ old('weight') }}">
+         <input type="number" required class="form-control border-dark" style="box-shadow:none !important;" name="weight" placeholder="body weight" value="{{ old('weight') }}">
     </div>
     <div class="col-1 mt-3 p-0"><h5>kg</h5></div>
   </div>
   <div class="form-group row">
     <div class="col-12 text-center mt-2"><h3>体脂肪率</h3></div>
     <div class="col-7 offset-2 mt-2 mb-4">
-       <input type="number" class="form-control" name="fat" placeholder="body Fat" value="{{ old('fat') }}">
+       <input type="number" class="form-control border-dark" style="box-shadow:none !important;" name="fat" placeholder="body Fat" value="{{ old('fat') }}">
     </div>
     <div class="col-1 mt-3 p-0"><h5>%</h5></div>
   </div>
@@ -211,7 +211,7 @@
     <div class="col-12 text-center mt-4"><h3>自己紹介</h3></div>
     <div class="col-10 mx-auto  mb-4">
        <label for="self_introduction"></label>
-       <textarea class="form-control" maxlength="300" required name="introduction" id="self_introduction" rows="10">{{ old('introduction') }}</textarea>
+       <textarea class="form-control border-dark" style="box-shadow:none !important;" maxlength="300" required name="introduction" id="self_introduction" rows="10">{{ old('introduction') }}</textarea>
     </div>
   </div>
   <div class="row">

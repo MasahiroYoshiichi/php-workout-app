@@ -33,13 +33,13 @@
        <div class="row justify-content-center">
            <div class="col-xs-12 mt-4">
                <div class="col-xs-12">
-                   <a type="button" href="/athlete" class="btn selection-button-sm">アスリートコース</a>
+                   <a type="button" href="/athlete" class="btn btn-outline-dark selection-button-sm" style="outline: none;">アスリートコース</a>
                </div>
                <div class="col-xs-12">
-                   <a type="button" href="/exercise" class="btn selection-button-sm">エクササイズコース</a>
+                   <a type="button" href="/exercise" class="btn btn-outline-dark selection-button-sm">エクササイズコース</a>
                </div>
                <div class="col-xs-12">
-                   <a type="button" href="/fitness" class="btn selection-button-sm">フィットネスコース</a>
+                   <a type="button" href="/fitness" class="btn btn-outline-dark selection-button-sm">フィットネスコース</a>
                </div>
            </div>
         </div>

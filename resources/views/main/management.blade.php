@@ -57,7 +57,7 @@
     <div class="row" style="background-color: #fff">
         <div class="col-md-7 ">
              <div class="management-bottom text-center" role="group" aria-label="bodyType">
-               <button type="button" class="btn btn-color click" data-id="management_chest">胸</button>
+               <button type="button" class="btn btn-color click"  data-id="management_chest">胸</button>
                <button type="button" class="btn btn-color2 click" data-id="management_back">背中</button>
                <button type="button" class="btn btn-color3 click" data-id="management_sholuder">肩</button>
                <button type="button" class="btn btn-color4 click" data-id="management_bicelder">上腕二頭筋</button>

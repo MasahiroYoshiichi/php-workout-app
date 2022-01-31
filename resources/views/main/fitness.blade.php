@@ -35,7 +35,7 @@
               </div>
             </div>
         </div>
-        <div class="col-12 d-block d-md-none">
+        <div class="col-12 p-0 d-block d-md-none">
             <div class="col-8 mx-auto  history-top text-center">ワークアウト履歴</div>
             @if(empty($history_date))
               <div class="col-8 offset-2 pl-4 history-text">
@@ -62,6 +62,7 @@
                  </p>
               </div>
              @endif
+             <div class="col-12" style="height: 1.2rem; background-color: #fff;"></div>
         </div>
         @if($today == $history_time) 
         <div class="col-md-10 d-none d-md-block" style="background-color: #778899">
@@ -190,14 +191,14 @@
                <div class="row bg-light text-dark text-center justify-content-center pt-3">
                    <div class="col-md-3">
                        <label class="form-label" for="weight">体重を入力</label>
-                       <input type="number" required class="form-control" name="user_weight" id="weight" placeholder="kg">
+                       <input type="number" required class="form-control border-dark" style="box-shadow:none !important;" name="user_weight" id="weight" placeholder="kg">
                    </div>
                    <div class="unit">
                        <p>kg</p>
                    </div>
                    <div class="col-md-3">
                        <label class="form-label" for="fat">体脂肪率を入力</label>
-                       <input type="number" class="form-control" name="user_fat" id="fat" placeholder="%">
+                       <input type="number" class="form-control border-dark" style="box-shadow:none !important;" name="user_fat" id="fat" placeholder="%">
                    </div>
                     <div class="unit">
                        <p>%</p>
@@ -245,12 +246,12 @@
                <div class="row bg-light text-dark text-center pt-3">
                    <div class="col-4 offset-2">
                        <label class="form-label" for="weight">体重</label>
-                       <input type="number" required class="form-control text-center" name="user_weight" id="weight" placeholder="kg">
+                       <input type="number" required class="form-control text-center border-dark" style="box-shadow:none !important;" name="user_weight" id="weight" placeholder="kg">
                        <span> kg</span>
                    </div>
                    <div class="col-4">
                        <label class="form-label" for="fat">体脂肪率</label>
-                       <input type="number" class="form-control text-center" name="user_fat" id="fat" placeholder="%">
+                       <input type="number" class="form-control text-center border-dark" style="box-shadow:none !important;" name="user_fat" id="fat" placeholder="%">
                         <span>%</span>
                    </div>
                </div>
