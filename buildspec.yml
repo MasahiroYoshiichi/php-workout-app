@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 7.4
+    commands:
+      - echo Installing source code...
+      - ls -la
+      - composer install --no-interaction --prefer-dist --optimize-autoloader
+
+  pre_build:
+    commands:
+      - echo Pre-build step...
+      - cp .env.example .env
+      - php artisan key:generate
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Running unit tests...
+      - php artisan test
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Deleting the env file...
+      - rm .env
