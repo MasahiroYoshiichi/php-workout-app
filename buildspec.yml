@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      php: 8
+      php: 8.2
     commands:
       - echo Installing source code...
       - ls -la
