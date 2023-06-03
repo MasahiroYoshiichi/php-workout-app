@@ -14,6 +14,12 @@ phases:
       - echo Pre-build step...
       - cp .env.example .env
       - php artisan key:generate
+      - php artisan migrate --force
+      - php artisan db:seed --class=CourseTableSeeder
+      - php artisan db:seed --class=TrainingPointTableSeeder
+      - php artisan db:seed --class=TrainingSetTableSeeder
+      - php artisan db:seed --class=TraininggTableSeeder
+      - php artisan db:seed --class=TrainingTableSeeder
 
   build:
     commands:
